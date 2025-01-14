@@ -1,7 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(){ window.addEventListener("DOMContentLoaded", function(){
-	UAGBForms.init( {"block_id":"5ccad004","reCaptchaEnable":false,"reCaptchaType":"v2","reCaptchaSiteKeyV2":"","reCaptchaSecretKeyV2":"","reCaptchaSiteKeyV3":"","reCaptchaSecretKeyV3":"","afterSubmitToEmail":"keerthi.office1990@gmail.com","afterSubmitCcEmail":"","afterSubmitBccEmail":"","afterSubmitEmailSubject":"Form Submission","sendAfterSubmitEmail":true,"confirmationType":"message","hidereCaptchaBatch":false,"captchaMessage":"Please fill up the above captcha.","confirmationUrl":""}, '.uagb-block-5ccad004', 35 );
-});
-var ssLinksParent = document.querySelector( '.uagb-block-51f58940' );
+document.addEventListener("DOMContentLoaded", function(){ var ssLinksParent = document.querySelector( '.uagb-block-2f905882' );
 ssLinksParent?.addEventListener( 'keyup', function ( e ) {
 var link = e.target.closest( '.uagb-ss__link' );
 if ( link && e.keyCode === 13 ) {
