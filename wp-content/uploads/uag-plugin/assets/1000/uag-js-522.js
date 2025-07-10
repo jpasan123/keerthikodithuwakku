@@ -21,7 +21,7 @@ if ( social_url == "mailto:?body=" ) {
 }
 var request_url = "";
 if ( social_url.indexOf("/pin/create/link/?url=") !== -1 ) {
-	request_url = social_url + encodeURIComponent( window.location.href ) + "&media=" + 'http://localhost/keerthi/wp-content/uploads/2024/11/myndrone-320.png';
+	request_url = social_url + encodeURIComponent( window.location.href ) + "&media=" + 'http://localhost/keerthi/wp-content/uploads/2025/01/277253930_4924701910944785_4382205761829635155_n-1.jpg';
 } else {
 	request_url = social_url + encodeURIComponent( window.location.href );
 }
