@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Celebrating Start-up Innovation: Highlights from Seedstars Sri Lanka Regional Event	</title>
+	<atom:link href="/hello-world/feed/" rel="self" type="application/rss+xml" />
+	<link>/hello-world/</link>
+	<description></description>
+	<lastBuildDate>Tue, 29 Oct 2024 06:58:54 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.2</generator>
+	<item>
+		<title>
+		By: Anonymous		</title>
+		<link>/hello-world/#comment-1</link>
+
+		<dc:creator><![CDATA[Anonymous]]></dc:creator>
+		<pubDate>Tue, 29 Oct 2024 06:22:40 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1#comment-1</guid>
+
+					<description><![CDATA[]]></description>
+			<content:encoded><![CDATA[]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>
