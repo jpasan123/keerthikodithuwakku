@@ -1,4 +1,16 @@
-document.addEventListener("DOMContentLoaded", function(){ var ssLinksParent = document.querySelector( '.uagb-block-9033c73c' );
+document.addEventListener("DOMContentLoaded", function(){ window.addEventListener("DOMContentLoaded", function(){
+	var swiper = new Swiper( ".uagb-block-b2352154 .uagb-swiper",
+		{"autoplay":{"delay":3000,"disableOnInteraction":false,"pauseOnMouseEnter":true,"stopOnLastSlide":false},"loop":true,"speed":800,"effect":"slide","direction":"horizontal","flipEffect":{"slideShadows":false},"fadeEffect":{"crossFade":true},"pagination":{"el":".uagb-block-b2352154 .swiper-pagination","clickable":true,"hideOnClick":false},"navigation":{"nextEl":".uagb-block-b2352154 .swiper-button-next","prevEl":".uagb-block-b2352154 .swiper-button-prev"}}	);
+});
+
+window.addEventListener( 'load', function() {
+	UAGBTabs.init( '.uagb-block-d2fc5430' );
+	UAGBTabs.anchorTabId( '.uagb-block-d2fc5430' );
+});
+window.addEventListener( 'hashchange', function() {
+	UAGBTabs.anchorTabId( '.uagb-block-d2fc5430' );
+}, false );
+var ssLinksParent = document.querySelector( '.uagb-block-9033c73c' );
 ssLinksParent?.addEventListener( 'keyup', function ( e ) {
 var link = e.target.closest( '.uagb-ss__link' );
 if ( link && e.keyCode === 13 ) {
@@ -21,7 +33,7 @@ if ( social_url == "mailto:?body=" ) {
 }
 var request_url = "";
 if ( social_url.indexOf("/pin/create/link/?url=") !== -1 ) {
-	request_url = social_url + encodeURIComponent( window.location.href ) + "&media=" + 'http://localhost/keerthi/wp-content/uploads/2024/10/Untitled-88-5.jpg';
+	request_url = social_url + encodeURIComponent( window.location.href ) + "&media=" + '';
 } else {
 	request_url = social_url + encodeURIComponent( window.location.href );
 }
