@@ -1,16 +1,6 @@
 {
-  "buildCommand": "echo 'Static site - no build required'",
+  "buildCommand": "",
   "outputDirectory": "./",
-  "framework": "static",
-  "installCommand": "echo 'No dependencies to install'",
-  "env": {
-    "FRAMEWORK": "static"
-  },
-  "regions": ["sfo1"],
-  "functions": {
-    "api/**/*.js": {
-      "memory": 3008,
-      "maxDuration": 900
-    }
-  }
+  "installCommand": "",
+  "regions": ["sfo1"]
 }
