@@ -847,17 +847,233 @@ p.uagb-heading-text {
 
 
 
-<h3 class="wp-block-heading"><strong>2026/27 Che­ven­ing Awards CRISP Fel­low­ship — Uni­ver­si­ty of Ox­ford</strong></h3>
+<style>
+.chevening-feature {
+	margin: 0 var(--wp--preset--spacing--20) 3rem;
+	padding: 0 var(--wp--preset--spacing--20);
+	position: relative;
+	animation: cheveningFadeUp 700ms ease both;
+}
 
+.chevening-feature__badge {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.45rem 1rem;
+	border-radius: 9999px;
+	background: rgba(241, 130, 0, 0.08);
+	color: var(--ast-global-color-0);
+	font-size: 0.875rem;
+	font-weight: 600;
+	letter-spacing: 0.01em;
+	margin: 0 auto 0.9rem;
+}
 
+.chevening-feature__header {
+	max-width: 820px;
+	margin: 0 auto 2rem;
+	text-align: center;
+}
 
-<div class="wp-block-media-text is-stacked-on-mobile" style="margin-right:var(--wp--preset--spacing--20);margin-left:var(--wp--preset--spacing--20);padding-right:var(--wp--preset--spacing--20);padding-left:var(--wp--preset--spacing--20)"><figure class="wp-block-media-text__media"><img loading="lazy" decoding="async" width="595" height="325" src="/wp-content/uploads/2026/04/oxford2.jpeg" alt class="wp-image-956 size-full"></figure><div class="wp-block-media-text__content">
-<p class="uagb-heading-text">Se­lect­ed for the 2026/27 Che­ven­ing Awards CRISP Fel­low­ship to pur­sue stud­ies at the Uni­ver­si­ty of Ox­ford, this achieve­ment rep­re­sents a sig­nif­i­cant mile­stone in a jour­ney shaped by in­no­va­tion, lead­er­ship, and ser­vice. The rec­og­ni­tion was for­mal­ly re­ceived at the Brit­ish High Com­mis­sion in Co­lom­bo.</p>
+.chevening-feature__header h3 {
+	margin: 0;
+	font-size: clamp(2rem, 4vw, 3.25rem);
+	line-height: 1.08;
+	color: #243143;
+	font-weight: 700;
+}
 
+.chevening-feature__subtitle {
+	margin: 1rem auto 0;
+	max-width: 760px;
+	font-size: 1rem;
+	line-height: 1.7;
+	color: #6b7280;
+}
 
+.chevening-feature__grid {
+	display: grid;
+	grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+	gap: 1.6rem;
+	align-items: start;
+}
 
-<p class="uagb-heading-text">Sup­port­ed by the UK For­eign, Com­mon­wealth and De­vel­op­ment Of­fice and the glob­al­ly pres­ti­gious Che­ven­ing Awards, the fel­low­ship pro­vides a unique plat­form to fur­ther de­vel­op glob­al per­spec­tives and lead­er­ship ca­pa­bil­i­ties. This op­por­tu­ni­ty re­in­forces a con­tin­ued com­mit­ment to lev­er­ag­ing in­no­va­tion and knowl­edge to con­trib­ute to­ward Sri Lan­ka's fu­ture and cre­ate last­ing im­pact a­cross tech­nol­o­gy and health­care do­mains.</p>
-</div></div>
+.chevening-feature__media {
+	display: grid;
+	gap: 1rem;
+}
+
+.chevening-feature__media figure {
+	margin: 0;
+	overflow: hidden;
+	border-radius: 20px;
+	box-shadow: 0 18px 45px rgba(15, 23, 42, 0.09);
+	background: #ffffff;
+	transform: translateY(0);
+	transition: transform 260ms ease, box-shadow 260ms ease;
+}
+
+.chevening-feature__media figure:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 24px 55px rgba(15, 23, 42, 0.14);
+}
+
+.chevening-feature__media img {
+	display: block;
+	width: 100%;
+	height: auto;
+	transition: transform 420ms ease;
+}
+
+.chevening-feature__media figure:hover img {
+	transform: scale(1.03);
+}
+
+.chevening-feature__card {
+	position: relative;
+	background: #ffffff;
+	border: 1px solid rgba(241, 130, 0, 0.08);
+	border-radius: 22px;
+	padding: clamp(1.4rem, 2.2vw, 2rem);
+	box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+	overflow: hidden;
+}
+
+.chevening-feature__card::before {
+	content: "";
+	position: absolute;
+	inset: 0 auto auto 0;
+	height: 4px;
+	width: 100%;
+	background: linear-gradient(90deg, #f18200, #ffb347);
+}
+
+.chevening-feature__card h4 {
+	margin: 0 0 1rem;
+	font-size: clamp(1.4rem, 2.5vw, 2.05rem);
+	line-height: 1.2;
+	color: #243143;
+	font-weight: 700;
+}
+
+.chevening-feature__card p {
+	margin: 0 0 1rem;
+	font-size: 0.97rem;
+	line-height: 1.75;
+	color: #667085;
+}
+
+.chevening-feature__tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-top: 0.35rem;
+	padding-top: 0.45rem;
+}
+
+.chevening-feature__tag {
+	display: inline-flex;
+	align-items: center;
+	border-radius: 9999px;
+	padding: 0.35rem 0.75rem;
+	background: rgba(241, 130, 0, 0.08);
+	color: var(--ast-global-color-0);
+	font-size: 0.8rem;
+	font-weight: 600;
+}
+
+.chevening-feature__cta {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.55rem;
+	margin-top: 1.15rem;
+	padding: 0.9rem 1.4rem;
+	border-radius: 9999px;
+	background: linear-gradient(90deg, var(--ast-global-color-0), var(--ast-global-color-1));
+	color: #ffffff;
+	font-weight: 700;
+	text-decoration: none;
+	box-shadow: 0 10px 24px rgba(241, 130, 0, 0.28);
+	transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.chevening-feature__cta:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 14px 30px rgba(241, 130, 0, 0.36);
+}
+
+/* Keep the CTA color/contrast identical on hover (prevent global hover overrides) */
+.chevening-feature__cta,
+.chevening-feature__cta:focus,
+.chevening-feature__cta:active,
+.chevening-feature__cta:hover {
+	background: linear-gradient(90deg, var(--ast-global-color-0), var(--ast-global-color-1));
+	color: #ffffff;
+	text-decoration: none;
+	opacity: 1 !important;
+	filter: none !important;
+	-webkit-text-fill-color: #ffffff !important;
+}
+
+@keyframes cheveningFadeUp {
+	from {
+		opacity: 0;
+		transform: translateY(18px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@media (max-width: 900px) {
+	.chevening-feature__grid {
+		grid-template-columns: 1fr;
+	}
+
+	.chevening-feature__header {
+		margin-bottom: 1.35rem;
+	}
+}
+</style>
+
+<section class="chevening-feature" aria-labelledby="chevening-fellowship-title">
+	<div class="chevening-feature__badge">Chevening Fellowship</div>
+	<div class="chevening-feature__header">
+		<h3 id="chevening-fellowship-title">Our CEO Selected for Chevening CRISP 2026 at University of Oxford</h3>
+		<p class="chevening-feature__subtitle">A new milestone at St Cross College, Oxford, with inspiration to bring cutting-edge medtech insights back to Sri Lanka.</p>
+	</div>
+
+	<div class="chevening-feature__grid">
+		<div class="chevening-feature__media">
+			<figure>
+				<img loading="lazy" decoding="async" width="595" height="325" src="/wp-content/uploads/2026/04/oxford1.jpeg" alt="Chevening pre-departure programme photo 1" class="wp-image-957 size-full">
+			</figure>
+			<figure>
+				<img loading="lazy" decoding="async" width="595" height="325" src="/wp-content/uploads/2026/04/oxford2.jpeg" alt="Chevening pre-departure programme photo 2" class="wp-image-956 size-full">
+			</figure>
+		</div>
+
+		<article class="chevening-feature__card">
+			<h4>Chevening Research Science and Innovation Leadership Fellowship</h4>
+			<p>Honoured to be selected for the Chevening Research Science and Innovation Leadership Fellowship at St Cross College, Oxford.</p>
+			<p>At the Chevening pre-departure programme, I had the privilege of meeting His Excellency Andrew Patrick, the British High Commissioner, and learning more about the fellowship and its global opportunities.</p>
+			<p>I look forward to exploring cutting-edge medtech innovations and bringing these insights back to Sri Lanka to drive impact in healthcare and technology.</p>
+			<p>My work continues to focus on preventive healthcare, accessible AI-enabled screening, and practical solutions that can support both advanced and resource-limited healthcare settings across South and Southeast Asia.</p>
+			<p>Beyond entrepreneurship, I remain committed to mentoring young innovators, strengthening Sri Lanka's startup ecosystem, and encouraging more women to pursue STEM and innovation-led careers.</p>
+
+			<div class="chevening-feature__tags">
+				<span class="chevening-feature__tag">Oxford</span>
+				<span class="chevening-feature__tag">Chevening</span>
+				<span class="chevening-feature__tag">MedTech Leadership</span>
+			</div>
+
+			<a class="chevening-feature__cta" href="https://tngss.startuptn.in/speakers/keerthi-kodithuwakku" target="_blank" rel="noopener noreferrer">Read this article</a>
+		</article>
+	</div>
+</section>
 
 
 
