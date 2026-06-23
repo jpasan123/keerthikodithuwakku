@@ -1263,10 +1263,10 @@ p.uagb-heading-text {
 									
 
 
-<section class="home-chevening" aria-labelledby="home-chevening-title">
-	<div class="home-chevening__eyebrow">Chevening Fellowship</div>
+<section class="home-chevening">
+
 	<div class="home-chevening__header">
-		<h3 id="home-chevening-title">Our CEO Selected for Chevening CRISP 2026 at University of Oxford</h3>
+
 		<p class="home-chevening__subtitle">A new milestone at St Cross College, Oxford, with inspiration to bring cutting-edge medtech insights back to Sri Lanka.</p>
 	</div>
 
@@ -1281,7 +1281,7 @@ p.uagb-heading-text {
 		</div>
 
 		<article class="home-chevening__card">
-			<h4>Chevening Research Science and Innovation Leadership Fellowship</h4>
+			<h4>Chevening CRISP Fellowship 2026 at University of Oxford</h4>
 			<p>Honoured to be selected for the Chevening Research Science and Innovation Leadership Fellowship at St Cross College, Oxford.</p>
 			<p>At the Chevening pre-departure programme, I had the privilege of meeting His Excellency Andrew Patrick, the British High Commissioner, and learning more about the fellowship and its global opportunities.</p>
 			<p>I look forward to exploring cutting-edge medtech innovations and bringing these insights back to Sri Lanka to drive impact in healthcare and technology.</p>
@@ -1375,19 +1375,7 @@ p.uagb-heading-text {
 	animation: homeCheveningRise 700ms ease both;
 }
 
-.home-chevening__eyebrow {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	margin: 0 auto 0.9rem;
-	padding: 0.45rem 1rem;
-	border-radius: 9999px;
-	background: rgba(47, 152, 201, 0.1);
-	color: #2f98c9;
-	font-size: 0.875rem;
-	font-weight: 700;
-	letter-spacing: 0.01em;
-}
+/* badge removed */
 
 .home-chevening__header {
 	max-width: 820px;
@@ -1459,13 +1447,8 @@ p.uagb-heading-text {
 }
 
 .home-chevening__card::before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	height: 4px;
-	background: linear-gradient(90deg, #f18200, #ffb347);
+	/* removed top accent bar for cleaner look */
+	display: none !important;
 }
 
 .home-chevening__card h4 {
@@ -1484,11 +1467,7 @@ p.uagb-heading-text {
 }
 
 .home-chevening__tags {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 0.5rem;
-	margin-top: 0.35rem;
-	padding-top: 0.45rem;
+	display: none !important; /* hide small tag badges as requested */
 }
 
 .home-chevening__tag {
