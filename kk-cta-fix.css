@@ -1,0 +1,84 @@
+/* Shared Connect CTA background fix — used across all pages */
+
+.uagb-block-0d92c2ce {
+	position: relative !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: flex-start !important;
+	min-height: clamp(480px, 62vh, 680px) !important;
+	padding-top: clamp(4rem, 8vw, 6.5rem) !important;
+	padding-bottom: clamp(4rem, 8vw, 6.5rem) !important;
+	padding-left: clamp(1.25rem, 5vw, 4.5rem) !important;
+	padding-right: clamp(1.25rem, 5vw, 4.5rem) !important;
+	background-size: cover !important;
+	background-position: 78% 18% !important;
+	background-repeat: no-repeat !important;
+	overflow: hidden !important;
+}
+
+.uagb-block-0d92c2ce::before {
+	content: "" !important;
+	position: absolute !important;
+	inset: 0 !important;
+	width: 100% !important;
+	height: 100% !important;
+	pointer-events: none !important;
+	opacity: 1 !important;
+	background: linear-gradient(
+		90deg,
+		rgba(12, 14, 10, 0.88) 0%,
+		rgba(12, 14, 10, 0.72) 34%,
+		rgba(12, 14, 10, 0.35) 62%,
+		rgba(12, 14, 10, 0.18) 100%
+	) !important;
+	z-index: 0 !important;
+}
+
+.uagb-block-0d92c2ce > .uagb-container-inner-blocks-wrap {
+	position: relative;
+	z-index: 1;
+	max-width: min(100%, 560px) !important;
+}
+
+.uagb-block-0d92c2ce .uagb-block-dbde4be2 .uagb-ifb-title-prefix,
+.uagb-block-0d92c2ce .uagb-block-dbde4be2 .uagb-ifb-title,
+.uagb-block-0d92c2ce .uagb-block-dbde4be2 .uagb-ifb-desc {
+	color: #ffffff !important;
+	text-align: left !important;
+}
+
+.uagb-block-0d92c2ce .uagb-block-dbde4be2 .uagb-ifb-title {
+	font-size: clamp(1.75rem, 3.2vw, 2.6rem) !important;
+	line-height: 1.15 !important;
+	margin-bottom: 0.75rem !important;
+}
+
+.uagb-block-0d92c2ce .uagb-block-dbde4be2 .uagb-ifb-desc {
+	max-width: 34rem;
+	opacity: 0.92;
+}
+
+@media (max-width: 900px) {
+	.uagb-block-0d92c2ce {
+		min-height: clamp(420px, 58vh, 560px) !important;
+		background-position: 70% 16% !important;
+	}
+
+	.uagb-block-0d92c2ce::before {
+		background: linear-gradient(
+			180deg,
+			rgba(12, 14, 10, 0.78) 0%,
+			rgba(12, 14, 10, 0.62) 45%,
+			rgba(12, 14, 10, 0.78) 100%
+		) !important;
+	}
+}
+
+@media (max-width: 640px) {
+	.uagb-block-0d92c2ce {
+		min-height: 460px !important;
+		background-position: 66% 14% !important;
+		padding-top: 3.25rem !important;
+		padding-bottom: 3.25rem !important;
+	}
+}
