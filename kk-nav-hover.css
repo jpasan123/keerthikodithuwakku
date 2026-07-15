@@ -1,0 +1,11 @@
+/* Desktop / tablet: smooth orange hover on top nav labels only */
+@media (hover: hover) and (pointer: fine) {
+	.main-header-menu > .menu-item > .menu-link {
+		transition: color 0.28s ease;
+	}
+
+	.main-header-menu > .menu-item > .menu-link:hover,
+	.main-header-menu > .menu-item > .menu-link:focus-visible {
+		color: #f18200 !important;
+	}
+}

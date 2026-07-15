@@ -1,0 +1,265 @@
+/* Social connect welcome popup — site-wide */
+
+.kk-social-popup {
+	position: fixed;
+	inset: 0;
+	z-index: 99999;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1.25rem;
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	transition: opacity 280ms ease, visibility 280ms ease;
+}
+
+.kk-social-popup.is-open {
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+}
+
+.kk-social-popup__backdrop,
+button.kk-social-popup__backdrop,
+.kk-social-popup button.kk-social-popup__backdrop {
+	position: absolute !important;
+	inset: 0 !important;
+	width: 100% !important;
+	height: 100% !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	border: 0 !important;
+	border-radius: 0 !important;
+	box-shadow: none !important;
+	outline: none !important;
+	background: rgba(12, 14, 10, 0.55) !important;
+	background-color: rgba(12, 14, 10, 0.55) !important;
+	background-image: none !important;
+	color: transparent !important;
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+	cursor: pointer !important;
+	text-transform: none !important;
+	font-size: 0 !important;
+	line-height: 0 !important;
+	min-height: 0 !important;
+	min-width: 0 !important;
+}
+
+.kk-social-popup__backdrop:hover,
+.kk-social-popup__backdrop:focus,
+.kk-social-popup__backdrop:focus-visible,
+.kk-social-popup__backdrop:active,
+button.kk-social-popup__backdrop:hover,
+button.kk-social-popup__backdrop:focus,
+button.kk-social-popup__backdrop:active {
+	background: rgba(12, 14, 10, 0.55) !important;
+	background-color: rgba(12, 14, 10, 0.55) !important;
+	background-image: none !important;
+	border-color: transparent !important;
+	color: transparent !important;
+	box-shadow: none !important;
+	opacity: 1 !important;
+}
+
+.kk-social-popup__card {
+	position: relative;
+	z-index: 1;
+	width: min(100%, 420px);
+	padding: 2rem 1.75rem 1.5rem;
+	border-radius: 24px;
+	background:
+		radial-gradient(120% 90% at 100% 0%, rgba(241, 130, 0, 0.14), transparent 52%),
+		linear-gradient(180deg, #ffffff 0%, #fbfaf8 100%);
+	box-shadow:
+		0 28px 80px rgba(15, 23, 42, 0.28),
+		0 0 0 1px rgba(15, 23, 42, 0.06);
+	transform: translateY(18px) scale(0.97);
+	opacity: 0;
+	transition: transform 340ms cubic-bezier(0.22, 1, 0.36, 1), opacity 280ms ease;
+	text-align: center;
+}
+
+.kk-social-popup.is-open .kk-social-popup__card {
+	transform: translateY(0) scale(1);
+	opacity: 1;
+}
+
+.kk-social-popup__close {
+	position: absolute;
+	top: 0.9rem;
+	right: 0.9rem;
+	width: 36px;
+	height: 36px;
+	border: 0;
+	border-radius: 999px !important;
+	background: rgba(15, 23, 42, 0.06) !important;
+	color: #243143 !important;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 !important;
+	box-shadow: none !important;
+	text-transform: none;
+	transition: background 180ms ease, transform 180ms ease;
+}
+
+.kk-social-popup__close:hover,
+.kk-social-popup__close:focus-visible {
+	background: rgba(15, 23, 42, 0.12);
+	outline: none;
+	transform: rotate(90deg);
+}
+
+.kk-social-popup__eyebrow {
+	margin: 0 0 0.55rem;
+	font-size: 0.78rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--ast-global-color-0, #f18200);
+}
+
+.kk-social-popup__title {
+	margin: 0;
+	font-family: "Space Grotesk", sans-serif;
+	font-size: clamp(1.45rem, 3.5vw, 1.85rem);
+	line-height: 1.15;
+	font-weight: 700;
+	color: #0c0e0a;
+}
+
+.kk-social-popup__text {
+	margin: 0.7rem auto 1.35rem;
+	max-width: 30ch;
+	font-size: 0.95rem;
+	line-height: 1.55;
+	color: #5b5b5b;
+}
+
+.kk-social-popup__links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	justify-content: center;
+	margin: 0 0 1.15rem;
+}
+
+.kk-social-popup__link {
+	width: 52px;
+	height: 52px;
+	border-radius: 16px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: #ffffff;
+	text-decoration: none;
+	box-shadow: 0 10px 22px rgba(15, 23, 42, 0.16);
+	transition: transform 200ms ease, box-shadow 200ms ease, filter 200ms ease;
+}
+
+.kk-social-popup__link svg {
+	width: 22px;
+	height: 22px;
+	fill: currentColor;
+}
+
+.kk-social-popup__link:hover,
+.kk-social-popup__link:focus-visible {
+	transform: translateY(-4px) scale(1.04);
+	box-shadow: 0 16px 30px rgba(15, 23, 42, 0.22);
+	outline: none;
+	filter: brightness(1.05);
+}
+
+.kk-social-popup__link--facebook { background: #1877f2; }
+.kk-social-popup__link--linkedin { background: #0a66c2; }
+.kk-social-popup__link--x { background: #111111; }
+.kk-social-popup__link--instagram {
+	background: linear-gradient(45deg, #f58529, #dd2a7b 48%, #8134af 78%, #515bd4);
+}
+.kk-social-popup__link--contact { background: var(--ast-global-color-0, #f18200); }
+
+.kk-social-popup__actions {
+	display: flex;
+	flex-direction: column;
+	gap: 0.55rem;
+	align-items: center;
+}
+
+.kk-social-popup__cta {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 44px;
+	padding: 0.7rem 1.35rem;
+	border-radius: 999px;
+	background: linear-gradient(90deg, var(--ast-global-color-0, #f18200), var(--ast-global-color-1, #ff9c27));
+	color: #ffffff !important;
+	font-size: 0.85rem;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	text-decoration: none !important;
+	box-shadow: 0 10px 24px rgba(241, 130, 0, 0.28);
+	transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.kk-social-popup__cta:hover,
+.kk-social-popup__cta:focus-visible {
+	transform: translateY(-2px);
+	box-shadow: 0 14px 28px rgba(241, 130, 0, 0.36);
+	outline: none;
+	color: #ffffff !important;
+}
+
+.kk-social-popup__dismiss {
+	border: 0;
+	background: transparent;
+	color: #6b7280;
+	font-size: 0.88rem;
+	font-weight: 500;
+	letter-spacing: normal;
+	text-transform: none;
+	cursor: pointer;
+	padding: 0.35rem 0.6rem;
+	text-decoration: underline;
+	text-underline-offset: 3px;
+	box-shadow: none;
+	border-radius: 0;
+}
+
+.kk-social-popup__dismiss:hover,
+.kk-social-popup__dismiss:focus-visible {
+	color: #243143;
+	outline: none;
+}
+
+body.kk-social-popup-lock {
+	overflow: hidden;
+}
+
+@media (max-width: 480px) {
+	.kk-social-popup__card {
+		padding: 1.7rem 1.2rem 1.25rem;
+		border-radius: 20px;
+	}
+
+	.kk-social-popup__link {
+		width: 48px;
+		height: 48px;
+		border-radius: 14px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.kk-social-popup,
+	.kk-social-popup__card,
+	.kk-social-popup__link,
+	.kk-social-popup__close,
+	.kk-social-popup__cta {
+		transition: none !important;
+	}
+}

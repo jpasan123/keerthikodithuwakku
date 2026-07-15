@@ -692,6 +692,8 @@ p.uagb-heading-text {
     align-items: flex-start !important;
 }		</style>
 <link rel="stylesheet" href="/kk-cta-fix.css">
+<link rel="stylesheet" href="/kk-social-popup.css">
+<link rel="stylesheet" href="/kk-nav-hover.css">
 		</head>
 
 <body itemtype="https://schema.org/WebPage" itemscope="itemscope" class="home page-template-default page page-id-32 wp-custom-logo surecart-theme-light ast-desktop ast-plain-container ast-no-sidebar astra-4.8.3 ast-single-post ast-inherit-site-logo-transparent ast-theme-transparent-header ast-hfb-header elementor-default elementor-kit-610">
@@ -805,11 +807,6 @@ p.uagb-heading-text {
 
 <div class="wp-block-uagb-container uagb-block-38815769"></div>
 </div></div>
-
-
-
-<p></p>
-
 
 					<div class="wp-block-uagb-image-gallery uagb-block-a16a7725 kk-modern-gallery" style="">
 											<div class="spectra-image-gallery spectra-image-gallery__layout--masonry spectra-image-gallery__layout--masonry-col-3 spectra-image-gallery__layout--masonry-col-tab-2 spectra-image-gallery__layout--masonry-col-mob-1">
@@ -1687,22 +1684,24 @@ p.uagb-heading-text {
 	}
 }
 
-/* ===== Modern responsive image gallery (scoped) ===== */
+/* ===== Hero → gallery: clean WordPress-style section split ===== */
 .uagb-block-a16a7725.kk-modern-gallery {
-	--kk-gallery-gap: 16px;
-	--kk-gallery-radius: 18px;
-	/* Break out of .ast-container so desktop has no huge side white gaps */
+	position: relative;
+	z-index: 2;
+	--kk-gallery-gap: 12px;
+	--kk-gallery-radius: 16px;
 	width: 100vw;
 	max-width: 100vw;
-	position: relative;
 	left: 50%;
 	right: 50%;
 	margin-left: -50vw;
 	margin-right: -50vw;
-	margin-top: 0.35rem;
+	margin-top: 0;
 	margin-bottom: 2.75rem;
-	padding: 0 clamp(0.75rem, 1.6vw, 1.75rem);
+	padding: clamp(2rem, 4vw, 3.25rem) clamp(0.9rem, 1.8vw, 1.85rem) 0;
 	box-sizing: border-box;
+	background: #ffffff;
+	border-top: 1px solid rgba(15, 23, 42, 0.06);
 }
 
 .uagb-block-a16a7725.kk-modern-gallery,
@@ -1711,8 +1710,12 @@ p.uagb-heading-text {
 }
 
 .uagb-block-a16a7725.kk-modern-gallery .spectra-image-gallery__layout--masonry {
-	column-count: 3;
-	column-gap: var(--kk-gallery-gap);
+	display: grid !important;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	grid-auto-rows: minmax(190px, 22vw);
+	gap: var(--kk-gallery-gap);
+	column-count: unset !important;
+	column-gap: unset !important;
 	width: 100% !important;
 	height: auto !important;
 	min-height: 0 !important;
@@ -1721,18 +1724,21 @@ p.uagb-heading-text {
 
 @media (min-width: 1400px) {
 	.uagb-block-a16a7725.kk-modern-gallery {
-		--kk-gallery-gap: 18px;
-		padding: 0 clamp(1rem, 1.4vw, 1.5rem);
+		--kk-gallery-gap: 14px;
+		padding-left: clamp(1rem, 1.5vw, 1.6rem);
+		padding-right: clamp(1rem, 1.5vw, 1.6rem);
 	}
 
 	.uagb-block-a16a7725.kk-modern-gallery .spectra-image-gallery__layout--masonry {
-		column-count: 4;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		grid-auto-rows: minmax(200px, 18vw);
 	}
 }
 
 @media (min-width: 1800px) {
 	.uagb-block-a16a7725.kk-modern-gallery .spectra-image-gallery__layout--masonry {
-		column-count: 5;
+		grid-template-columns: repeat(5, minmax(0, 1fr));
+		grid-auto-rows: minmax(210px, 15vw);
 	}
 }
 
@@ -1744,26 +1750,25 @@ p.uagb-heading-text {
 	bottom: auto !important;
 	transform: none !important;
 	width: 100% !important;
-	margin: 0 0 var(--kk-gallery-gap) !important;
+	height: 100% !important;
+	margin: 0 !important;
 	padding: 0 !important;
-	break-inside: avoid;
-	-webkit-column-break-inside: avoid;
-	page-break-inside: avoid;
-	display: inline-block;
-	vertical-align: top;
+	display: block !important;
 }
 
 .uagb-block-a16a7725.kk-modern-gallery .spectra-image-gallery__media-wrapper {
 	outline: none;
 	cursor: pointer;
+	height: 100%;
 }
 
 .uagb-block-a16a7725.kk-modern-gallery .spectra-image-gallery__media--masonry {
 	position: relative;
 	overflow: hidden;
+	height: 100%;
 	border-radius: var(--kk-gallery-radius);
 	background: #0f172a;
-	box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+	box-shadow: 0 12px 32px rgba(15, 23, 42, 0.1);
 	transition: transform 280ms ease, box-shadow 280ms ease;
 	isolation: isolate;
 }
@@ -1800,7 +1805,7 @@ p.uagb-heading-text {
 
 .uagb-block-a16a7725.kk-modern-gallery .spectra-image-gallery__media-wrapper:hover .spectra-image-gallery__media--masonry,
 .uagb-block-a16a7725.kk-modern-gallery .spectra-image-gallery__media-wrapper:focus-visible .spectra-image-gallery__media--masonry {
-	transform: translateY(-4px);
+	transform: translateY(-3px);
 	box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
 }
 
@@ -1821,11 +1826,17 @@ p.uagb-heading-text {
 .uagb-block-a16a7725.kk-modern-gallery picture img {
 	display: block;
 	width: 100%;
-	height: auto;
+	height: 100%;
 	margin: 0;
 	border: 0;
 	border-radius: inherit;
+	object-fit: cover;
+	object-position: center;
 	transition: transform 480ms ease;
+}
+
+.uagb-block-a16a7725.kk-modern-gallery picture {
+	height: 100%;
 }
 
 .uagb-block-a16a7725.kk-modern-gallery .spectra-image-gallery__media-wrapper:hover .spectra-image-gallery__media-thumbnail--masonry,
@@ -1839,26 +1850,29 @@ p.uagb-heading-text {
 
 @media (max-width: 1024px) {
 	.uagb-block-a16a7725.kk-modern-gallery {
-		--kk-gallery-gap: 12px;
-		--kk-gallery-radius: 16px;
+		--kk-gallery-gap: 10px;
+		--kk-gallery-radius: 14px;
 		margin-bottom: 2.25rem;
+		padding-top: 2rem;
 	}
 
 	.uagb-block-a16a7725.kk-modern-gallery .spectra-image-gallery__layout--masonry {
-		column-count: 2;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		grid-auto-rows: minmax(170px, 34vw);
 	}
 }
 
 @media (max-width: 640px) {
 	.uagb-block-a16a7725.kk-modern-gallery {
-		--kk-gallery-gap: 10px;
-		--kk-gallery-radius: 14px;
-		padding: 0 0.9rem;
+		--kk-gallery-gap: 8px;
+		--kk-gallery-radius: 12px;
+		padding: 1.75rem 0.9rem 0;
 		margin-bottom: 1.75rem;
 	}
 
 	.uagb-block-a16a7725.kk-modern-gallery .spectra-image-gallery__layout--masonry {
-		column-count: 1;
+		grid-template-columns: 1fr;
+		grid-auto-rows: minmax(220px, 62vw);
 	}
 
 	.uagb-block-a16a7725.kk-modern-gallery .spectra-image-gallery__media--masonry::before {
@@ -2218,6 +2232,7 @@ var uagb_image_gallery = {"ajax_url":"\/wp-admin\/admin-ajax.php","uagb_image_ga
 		grid.style.height = 'auto';
 		grid.style.minHeight = '0';
 		grid.style.visibility = 'visible';
+		grid.style.display = 'grid';
 
 		var items = grid.querySelectorAll('.spectra-image-gallery__media-wrapper--isotope');
 		items.forEach(function (item) {
@@ -2226,6 +2241,7 @@ var uagb_image_gallery = {"ajax_url":"\/wp-admin\/admin-ajax.php","uagb_image_ga
 			item.style.top = 'auto';
 			item.style.transform = 'none';
 			item.style.width = '100%';
+			item.style.height = '100%';
 		});
 
 		if (scope.parentNode) {
@@ -2240,5 +2256,6 @@ var uagb_image_gallery = {"ajax_url":"\/wp-admin\/admin-ajax.php","uagb_image_ga
 	});
 })();
 </script>
+				<script src="/kk-social-popup.js" defer></script>
 				</body>
 </html>
