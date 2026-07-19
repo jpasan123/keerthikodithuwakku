@@ -66,7 +66,7 @@ button.kk-social-popup__backdrop:active {
 .kk-social-popup__card {
 	position: relative;
 	z-index: 1;
-	width: min(100%, 420px);
+	width: min(100%, 440px);
 	padding: 2rem 1.75rem 1.5rem;
 	border-radius: 24px;
 	background:
@@ -140,47 +140,65 @@ button.kk-social-popup__backdrop:active {
 }
 
 .kk-social-popup__links {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 0.75rem;
-	justify-content: center;
-	margin: 0 0 1.15rem;
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 0.7rem;
+	margin: 0 0 1.25rem;
 }
 
 .kk-social-popup__link {
-	width: 52px;
-	height: 52px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 0.45rem;
+	padding: 0.7rem 0.35rem 0.65rem;
 	border-radius: 16px;
+	text-decoration: none !important;
+	background: #ffffff;
+	border: 1px solid rgba(15, 23, 42, 0.08);
+	box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
+	transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+
+.kk-social-popup__logo {
+	width: 44px;
+	height: 44px;
+	border-radius: 12px;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	color: #ffffff;
-	text-decoration: none;
-	box-shadow: 0 10px 22px rgba(15, 23, 42, 0.16);
-	transition: transform 200ms ease, box-shadow 200ms ease, filter 200ms ease;
+	box-shadow: 0 8px 16px rgba(15, 23, 42, 0.18);
 }
 
-.kk-social-popup__link svg {
+.kk-social-popup__logo svg {
 	width: 22px;
 	height: 22px;
 	fill: currentColor;
+	display: block;
+}
+
+.kk-social-popup__label {
+	font-size: 0.68rem;
+	font-weight: 700;
+	letter-spacing: 0.02em;
+	color: #334155;
+	line-height: 1.2;
 }
 
 .kk-social-popup__link:hover,
 .kk-social-popup__link:focus-visible {
-	transform: translateY(-4px) scale(1.04);
-	box-shadow: 0 16px 30px rgba(15, 23, 42, 0.22);
+	transform: translateY(-3px);
+	box-shadow: 0 14px 26px rgba(15, 23, 42, 0.12);
+	border-color: rgba(241, 130, 0, 0.35);
 	outline: none;
-	filter: brightness(1.05);
 }
 
-.kk-social-popup__link--facebook { background: #1877f2; }
-.kk-social-popup__link--linkedin { background: #0a66c2; }
-.kk-social-popup__link--x { background: #111111; }
-.kk-social-popup__link--instagram {
-	background: linear-gradient(45deg, #f58529, #dd2a7b 48%, #8134af 78%, #515bd4);
-}
-.kk-social-popup__link--contact { background: var(--ast-global-color-0, #f18200); }
+.kk-social-popup__link--facebook .kk-social-popup__logo { background: #1877f2; }
+.kk-social-popup__link--linkedin .kk-social-popup__logo { background: #0a66c2; }
+.kk-social-popup__link--x .kk-social-popup__logo { background: #000000; }
+.kk-social-popup__link--contact .kk-social-popup__logo { background: var(--ast-global-color-0, #f18200); }
 
 .kk-social-popup__actions {
 	display: flex;
@@ -243,14 +261,27 @@ body.kk-social-popup-lock {
 
 @media (max-width: 480px) {
 	.kk-social-popup__card {
-		padding: 1.7rem 1.2rem 1.25rem;
+		padding: 1.7rem 1.1rem 1.25rem;
 		border-radius: 20px;
 	}
 
-	.kk-social-popup__link {
-		width: 48px;
-		height: 48px;
-		border-radius: 14px;
+	.kk-social-popup__links {
+		gap: 0.5rem;
+	}
+
+	.kk-social-popup__logo {
+		width: 40px;
+		height: 40px;
+		border-radius: 11px;
+	}
+
+	.kk-social-popup__logo svg {
+		width: 20px;
+		height: 20px;
+	}
+
+	.kk-social-popup__label {
+		font-size: 0.62rem;
 	}
 }
 

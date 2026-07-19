@@ -1,5 +1,5 @@
 (function () {
-	var STORAGE_KEY = "kk_social_popup_seen_v1";
+	var STORAGE_KEY = "kk_social_popup_seen_v2";
 	var SHOW_DELAY_MS = 900;
 
 	function alreadySeen() {
@@ -36,16 +36,28 @@
 			'<p class="kk-social-popup__text">Follow the journey in biomedical innovation, MedTech leadership, and global collaborations.</p>' +
 			'<div class="kk-social-popup__links">' +
 			'<a class="kk-social-popup__link kk-social-popup__link--facebook" href="https://www.facebook.com/keerthi.priyankara.3" target="_blank" rel="noopener noreferrer" aria-label="Facebook">' +
-			'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H8v3h3v7h3v-7h3l1-3h-4V9c0-.6.4-1 1-1z"/></svg>' +
+			'<span class="kk-social-popup__logo" aria-hidden="true">' +
+			'<svg viewBox="0 0 24 24"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"/></svg>' +
+			"</span>" +
+			'<span class="kk-social-popup__label">Facebook</span>' +
 			"</a>" +
 			'<a class="kk-social-popup__link kk-social-popup__link--linkedin" href="https://www.linkedin.com/in/keerthi-kodithuwakku-b98149219" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">' +
-			'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.9 8.4A1.9 1.9 0 1 1 6.9 4.6a1.9 1.9 0 0 1 0 3.8zM5.2 20.2h3.4V9.6H5.2v10.6zM13.1 9.6c-1.3 0-2.2.5-2.7 1.2V9.6H7.2c0 .6-.1 10.6-.1 10.6h3.2v-5.9c0-.3 0-.7.1-.9.3-.7.9-1.4 2-1.4 1.4 0 2 1.1 2 2.7v5.5h3.2v-5.9c0-3.2-1.7-4.7-4.1-4.7z"/></svg>' +
+			'<span class="kk-social-popup__logo" aria-hidden="true">' +
+			'<svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg>' +
+			"</span>" +
+			'<span class="kk-social-popup__label">LinkedIn</span>' +
 			"</a>" +
 			'<a class="kk-social-popup__link kk-social-popup__link--x" href="https://x.com/mkkeerthi" target="_blank" rel="noopener noreferrer" aria-label="X">' +
-			'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 3h2.8l-6.1 7 7.2 11h-5.6l-4.4-6.5L6.1 21H3.3l6.5-7.5L3 3h5.8l4 5.9L17.5 3zm-1 16.1h1.5L7.6 4.8H6L16.5 19.1z"/></svg>' +
+			'<span class="kk-social-popup__logo" aria-hidden="true">' +
+			'<svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>' +
+			"</span>" +
+			'<span class="kk-social-popup__label">X</span>' +
 			"</a>" +
 			'<a class="kk-social-popup__link kk-social-popup__link--contact" href="/contact/" aria-label="Contact">' +
-			'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/></svg>' +
+			'<span class="kk-social-popup__logo" aria-hidden="true">' +
+			'<svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/></svg>' +
+			"</span>" +
+			'<span class="kk-social-popup__label">Contact</span>' +
 			"</a>" +
 			"</div>" +
 			'<div class="kk-social-popup__actions">' +
@@ -79,9 +91,6 @@
 
 	function init() {
 		if (alreadySeen()) return;
-		if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-			/* still show, just without forced delay issues */
-		}
 
 		var root = createPopup();
 		var closeEls = root.querySelectorAll(

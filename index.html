@@ -692,7 +692,7 @@ p.uagb-heading-text {
     align-items: flex-start !important;
 }		</style>
 <link rel="stylesheet" href="/kk-cta-fix.css">
-<link rel="stylesheet" href="/kk-social-popup.css">
+<link rel="stylesheet" href="/kk-social-popup.css?v=logos2">
 <link rel="stylesheet" href="/kk-nav-hover.css?v=mobile2">
 <script src="/kk-nav.js" defer></script>
 		</head>
@@ -906,9 +906,9 @@ p.uagb-heading-text {
 													<div class="spectra-image-gallery__media-wrapper" data-spectra-gallery-image-id="2010" tabindex="0">
 														<div class="spectra-image-gallery__media spectra-image-gallery__media--masonry">
 														<picture>
-															<source media="(min-width: 1024px)" srcset="https://i.ibb.co/20D2DRvZ/Whats-App-Image-2026-07-15-at-12-08-31-1.jpg">
-															<source media="(min-width: 768px)" srcset="https://i.ibb.co/20D2DRvZ/Whats-App-Image-2026-07-15-at-12-08-31-1.jpg">
-															<img decoding="async" class="spectra-image-gallery__media-thumbnail spectra-image-gallery__media-thumbnail--masonry" src="https://i.ibb.co/20D2DRvZ/Whats-App-Image-2026-07-15-at-12-08-31-1.jpg" alt="Event photo July 2026" loading="lazy">
+															<source media="(min-width: 1024px)" srcset="/wp-content/uploads/2026/07/gallery-hq/kk-oxford-arch.jpg">
+															<source media="(min-width: 768px)" srcset="/wp-content/uploads/2026/07/gallery-hq/kk-oxford-arch.jpg">
+															<img decoding="async" class="spectra-image-gallery__media-thumbnail spectra-image-gallery__media-thumbnail--masonry" src="/wp-content/uploads/2026/07/gallery-hq/kk-oxford-arch.jpg" alt="Event photo July 2026" loading="lazy">
 														</source></source></picture>
 														<div class="spectra-image-gallery__media-thumbnail-blurrer"></div>
 														<div class="spectra-image-gallery__media-thumbnail-caption-wrapper spectra-image-gallery__media-thumbnail-caption-wrapper--overlay"></div>
@@ -1500,7 +1500,7 @@ p.uagb-heading-text {
 												<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
 																					</div>
 <div class="swiper-slide">
-								<img class="swiper-lazy" data-src="https://i.ibb.co/20D2DRvZ/Whats-App-Image-2026-07-15-at-12-08-31-1.jpg" alt="Event photo July 2026">
+								<img class="swiper-lazy" data-src="/wp-content/uploads/2026/07/gallery-hq/kk-oxford-arch.jpg" alt="Event photo July 2026">
 								<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
 															</div>
 							<div class="swiper-slide">
@@ -2188,7 +2188,7 @@ p.uagb-heading-text {
 	position: relative;
 	overflow: hidden;
 	height: auto;
-	aspect-ratio: 4 / 3;
+	aspect-ratio: 1 / 1;
 	border-radius: var(--kk-gallery-radius);
 	background: #f3f4f6;
 	box-shadow: 0 4px 18px rgba(15, 23, 42, 0.08);
@@ -2254,7 +2254,7 @@ p.uagb-heading-text {
 	border: 0;
 	border-radius: inherit;
 	object-fit: cover;
-	object-position: center 20%;
+	object-position: center center;
 	image-rendering: auto;
 	-ms-interpolation-mode: bicubic;
 	transform: translateZ(0);
@@ -2263,6 +2263,36 @@ p.uagb-heading-text {
 
 .uagb-block-a16a7725.kk-modern-gallery picture {
 	height: 100%;
+}
+
+/* Portrait Oxford arch — keep subject + full doorway details in frame */
+.uagb-block-a16a7725.kk-modern-gallery .spectra-image-gallery__media-wrapper[data-spectra-gallery-image-id="2010"] img,
+.uagb-block-a16a7725.kk-modern-gallery .spectra-image-gallery__media-wrapper[data-spectra-gallery-image-id="2010"] picture img {
+	object-position: center 78%;
+}
+
+/* Other tall July portraits — prefer people over empty sky/ceiling */
+.uagb-block-a16a7725.kk-modern-gallery .spectra-image-gallery__media-wrapper[data-spectra-gallery-image-id="2009"] img,
+.uagb-block-a16a7725.kk-modern-gallery .spectra-image-gallery__media-wrapper[data-spectra-gallery-image-id="2008"] img,
+.uagb-block-a16a7725.kk-modern-gallery .spectra-image-gallery__media-wrapper[data-spectra-gallery-image-id="2007"] img,
+.uagb-block-a16a7725.kk-modern-gallery .spectra-image-gallery__media-wrapper[data-spectra-gallery-image-id="2006"] img,
+.uagb-block-a16a7725.kk-modern-gallery .spectra-image-gallery__media-wrapper[data-spectra-gallery-image-id="2005"] img,
+.uagb-block-a16a7725.kk-modern-gallery .spectra-image-gallery__media-wrapper[data-spectra-gallery-image-id="2004"] img,
+.uagb-block-a16a7725.kk-modern-gallery .spectra-image-gallery__media-wrapper[data-spectra-gallery-image-id="2003"] img,
+.uagb-block-a16a7725.kk-modern-gallery .spectra-image-gallery__media-wrapper[data-spectra-gallery-image-id="2002"] img,
+.uagb-block-a16a7725.kk-modern-gallery .spectra-image-gallery__media-wrapper[data-spectra-gallery-image-id="2001"] img,
+.uagb-block-a16a7725.kk-modern-gallery .spectra-image-gallery__media-wrapper[data-spectra-gallery-image-id="2000"] img,
+.uagb-block-a16a7725.kk-modern-gallery .spectra-image-gallery__media-wrapper[data-spectra-gallery-image-id="2009"] picture img,
+.uagb-block-a16a7725.kk-modern-gallery .spectra-image-gallery__media-wrapper[data-spectra-gallery-image-id="2008"] picture img,
+.uagb-block-a16a7725.kk-modern-gallery .spectra-image-gallery__media-wrapper[data-spectra-gallery-image-id="2007"] picture img,
+.uagb-block-a16a7725.kk-modern-gallery .spectra-image-gallery__media-wrapper[data-spectra-gallery-image-id="2006"] picture img,
+.uagb-block-a16a7725.kk-modern-gallery .spectra-image-gallery__media-wrapper[data-spectra-gallery-image-id="2005"] picture img,
+.uagb-block-a16a7725.kk-modern-gallery .spectra-image-gallery__media-wrapper[data-spectra-gallery-image-id="2004"] picture img,
+.uagb-block-a16a7725.kk-modern-gallery .spectra-image-gallery__media-wrapper[data-spectra-gallery-image-id="2003"] picture img,
+.uagb-block-a16a7725.kk-modern-gallery .spectra-image-gallery__media-wrapper[data-spectra-gallery-image-id="2002"] picture img,
+.uagb-block-a16a7725.kk-modern-gallery .spectra-image-gallery__media-wrapper[data-spectra-gallery-image-id="2001"] picture img,
+.uagb-block-a16a7725.kk-modern-gallery .spectra-image-gallery__media-wrapper[data-spectra-gallery-image-id="2000"] picture img {
+	object-position: center 62%;
 }
 
 .uagb-block-a16a7725.kk-modern-gallery .spectra-image-gallery__media-thumbnail-blurrer {
@@ -2693,6 +2723,6 @@ var uagb_image_gallery = {"ajax_url":"\/wp-admin\/admin-ajax.php","uagb_image_ga
 	});
 })();
 </script>
-				<script src="/kk-social-popup.js" defer></script>
+				<script src="/kk-social-popup.js?v=logos2" defer></script>
 				</body>
 </html>
