@@ -694,6 +694,7 @@ p.uagb-heading-text {
 <link rel="stylesheet" href="/kk-cta-fix.css">
 <link rel="stylesheet" href="/kk-social-popup.css?v=logos2">
 <link rel="stylesheet" href="/kk-nav-hover.css?v=mobile2">
+<link rel="stylesheet" href="/kk-feature-slider.css?v=7">
 <script src="/kk-nav.js" defer></script>
 		</head>
 
@@ -1681,6 +1682,31 @@ p.uagb-heading-text {
 													</div>
 
 
+<section class="home-chevening home-eisenhower">
+
+	<div class="home-chevening__header">
+		<p class="home-chevening__subtitle">Latest global recognition — selected as one of 28 fellows from 500+ applicants for Eisenhower Fellowships 2026.</p>
+	</div>
+
+	<div class="home-chevening__grid">
+		<div class="home-chevening__media">
+			<figure>
+				<img loading="eager" decoding="async" width="900" height="1613" src="/wp-content/uploads/2026/07/news/eisenhower-fellowship-2026-portrait.jpg" alt="Keerthi Kodithuwakku selected for Eisenhower Fellowship 2026 — Development Connect announcement">
+			</figure>
+		</div>
+
+		<article class="home-chevening__card">
+			<h4>Eisenhower Fellowship 2026 — Innovative Entrepreneurs Program</h4>
+			<p>Sri Lanka’s Keerthi Kodithuwakku, Chairman and CEO of Jendo Innovations Inc., has been selected as one of 28 fellows for the prestigious Eisenhower Fellowships 2026 Innovative Entrepreneurs Program.</p>
+			<p>Chosen from more than 500 global applicants, this honour recognises 12+ years of building Jendo into a pioneering biomedical company, with US &amp; Japan granted patents for non-invasive vascular health monitoring.</p>
+			<p>Fellowship focus: designing a South Asian Regulatory Framework for AI Medical Devices — a proud moment for Sri Lanka’s deep tech ecosystem.</p>
+
+			<a class="home-chevening__cta" href="/eisenhower-fellowship-2026/">Read more</a>
+			<p style="margin:0.85rem 0 0;"><a href="https://lnkd.in/gCx4b4SQ" target="_blank" rel="noopener noreferrer" style="color:var(--ast-global-color-0);font-weight:600;text-decoration:underline;text-underline-offset:3px;">View announcement →</a></p>
+		</article>
+	</div>
+</section>
+
 <section class="home-chevening">
 
 	<div class="home-chevening__header">
@@ -1689,13 +1715,21 @@ p.uagb-heading-text {
 	</div>
 
 	<div class="home-chevening__grid">
-		<div class="home-chevening__media">
-			<figure>
-				<img loading="lazy" decoding="async" width="595" height="325" src="/wp-content/uploads/2026/04/oxford1.jpeg" alt="Chevening pre-departure programme photo 1">
-			</figure>
-			<figure>
-				<img loading="lazy" decoding="async" width="595" height="325" src="/wp-content/uploads/2026/04/oxford2.jpeg" alt="Chevening pre-departure programme photo 2">
-			</figure>
+		<div class="home-chevening__media kk-feature-slider" data-autoplay="5000">
+			<div class="kk-feature-slider__viewport">
+				<div class="kk-feature-slider__track">
+					<figure class="kk-feature-slider__slide">
+						<img loading="eager" decoding="async" src="https://i.ibb.co/8L9d872r/Whats-App-Image-2026-06-25-at-11-51-53.jpg" alt="Building Global MedTech Innovation from Sri Lanka — Imperial College London guest speaker flyer">
+					</figure>
+					<figure class="kk-feature-slider__slide">
+						<img loading="lazy" decoding="async" width="1440" height="810" src="/wp-content/uploads/2026/04/oxford1.jpeg" alt="Chevening pre-departure programme photo 1">
+					</figure>
+					<figure class="kk-feature-slider__slide">
+						<img loading="lazy" decoding="async" width="1024" height="1024" src="/wp-content/uploads/2026/04/oxford2.jpeg" alt="Chevening pre-departure programme photo 2">
+					</figure>
+				</div>
+			</div>
+			<div class="kk-feature-slider__dots" role="tablist" aria-label="Chevening images"></div>
 		</div>
 
 		<article class="home-chevening__card">
@@ -1819,39 +1853,9 @@ p.uagb-heading-text {
 
 .home-chevening__grid {
 	display: grid;
-	grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+	grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
 	gap: 1.6rem;
-	align-items: start;
-}
-
-.home-chevening__media {
-	display: grid;
-	gap: 1rem;
-}
-
-.home-chevening__media figure {
-	margin: 0;
-	overflow: hidden;
-	border-radius: 22px;
-	background: #ffffff;
-	box-shadow: 0 18px 45px rgba(15, 23, 42, 0.09);
-	transition: transform 240ms ease, box-shadow 240ms ease;
-}
-
-.home-chevening__media figure:hover {
-	transform: translateY(-3px);
-	box-shadow: 0 24px 55px rgba(15, 23, 42, 0.14);
-}
-
-.home-chevening__media img {
-	display: block;
-	width: 100%;
-	height: auto;
-	transition: transform 420ms ease;
-}
-
-.home-chevening__media figure:hover img {
-	transform: scale(1.03);
+	align-items: stretch;
 }
 
 .home-chevening__card {
@@ -1862,6 +1866,11 @@ p.uagb-heading-text {
 	padding: clamp(1.4rem, 2.2vw, 2rem);
 	box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
 	overflow: hidden;
+	height: 100%;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .home-chevening__card::before {
@@ -1951,6 +1960,86 @@ p.uagb-heading-text {
 
 	.home-chevening__header {
 		margin-bottom: 1.35rem;
+	}
+}
+
+/* Eisenhower home: portrait announcement — balanced with text card */
+.home-eisenhower .home-chevening__grid {
+	align-items: stretch;
+	gap: 1.35rem;
+	grid-template-columns: minmax(220px, 0.72fr) minmax(0, 1.28fr);
+}
+
+.home-eisenhower .home-chevening__media {
+	display: flex !important;
+	flex-direction: column;
+	align-self: stretch;
+	justify-content: center;
+	height: auto;
+	min-height: 100%;
+}
+
+.home-eisenhower .home-chevening__media figure {
+	flex: 1 1 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	max-width: 380px;
+	margin: 0 auto;
+	min-height: 100%;
+	padding: 0.65rem;
+	overflow: hidden;
+	background: #ffffff;
+	border-radius: 20px;
+	box-shadow: 0 18px 45px rgba(15, 23, 42, 0.1);
+	border: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.home-eisenhower .home-chevening__media img {
+	width: 100%;
+	height: auto;
+	max-height: 100%;
+	object-fit: contain;
+	object-position: center top;
+	transform: none;
+	align-self: center;
+	border-radius: 14px;
+}
+
+.home-eisenhower .home-chevening__media figure:hover img {
+	transform: scale(1.01);
+}
+
+.home-eisenhower .home-chevening__card {
+	height: 100%;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+@media (max-width: 900px) {
+	.home-eisenhower .home-chevening__grid {
+		grid-template-columns: 1fr;
+	}
+
+	.home-eisenhower .home-chevening__media {
+		display: block !important;
+		min-height: 0;
+	}
+
+	.home-eisenhower .home-chevening__media figure {
+		display: block;
+		max-width: min(340px, 100%);
+		min-height: 0;
+		aspect-ratio: auto;
+		margin: 0 auto 0.5rem;
+	}
+
+	.home-eisenhower .home-chevening__media img {
+		width: 100%;
+		height: auto;
 	}
 }
 
@@ -2724,5 +2813,6 @@ var uagb_image_gallery = {"ajax_url":"\/wp-admin\/admin-ajax.php","uagb_image_ga
 })();
 </script>
 				<script src="/kk-social-popup.js?v=logos2" defer></script>
+<script src="/kk-feature-slider.js?v=2" defer></script>
 				</body>
 </html>

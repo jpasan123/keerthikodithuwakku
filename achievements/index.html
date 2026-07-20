@@ -689,6 +689,7 @@ p.uagb-heading-text {
 <link rel="stylesheet" href="/kk-cta-fix.css">
 <link rel="stylesheet" href="/kk-social-popup.css?v=logos2">
 <link rel="stylesheet" href="/kk-nav-hover.css?v=mobile2">
+<link rel="stylesheet" href="/kk-youtube-embed.css?v=1">
 <script src="/kk-nav.js" defer></script>
 		</head>
 
@@ -808,13 +809,7 @@ p.uagb-heading-text {
 
 
 
-<div class="wp-block-media-text is-stacked-on-mobile" style="margin-right:var(--wp--preset--spacing--20);margin-left:var(--wp--preset--spacing--20);padding-top:0;padding-right:var(--wp--preset--spacing--20);padding-bottom:0;padding-left:var(--wp--preset--spacing--20)"><figure class="wp-block-media-text__media"><img loading="lazy" decoding="async" src="https://i.ibb.co/8L9d872r/Whats-App-Image-2026-06-25-at-11-51-53.jpg" alt="Chevening photo" class="size-full"></figure><div class="wp-block-media-text__content">
-<p class="uagb-heading-text">Chevening CRISP Fellowship 2026 at University of Oxford</p>
-</div></div>
-
-
-
-<div class="wp-block-media-text is-stacked-on-mobile" style="margin-right:var(--wp--preset--spacing--20);margin-left:var(--wp--preset--spacing--20);padding-top:0;padding-right:var(--wp--preset--spacing--20);padding-bottom:0;padding-left:var(--wp--preset--spacing--20)"><figure class="wp-block-media-text__media"><img decoding="async" width="595" height="325" src="/wp-content/uploads/2026/02/Picture3-2.png" alt class="wp-image-953 size-full"></figure><div class="wp-block-media-text__content">
+<div class="wp-block-media-text is-stacked-on-mobile kk-achieve-pair" style="margin-right:var(--wp--preset--spacing--20);margin-left:var(--wp--preset--spacing--20);padding-top:0;padding-right:var(--wp--preset--spacing--20);padding-bottom:0;padding-left:var(--wp--preset--spacing--20)"><figure class="wp-block-media-text__media"><img decoding="async" width="595" height="325" src="/wp-content/uploads/2026/02/Picture3-2.png" alt="Global patent certificates from the United States, Japan, and Sri Lanka" class="wp-image-953 size-full"></figure><div class="wp-block-media-text__content">
 <p class="uagb-heading-text">Jen­do has been rec­og­nized glob­al­ly for its inno­v­a­tive approach to vas­cu­lar health mon­i­tor­ing through pres­ti­gious patents award­ed in mul­ti­ple coun­tries. These patents include recog­ni­tion from the Unit­ed States, Japan, and Sri Lan­ka, affirm­ing the unique­ness and impact of our tech­nol­o­gy in the field of non-inva­sive car­dio­vas­cu­lar health diag­nos­tics. Each patent under­scores our com­mit­ment to ground­break­ing research, tech­no­log­i­cal advance­ment, and ensur­ing intel­lec­tu­al prop­er­ty rights as we expand our pres­ence across the globe.</p>
 </div></div>
 
@@ -828,7 +823,7 @@ p.uagb-heading-text {
 
 
 
-<div class="wp-block-media-text is-stacked-on-mobile" style="margin-right:var(--wp--preset--spacing--20);margin-left:var(--wp--preset--spacing--20);padding-right:var(--wp--preset--spacing--20);padding-left:var(--wp--preset--spacing--20)"><figure class="wp-block-media-text__media"><img loading="lazy" decoding="async" width="595" height="286" src="/wp-content/uploads/2026/02/Picture5-1.jpg" alt class="wp-image-954 size-full"></figure><div class="wp-block-media-text__content">
+<div class="wp-block-media-text is-stacked-on-mobile kk-achieve-pair" style="margin-right:var(--wp--preset--spacing--20);margin-left:var(--wp--preset--spacing--20);padding-right:var(--wp--preset--spacing--20);padding-left:var(--wp--preset--spacing--20)"><figure class="wp-block-media-text__media"><img loading="lazy" decoding="async" width="595" height="286" src="/wp-content/uploads/2026/02/Picture5-1.jpg" alt class="wp-image-954 size-full"></figure><div class="wp-block-media-text__content">
 <p class="has-text-align-left"></p><p class="uagb-heading-text">Rec­og­nized as one of the high­est nation­al hon­ors in Sri Lanka’s infor­ma­tion and com­mu­ni­ca­tion tech­nol­o­gy sec­tor, this award rep­re­sents a sig­nif­i­cant pro­fes­sion­al mile­stone. Con­ferred annu­al­ly by the <strong>Com­put­er Soci­ety of Sri Lan­ka (CSSL)</strong>, it acknowl­edges excep­tion­al lead­er­ship, sus­tained excel­lence, and mean­ing­ful con­tri­bu­tions to the advance­ment of the ICT indus­try. Achieved at the age of 35, this recog­ni­tion also places the recip­i­ent among the youngest awardees in the his­to­ry of the hon­or, reflect­ing a strong com­mit­ment to inno­va­tion, strate­gic lead­er­ship, and nation­al impact.</p>
 
 
@@ -858,6 +853,45 @@ p.uagb-heading-text {
 
 
 <style>
+/* Achievements media-text: keep description aligned with image, no empty voids */
+.entry-content .wp-block-media-text {
+	align-items: center;
+}
+
+.entry-content .wp-block-media-text__content {
+	padding-top: 0.75rem !important;
+	padding-bottom: 0.75rem !important;
+}
+
+.entry-content .wp-block-media-text__content > *:first-child {
+	margin-top: 0;
+}
+
+.entry-content .wp-block-media-text__content > *:last-child {
+	margin-bottom: 0;
+}
+
+.entry-content .kk-achieve-pair {
+	gap: 1.25rem;
+}
+
+.entry-content .kk-achieve-pair .wp-block-media-text__media img {
+	width: 100%;
+	height: auto;
+	border-radius: 14px;
+	box-shadow: 0 12px 32px rgba(15, 23, 42, 0.1);
+}
+
+.entry-content .kk-achieve-pair .wp-block-media-text__content .uagb-heading-text {
+	margin: 0 0 0.85rem;
+	line-height: 1.7;
+	color: #4b5563;
+}
+
+.entry-content .kk-achieve-pair .wp-block-media-text__content .uagb-heading-text:last-child {
+	margin-bottom: 0;
+}
+
 .chevening-feature {
 	margin: 0 var(--wp--preset--spacing--20) 3rem;
 	padding: 0 var(--wp--preset--spacing--20);
@@ -891,40 +925,57 @@ p.uagb-heading-text {
 
 .chevening-feature__grid {
 	display: grid;
-	grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-	gap: 1.6rem;
-	align-items: start;
+	grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+	gap: 1.25rem;
+	align-items: stretch;
 }
 
 .chevening-feature__media {
 	display: grid;
-	gap: 1rem;
+	grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+	grid-template-rows: 1fr 1fr;
+	gap: 0.85rem;
+	align-self: stretch;
+	min-height: 0;
 }
 
 .chevening-feature__media figure {
 	margin: 0;
 	overflow: hidden;
-	border-radius: 20px;
-	box-shadow: 0 18px 45px rgba(15, 23, 42, 0.09);
+	border-radius: 18px;
+	box-shadow: 0 16px 40px rgba(15, 23, 42, 0.1);
 	background: #ffffff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 0;
+	height: auto;
 	transform: translateY(0);
 	transition: transform 260ms ease, box-shadow 260ms ease;
 }
 
+.chevening-feature__media figure:first-child {
+	grid-row: 1 / -1;
+	grid-column: 1;
+}
+
 .chevening-feature__media figure:hover {
-	transform: translateY(-3px);
-	box-shadow: 0 24px 55px rgba(15, 23, 42, 0.14);
+	transform: translateY(-2px);
+	box-shadow: 0 22px 48px rgba(15, 23, 42, 0.14);
 }
 
 .chevening-feature__media img {
 	display: block;
 	width: 100%;
 	height: auto;
-	transition: transform 420ms ease;
+	max-height: 100%;
+	object-fit: contain;
+	object-position: center;
+	transition: none;
 }
 
 .chevening-feature__media figure:hover img {
-	transform: scale(1.03);
+	transform: none;
 }
 
 .chevening-feature__card {
@@ -935,6 +986,11 @@ p.uagb-heading-text {
 	padding: clamp(1.4rem, 2.2vw, 2rem);
 	box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
 	overflow: hidden;
+	height: 100%;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .chevening-feature__card::before {
@@ -1023,26 +1079,155 @@ p.uagb-heading-text {
 		grid-template-columns: 1fr;
 	}
 
+	.chevening-feature__media {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto;
+		min-height: 0;
+	}
+
+	.chevening-feature__media figure:first-child {
+		grid-column: 1 / -1;
+		grid-row: auto;
+	}
+
+	.chevening-feature__media figure:not(:first-child) {
+		aspect-ratio: auto;
+	}
+
 	.chevening-feature__header {
 		margin-bottom: 1.35rem;
 	}
 }
+
+/* Eisenhower: portrait announcement — balanced with text card */
+.eisenhower-feature .chevening-feature__grid {
+	align-items: stretch;
+	gap: 1.35rem;
+	grid-template-columns: minmax(220px, 0.72fr) minmax(0, 1.28fr);
+}
+
+.eisenhower-feature .chevening-feature__media {
+	display: flex !important;
+	flex-direction: column;
+	align-self: stretch;
+	justify-content: center;
+	height: auto;
+	min-height: 100%;
+	grid-template-columns: none;
+	grid-template-rows: none;
+}
+
+.eisenhower-feature .chevening-feature__media figure:first-child {
+	grid-row: auto;
+}
+
+.eisenhower-feature .chevening-feature__media figure {
+	flex: 1 1 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	max-width: 380px;
+	margin: 0 auto;
+	min-height: 100%;
+	padding: 0.65rem;
+	overflow: hidden;
+	background: #ffffff;
+	border-radius: 20px;
+	box-shadow: 0 18px 45px rgba(15, 23, 42, 0.1);
+	border: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.eisenhower-feature .chevening-feature__media img {
+	width: 100%;
+	height: auto;
+	max-height: 100%;
+	object-fit: contain;
+	object-position: center top;
+	transform: none;
+	align-self: center;
+	border-radius: 14px;
+}
+
+.eisenhower-feature .chevening-feature__media figure:hover img {
+	transform: scale(1.01);
+}
+
+.eisenhower-feature .chevening-feature__card {
+	height: 100%;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+@media (max-width: 900px) {
+	.eisenhower-feature .chevening-feature__grid {
+		grid-template-columns: 1fr;
+	}
+
+	.eisenhower-feature .chevening-feature__media {
+		display: block !important;
+		min-height: 0;
+	}
+
+	.eisenhower-feature .chevening-feature__media figure {
+		display: block;
+		max-width: min(340px, 100%);
+		min-height: 0;
+		aspect-ratio: auto;
+		margin: 0 auto 0.5rem;
+	}
+
+	.eisenhower-feature .chevening-feature__media img {
+		width: 100%;
+		height: auto;
+	}
+}
 </style>
 
-<section class="chevening-feature">
+<section class="chevening-feature eisenhower-feature">
 
 	<div class="chevening-feature__header">
-
-		<p class="chevening-feature__subtitle">A new milestone at St Cross College, Oxford, with inspiration to bring cutting-edge medtech insights back to Sri Lanka.</p>
+		<p class="chevening-feature__subtitle">Latest global recognition — selected as one of 28 fellows from 500+ applicants for Eisenhower Fellowships 2026.</p>
 	</div>
 
 	<div class="chevening-feature__grid">
 		<div class="chevening-feature__media">
 			<figure>
-				<img loading="lazy" decoding="async" width="595" height="325" src="/wp-content/uploads/2026/04/oxford1.jpeg" alt="Chevening pre-departure programme photo 1" class="wp-image-957 size-full">
+				<img loading="eager" decoding="async" width="900" height="1613" src="/wp-content/uploads/2026/07/news/eisenhower-fellowship-2026-portrait.jpg" alt="Keerthi Kodithuwakku selected for Eisenhower Fellowship 2026 — Development Connect announcement" class="wp-image-eisenhower size-full">
+			</figure>
+		</div>
+
+		<article class="chevening-feature__card">
+			<h4>Eisenhower Fellowship 2026 — Innovative Entrepreneurs Program</h4>
+			<p>Sri Lanka’s Keerthi Kodithuwakku, Chairman and CEO of Jendo Innovations Inc., has been selected as one of 28 fellows for the prestigious Eisenhower Fellowships 2026 Innovative Entrepreneurs Program.</p>
+			<p>Chosen from more than 500 global applicants, this honour recognises 12+ years of building Jendo from a University of Moratuwa concept into a pioneering biomedical company, with US &amp; Japan granted patents for non-invasive vascular health monitoring.</p>
+			<p>During the fellowship, Keerthi plans to design a South Asian Regulatory Framework for AI Medical Devices — advancing safer pathways for MedTech innovation across the region.</p>
+			<p>A proud moment for Sri Lanka’s deep tech and biomedical ecosystem.</p>
+
+			<a class="chevening-feature__cta" href="/eisenhower-fellowship-2026/">Read more</a>
+			<p style="margin:0.85rem 0 0;"><a href="https://lnkd.in/gCx4b4SQ" target="_blank" rel="noopener noreferrer" style="color:var(--ast-global-color-0);font-weight:600;text-decoration:underline;text-underline-offset:3px;">View announcement →</a></p>
+		</article>
+	</div>
+</section>
+
+<section class="chevening-feature">
+
+	<div class="chevening-feature__header">
+		<p class="chevening-feature__subtitle">A new milestone at St Cross College, Oxford — with inspiration to bring cutting-edge medtech insights back to Sri Lanka.</p>
+	</div>
+
+	<div class="chevening-feature__grid">
+		<div class="chevening-feature__media">
+			<figure>
+				<img loading="lazy" decoding="async" src="https://i.ibb.co/8L9d872r/Whats-App-Image-2026-06-25-at-11-51-53.jpg" alt="Building Global MedTech Innovation from Sri Lanka — Imperial College London guest speaker flyer" class="size-full">
 			</figure>
 			<figure>
-				<img loading="lazy" decoding="async" width="595" height="325" src="/wp-content/uploads/2026/04/oxford2.jpeg" alt="Chevening pre-departure programme photo 2" class="wp-image-956 size-full">
+				<img loading="lazy" decoding="async" width="1440" height="810" src="/wp-content/uploads/2026/04/oxford1.jpeg" alt="Chevening pre-departure programme photo 1" class="wp-image-957 size-full">
+			</figure>
+			<figure>
+				<img loading="lazy" decoding="async" width="1024" height="1024" src="/wp-content/uploads/2026/04/oxford2.jpeg" alt="Chevening pre-departure programme photo 2" class="wp-image-956 size-full">
 			</figure>
 		</div>
 
@@ -1053,12 +1238,7 @@ p.uagb-heading-text {
 			<p>I look forward to exploring cutting-edge medtech innovations and bringing these insights back to Sri Lanka to drive impact in healthcare and technology.</p>
 			<p>My work continues to focus on preventive healthcare, accessible AI-enabled screening, and practical solutions that can support both advanced and resource-limited healthcare settings across South and Southeast Asia.</p>
 			<p>Beyond entrepreneurship, I remain committed to mentoring young innovators, strengthening Sri Lanka's startup ecosystem, and encouraging more women to pursue STEM and innovation-led careers.</p>
-
-			<div class="chevening-feature__tags">
-				<span class="chevening-feature__tag">Oxford</span>
-				<span class="chevening-feature__tag">Chevening</span>
-				<span class="chevening-feature__tag">MedTech Leadership</span>
-			</div>
+			<p>This journey also includes sharing Sri Lankan MedTech leadership on global stages such as Imperial College London — turning research into real-world healthcare solutions.</p>
 
 			<a class="chevening-feature__cta" href="https://tngss.startuptn.in/speakers/keerthi-kodithuwakku" target="_blank" rel="noopener noreferrer">Read this article</a>
 		</article>
@@ -1079,7 +1259,7 @@ p.uagb-heading-text {
 
 
 
-<div class="wp-block-media-text is-stacked-on-mobile" style="margin-right:var(--wp--preset--spacing--20);margin-left:var(--wp--preset--spacing--20);padding-right:var(--wp--preset--spacing--20);padding-left:var(--wp--preset--spacing--20)"><figure class="wp-block-media-text__media"><img loading="lazy" decoding="async" width="596" height="286" src="/wp-content/uploads/2026/02/Picture6-1.jpg" alt class="wp-image-955 size-full"></figure><div class="wp-block-media-text__content">
+<div class="wp-block-media-text is-stacked-on-mobile kk-achieve-pair" style="margin-right:var(--wp--preset--spacing--20);margin-left:var(--wp--preset--spacing--20);padding-right:var(--wp--preset--spacing--20);padding-left:var(--wp--preset--spacing--20)"><figure class="wp-block-media-text__media"><img loading="lazy" decoding="async" width="596" height="286" src="/wp-content/uploads/2026/02/Picture6-1.jpg" alt class="wp-image-955 size-full"></figure><div class="wp-block-media-text__content">
 <p class="uagb-heading-text">Rec­og­nized as <strong>Young Inno­va­tor of the Year</strong> by the Fac­ul­ty of Allied Health Sci­ences at the Uni­ver­si­ty of Sri Jayewar­denepu­ra, this award acknowl­edges lead­er­ship in med tech inno­va­tion and mean­ing­ful con­tri­bu­tions toward advanc­ing mod­ern health­care.</p>
 
 
@@ -1101,7 +1281,7 @@ p.uagb-heading-text {
 
 
 
-<div class="wp-block-media-text is-stacked-on-mobile" style="margin-right:var(--wp--preset--spacing--20);margin-left:var(--wp--preset--spacing--20);padding-right:var(--wp--preset--spacing--20);padding-left:var(--wp--preset--spacing--20)"><figure class="wp-block-media-text__media"><img loading="lazy" decoding="async" width="720" height="480" src="/wp-content/uploads/2026/02/CEO.jpeg" alt class="wp-image-926 size-full"></figure><div class="wp-block-media-text__content">
+<div class="wp-block-media-text is-stacked-on-mobile kk-achieve-pair" style="margin-right:var(--wp--preset--spacing--20);margin-left:var(--wp--preset--spacing--20);padding-right:var(--wp--preset--spacing--20);padding-left:var(--wp--preset--spacing--20)"><figure class="wp-block-media-text__media"><img loading="lazy" decoding="async" width="720" height="480" src="/wp-content/uploads/2026/02/CEO.jpeg" alt class="wp-image-926 size-full"></figure><div class="wp-block-media-text__content">
 <p class="uagb-heading-text">Award­ed <strong>CEO of the Year – Arti­fi­cial Intel­li­gence Cat­e­go­ry</strong> at the Nation­al CEO Awards Night orga­nized by <strong>The CEO Mag­a­zine</strong>, this recog­ni­tion hon­ors lead­er­ship in lever­ag­ing arti­fi­cial intel­li­gence to dri­ve inno­va­tion, oper­a­tional excel­lence, and mean­ing­ful soci­etal impact.</p>
 
 
@@ -1121,7 +1301,7 @@ p.uagb-heading-text {
 
 
 
-<h3 class="wp-block-heading has-text-align-center has-large-font-size"><strong>2025</strong></h3>
+<h3 class="wp-block-heading has-text-align-center has-large-font-size"><strong>2026 / 2025</strong></h3>
 
 
 
@@ -1131,6 +1311,10 @@ p.uagb-heading-text {
 
 <div class="wp-block-uagb-container uagb-block-b05b3fdd alignfull uagb-is-root-container"><div class="uagb-container-inner-blocks-wrap">
 <div class="wp-block-uagb-icon-list uagb-block-d8d42c56"><div class="uagb-icon-list__wrap">
+<div class="wp-block-uagb-icon-list-child uagb-block-eisenhower2026"><span class="uagb-icon-list__source-wrap"><svg viewbox="0 0 512 512"><path d="M256 0C114.6 0 0 114.6 0 256c0 141.4 114.6 256 256 256s256-114.6 256-256C512 114.6 397.4 0 256 0zM406.6 278.6l-103.1 103.1c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25L306.8 288H128C110.3 288 96 273.7 96 256s14.31-32 32-32h178.8l-49.38-49.38c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l103.1 103.1C414.6 241.3 416 251.1 416 256C416 260.9 414.6 270.7 406.6 278.6z"></path></svg></span><span class="uagb-icon-list__label"><strong>Eisenhower Fellowships 2026 — Innovative Entrepreneurs Program</strong> (selected as 1 of 28 fellows from 500+ global applicants)</span></div>
+
+
+
 <div class="wp-block-uagb-icon-list-child uagb-block-87ca1ea0"><span class="uagb-icon-list__source-wrap"><svg viewbox="0 0 512 512"><path d="M256 0C114.6 0 0 114.6 0 256c0 141.4 114.6 256 256 256s256-114.6 256-256C512 114.6 397.4 0 256 0zM406.6 278.6l-103.1 103.1c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25L306.8 288H128C110.3 288 96 273.7 96 256s14.31-32 32-32h178.8l-49.38-49.38c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l103.1 103.1C414.6 241.3 416 251.1 416 256C416 260.9 414.6 270.7 406.6 278.6z"></path></svg></span><span class="uagb-icon-list__label"><strong>WIPO Inter­na­tion­al Patent Draft­ing Train­ing Pro­gram</strong>, Gene­va</span></div>
 
 
@@ -1733,5 +1917,6 @@ var aiStats = {"enabled":"","apiUrl":"\/wp-json\/audioigniter\/v1"};
 			/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
 			</script>
 				<script src="/kk-social-popup.js?v=logos2" defer></script>
+<script src="/kk-youtube-embed.js?v=1" defer></script>
 				</body>
 </html>

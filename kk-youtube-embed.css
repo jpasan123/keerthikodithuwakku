@@ -1,0 +1,94 @@
+/* Sharp YouTube previews — lite embed with HQ thumbnail until play */
+.kk-yt {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	background: #0f172a;
+	border-radius: 16px;
+	overflow: hidden;
+	cursor: pointer;
+	box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+	border: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.kk-yt--43 {
+	aspect-ratio: 4 / 3;
+}
+
+.kk-yt__thumb {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+	display: block;
+	transition: transform 420ms ease, filter 420ms ease;
+}
+
+.kk-yt:hover .kk-yt__thumb,
+.kk-yt:focus-visible .kk-yt__thumb {
+	transform: scale(1.015);
+	filter: brightness(0.92);
+}
+
+.kk-yt__shade {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(180deg, rgba(15, 23, 42, 0.04) 0%, rgba(15, 23, 42, 0.22) 100%);
+	pointer-events: none;
+}
+
+.kk-yt__play {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 72px;
+	height: 72px;
+	border: 0;
+	border-radius: 999px;
+	background: rgba(255, 0, 0, 0.92);
+	box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+	cursor: pointer;
+	transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease;
+}
+
+.kk-yt__play::before {
+	content: "";
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-40%, -50%);
+	border-style: solid;
+	border-width: 12px 0 12px 20px;
+	border-color: transparent transparent transparent #ffffff;
+}
+
+.kk-yt:hover .kk-yt__play,
+.kk-yt:focus-visible .kk-yt__play {
+	transform: translate(-50%, -50%) scale(1.06);
+	box-shadow: 0 16px 34px rgba(0, 0, 0, 0.34);
+	background: #ff0000;
+}
+
+.kk-yt iframe {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+
+.entry-content .wp-block-embed-youtube .ast-oembed-container,
+.entry-content .wp-block-embed-youtube .wp-block-embed__wrapper {
+	height: auto !important;
+}
+
+.entry-content .wp-block-embed-youtube.wp-has-aspect-ratio .wp-block-embed__wrapper::before {
+	display: none;
+}
+
+.entry-content .wp-block-embed-youtube figure {
+	margin: 0;
+}
