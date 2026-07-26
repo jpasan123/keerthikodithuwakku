@@ -513,7 +513,7 @@ export const achievements = {
         "A Hybrid Approach for Screening Endothelial Dysfunction using Photoplethysmography and Digital Thermal Monitoring",
       href: "https://ieeexplore.ieee.org/document/9629748",
       source: "IEEE Xplore",
-      image: "/media/publications/pub-ppg-dtm.jpg",
+      image: "/media/publications/pub-covid.jpg",
     },
     {
       title:
@@ -527,14 +527,14 @@ export const achievements = {
         "Psychometric Evaluation of a Sinhalese Version of the Five Facet Mindfulness Questionnaire",
       href: "https://www.researchgate.net/publication/359312955",
       source: "ResearchGate",
-      image: "/media/publications/pub-mindfulness-1.png",
+      image: "/media/publications/pub-mindfulness-b.jpg",
     },
     {
       title:
         "Psychometric Evaluation of a Sinhala Translation of the FFMQ and Development of a Short Form",
       href: "https://www.researchgate.net/publication/365476014",
       source: "ResearchGate",
-      image: "/media/publications/pub-mindfulness-2.png",
+      image: "/media/publications/pub-wipo.jpg",
     },
     {
       title: "Jendo — Heart Disease Prediction using Machine Learning",
