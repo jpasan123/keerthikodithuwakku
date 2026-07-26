@@ -13,7 +13,7 @@ import {
 import { lockPageScroll, unlockPageScroll } from "@/lib/scrollLock";
 import { site } from "@/lib/site";
 
-const STORAGE_KEY = "kk_social_popup_seen_v6";
+const STORAGE_KEY = "kk_social_popup_seen_v7";
 
 export function SocialPopup() {
   const [open, setOpen] = useState(false);
@@ -26,8 +26,7 @@ export function SocialPopup() {
     } catch {
       /* ignore */
     }
-    const t = window.setTimeout(() => setOpen(true), 8000);
-    return () => window.clearTimeout(t);
+    setOpen(true);
   }, [pathname]);
 
   function dismiss() {
