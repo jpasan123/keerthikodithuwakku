@@ -113,10 +113,10 @@ export const fellowships = [
     title: "Chevening CRISP Fellowship 2026",
     subtitle: "St Cross College, University of Oxford",
     body: "Selected for the Chevening Research Science and Innovation Leadership Fellowship — exploring cutting-edge MedTech innovations and bringing these insights back to Sri Lanka to drive impact in healthcare and technology.",
-    image: "/media/gallery/chevening-event.jpg",
+    image: "/media/gallery/oxford-chevening-b.jpeg",
     href: "/blog/chevening-crisp-oxford",
-    externalHref: "https://tngss.startuptn.in/speakers/keerthi-kodithuwakku",
-    externalLabel: "Read this article",
+    externalHref: "https://www.chevening.org/",
+    externalLabel: "About Chevening",
   },
 ] as const;
 
@@ -162,23 +162,22 @@ export const recognition = [
     tags: ["Oxford", "Chevening", "MedTech Leadership"],
     images: [
       {
-        src: "/media/gallery/chevening-event.jpg",
-        alt: "Building Global MedTech Innovation from Sri Lanka — guest speaker flyer",
+        src: "/media/gallery/oxford-chevening-b.jpeg",
+        alt: "Chevening fellowship certificate presentation with the British High Commission",
       },
       {
         src: "/media/gallery/oxford-chevening-a.jpeg",
         alt: "Chevening pre-departure programme meeting",
       },
       {
-        src: "/media/gallery/oxford-chevening-b.jpeg",
-        alt: "Chevening fellowship certificate presentation",
+        src: "/media/portraits/oxford-chevening-1.jpeg",
+        alt: "Keerthi Kodithuwakku at the Chevening pre-departure programme",
       },
     ],
     href: "/blog/chevening-crisp-oxford",
     cta: "Read this article",
-    ctaExternal: true,
-    externalHref: "https://tngss.startuptn.in/speakers/keerthi-kodithuwakku",
-    externalLabel: "Read full story",
+    externalHref: "https://www.chevening.org/",
+    externalLabel: "About Chevening",
   },
   {
     id: "ict-leader-2025",
@@ -221,7 +220,7 @@ export const featuredStorySlugs = [
   },
   {
     slug: "jendo-investment-milestone",
-    image: "/media/blog/blood-vessel-evolution.png",
+    image: "/media/products/jendo-device.jpg",
     cta: "Read this article",
   },
 ] as const;
@@ -248,18 +247,20 @@ export const gallery = [
   { src: "/media/gallery/event-jul-03.jpg", alt: "Professional engagement July 2026" },
   { src: "/media/gallery/event-jul-05.jpg", alt: "Industry visit July 2026" },
   { src: "/media/gallery/event-jul-06.jpg", alt: "Advanced manufacturing facility visit" },
-  { src: "/media/gallery/usa-hq-01.jpg", alt: "US partnership meeting" },
-  { src: "/media/gallery/usa-hq-03.jpg", alt: "International network — USA" },
-  { src: "/media/gallery/oxford-hq.jpg", alt: "Oxford fellowship programme" },
+  { src: "/media/gallery/usa-hq-01.jpg", alt: "Partnership visit in Japan" },
+  { src: "/media/gallery/usa-hq-03.jpg", alt: "International network meeting" },
+  { src: "/media/gallery/oxford-hq.jpg", alt: "Healthcare industry exhibition and networking" },
   { src: "/media/gallery/event-hq-02.jpg", alt: "Strategic briefing presentation" },
-  { src: "/media/gallery/kk-oxford-arch.jpg", alt: "St Cross College, Oxford" },
+  { src: "/media/gallery/kk-oxford-arch.jpg", alt: "University of Oxford campus architecture" },
+  { src: "/media/gallery/chevening-event.jpg", alt: "Guest speaker — Morph Lab, Imperial College London" },
   { src: "/media/portraits/keerthi-ceo.jpeg", alt: "Chairman & CEO portrait" },
   { src: "/media/awards/ada-derana.jpeg", alt: "TV Derana science initiative" },
-  { src: "/media/news/feature-speaking.jpg", alt: "Featured speaking appearance" },
+  { src: "/media/news/feature-speaking.jpg", alt: "CSSL National ICT Awards — stage presentation" },
   { src: "/media/about/collaboration.jpg", alt: "Strategic collaboration" },
   { src: "/media/awards/jkx-victory.jpg", alt: "John Keells X victory 2016" },
   { src: "/media/awards/young-innovator-2024.jpg", alt: "Young Innovator 2024" },
   { src: "/media/gallery/kk-hq-07.jpg", alt: "Roundtable discussion with international partners" },
+  { src: "/media/publications/pub-mindfulness-a.jpg", alt: "Seedstars Sri Lanka — stage presentation" },
 ] as const;
 
 export const highlights = [
@@ -526,20 +527,20 @@ export const achievements = {
         "Psychometric Evaluation of a Sinhalese Version of the Five Facet Mindfulness Questionnaire",
       href: "https://www.researchgate.net/publication/359312955",
       source: "ResearchGate",
-      image: "/media/publications/pub-mindfulness-a.jpg",
+      image: "/media/publications/pub-mindfulness-1.png",
     },
     {
       title:
         "Psychometric Evaluation of a Sinhala Translation of the FFMQ and Development of a Short Form",
       href: "https://www.researchgate.net/publication/365476014",
       source: "ResearchGate",
-      image: "/media/publications/pub-mindfulness-b.jpg",
+      image: "/media/publications/pub-mindfulness-2.png",
     },
     {
       title: "Jendo — Heart Disease Prediction using Machine Learning",
       href: "https://www.wipo.int/en/web/ip-advantage/w/stories/jendo-heart-disease-prediction-using-machine-learning",
       source: "WIPO IP Advantage",
-      image: "/media/publications/pub-ieee.jpg",
+      image: "/media/publications/pub-wipo-jendo.jpg",
     },
     {
       title: "Research profile — Keerthi M. Kodithuwakku",
