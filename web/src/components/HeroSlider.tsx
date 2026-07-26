@@ -22,9 +22,9 @@ const slides = [
   },
   {
     src: "/media/hero/business-best-hq.jpg",
-    mobileSrc: "/media/hero/business-mobile-v3.jpg",
+    mobileSrc: "/media/hero/business-mobile-v4.jpg",
     desktopPosition: "object-[74%_26%]",
-    mobilePosition: "object-[48%_20%]",
+    mobilePosition: "object-[55%_20%]",
     eyebrow: "MedTech Founder & Technopreneur",
     title: "Recognised leadership in business and innovation",
     text: "From national awards to global fellowships — building ventures that turn research into real clinical and commercial impact.",
@@ -139,7 +139,8 @@ export function HeroSlider() {
       <div className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-r from-black/40 via-black/10 to-transparent md:from-black/60 md:via-black/25" />
 
       <div className="relative z-[3] flex h-full min-h-0 flex-col">
-        <div className="container-kk flex min-h-0 flex-1 flex-col justify-end pb-4 pt-[4.75rem] sm:pb-5 sm:pt-28 md:pb-7 md:pt-32">
+        {/* Content sits higher with clearer vertical rhythm — not stacked at the bottom */}
+        <div className="container-kk flex min-h-0 flex-1 flex-col justify-end pb-5 pt-[5.25rem] sm:pb-7 sm:pt-28 md:justify-center md:pb-20 md:pt-28 lg:pb-24">
           <motion.div
             key={slide.title}
             initial={reduce ? false : { opacity: 0, y: 14 }}
@@ -147,13 +148,13 @@ export function HeroSlider() {
             transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-2xl"
           >
-            <p className="mb-2 text-[0.65rem] font-bold uppercase tracking-[0.16em] text-kk-accent drop-shadow sm:mb-2.5 sm:text-[0.68rem] md:mb-3 md:text-sm">
+            <p className="mb-3 text-[0.65rem] font-bold uppercase tracking-[0.16em] text-kk-accent drop-shadow sm:mb-3.5 sm:text-[0.68rem] md:mb-4 md:text-sm">
               {slide.eyebrow}
             </p>
-            <h1 className="font-display text-[clamp(1.55rem,6.2vw,4.1rem)] leading-[1.1] tracking-tight text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.45)]">
+            <h1 className="font-display text-[clamp(1.55rem,6.2vw,4.1rem)] leading-[1.12] tracking-tight text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.45)]">
               {slide.title}
             </h1>
-            <p className="mt-2.5 max-w-xl text-[0.84rem] leading-relaxed text-white/92 drop-shadow line-clamp-3 sm:mt-3.5 sm:line-clamp-none sm:text-[0.95rem] md:mt-4 md:text-lg">
+            <p className="mt-4 max-w-xl text-[0.84rem] leading-relaxed text-white/92 drop-shadow line-clamp-3 sm:mt-5 sm:line-clamp-none sm:text-[0.95rem] md:mt-6 md:text-lg md:leading-relaxed">
               {slide.text}
             </p>
           </motion.div>
@@ -162,7 +163,7 @@ export function HeroSlider() {
             initial={reduce ? false : { opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-4 flex w-full flex-col gap-2.5 sm:mt-5 sm:w-auto sm:flex-row sm:flex-wrap sm:gap-3 md:mt-7"
+            className="mt-6 flex w-full flex-col gap-2.5 sm:mt-7 sm:w-auto sm:flex-row sm:flex-wrap sm:gap-3 md:mt-9"
           >
             <Button href="/contact" showArrow className="w-full justify-center sm:w-auto">
               Get Appointment
@@ -176,10 +177,10 @@ export function HeroSlider() {
             </Button>
           </motion.div>
 
-          <div className="mt-4 flex items-center gap-2 sm:mt-5 md:mt-7">
+          <div className="mt-6 flex items-center gap-2 sm:mt-7 md:mt-9">
             {slides.map((s, i) => (
               <button
-                key={s.src}
+                key={s.src + s.eyebrow}
                 type="button"
                 aria-label={`Slide ${i + 1}`}
                 onClick={() => setIndex(i)}

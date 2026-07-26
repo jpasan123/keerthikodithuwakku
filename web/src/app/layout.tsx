@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { ChatBot } from "@/components/ChatBot";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { SocialPopup } from "@/components/SocialPopup";
+import { ScrollToTop } from "@/components/ScrollToTop";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -61,6 +62,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <ScrollToTop />
         <ChatBot />
       </body>
     </html>
