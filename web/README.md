@@ -52,7 +52,7 @@ to test locally.
 2. Framework: Next.js (auto)
 3. Add the Brevo and Gemini environment variables listed in `.env.example` to Preview and Production
 4. Deploy — share the preview URL for approval
-5. Submit one test inquiry and confirm delivery to `keerthi.office1990@gmail.com`
+5. Submit one test inquiry and confirm delivery to `keerthi@jendoinnovations.com`
 6. Open the floating “Ask Keerthi” chat and send a test question
 7. After approval, point the production domain at this Next.js deployment
 
@@ -63,7 +63,7 @@ Until cutover, the repo root static WordPress export can remain the live site.
 - [ ] Rasindu visual + content approval
 - [ ] Confirm contact email / phone / social URLs
 - [ ] Verify the Brevo sender and configure `BREVO_API_KEY` / `BREVO_SENDER_EMAIL`
-- [ ] Confirm a form submission reaches `keerthi.office1990@gmail.com`
+- [ ] Confirm a form submission reaches `keerthi@jendoinnovations.com`
 - [ ] Add `GEMINI_API_KEY` (and optional `GEMINI_MODEL`) for the site chatbot
 - [ ] Smoke-test the floating chat on mobile and desktop
 - [ ] Set Vercel Root Directory → `web`

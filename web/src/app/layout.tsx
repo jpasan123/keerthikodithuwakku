@@ -6,6 +6,7 @@ import { ChatBot } from "@/components/ChatBot";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { SocialPopup } from "@/components/SocialPopup";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -57,6 +58,7 @@ export default function RootLayout({
       <body
         className={`${plusJakarta.variable} ${instrument.variable} antialiased bg-kk-bg text-kk-ink`}
       >
+        <GoogleAnalytics />
         <SmoothScroll />
         <SocialPopup />
         <Header />

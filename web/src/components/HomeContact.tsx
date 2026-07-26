@@ -89,7 +89,7 @@ export function HomeContact() {
                 Trace Expert City, Colombo
               </h3>
               <p className="mt-1.5 text-sm text-kk-muted">
-                Bay X · AC19 — open for meetings by appointment.
+                Bay 09 · AC19 — open for meetings by appointment.
               </p>
             </div>
             <div className="relative min-h-[320px] flex-1 md:min-h-[420px]">
