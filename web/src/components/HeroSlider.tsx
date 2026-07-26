@@ -22,9 +22,9 @@ const slides = [
   },
   {
     src: "/media/hero/business-best-hq.jpg",
-    mobileSrc: "/media/hero/portrait-hq.jpg",
+    mobileSrc: "/media/hero/business-mobile-v2.jpg",
     desktopPosition: "object-[74%_26%]",
-    mobilePosition: "object-[50%_26%]",
+    mobilePosition: "object-[54%_22%]",
     eyebrow: "MedTech Founder & Technopreneur",
     title: "Recognised leadership in business and innovation",
     text: "From national awards to global fellowships — building ventures that turn research into real clinical and commercial impact.",
