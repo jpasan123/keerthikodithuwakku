@@ -1,6 +1,3 @@
 {
-  "buildCommand": "",
-  "outputDirectory": "./",
-  "installCommand": "",
   "regions": ["sfo1"]
 }

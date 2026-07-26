@@ -38,6 +38,7 @@ yarn-debug.log*
 *.wpress
 .wpress-backup/
 
-# Dependencies
+# Dependencies (allow Next.js lockfile under web/)
 package-lock.json
+!web/package-lock.json
 yarn.lock
