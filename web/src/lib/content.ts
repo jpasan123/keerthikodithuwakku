@@ -540,7 +540,7 @@ export const achievements = {
       title: "Jendo — Heart Disease Prediction using Machine Learning",
       href: "https://www.wipo.int/en/web/ip-advantage/w/stories/jendo-heart-disease-prediction-using-machine-learning",
       source: "WIPO IP Advantage",
-      image: "/media/publications/pub-wipo-jendo.jpg",
+      image: "/media/publications/pub-wipo-jendo-v2.jpg",
     },
     {
       title: "Research profile — Keerthi M. Kodithuwakku",

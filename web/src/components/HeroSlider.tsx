@@ -22,9 +22,9 @@ const slides = [
   },
   {
     src: "/media/hero/business-best-hq.jpg",
-    mobileSrc: "/media/hero/business-mobile-v2.jpg",
+    mobileSrc: "/media/hero/business-mobile-v3.jpg",
     desktopPosition: "object-[74%_26%]",
-    mobilePosition: "object-[54%_22%]",
+    mobilePosition: "object-[48%_20%]",
     eyebrow: "MedTech Founder & Technopreneur",
     title: "Recognised leadership in business and innovation",
     text: "From national awards to global fellowships — building ventures that turn research into real clinical and commercial impact.",
@@ -118,8 +118,8 @@ export function HeroSlider() {
               fill
               priority={i === 0}
               className={`object-cover md:hidden ${s.mobilePosition}`}
-              sizes="280vw"
-              quality={98}
+              sizes="(max-width: 767px) 200vw, 100vw"
+              quality={100}
             />
             <Image
               src={s.src}
@@ -128,15 +128,15 @@ export function HeroSlider() {
               priority={i === 0}
               className={`object-cover hidden md:block ${s.desktopPosition}`}
               sizes="100vw"
-              quality={98}
+              quality={95}
             />
           </motion.div>
         );
       })}
 
-      {/* Lighter top on mobile so heads aren’t crushed into dark crop */}
-      <div className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-t from-black/80 via-black/25 to-black/20 md:from-black/75 md:via-black/30 md:to-black/25" />
-      <div className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-r from-black/55 via-black/20 to-transparent md:from-black/60 md:via-black/25" />
+      {/* Lighter overlays on mobile so the hero photo stays sharp and readable */}
+      <div className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-t from-black/72 via-black/18 to-black/10 md:from-black/75 md:via-black/30 md:to-black/25" />
+      <div className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-r from-black/40 via-black/10 to-transparent md:from-black/60 md:via-black/25" />
 
       <div className="relative z-[3] flex h-full min-h-0 flex-col">
         <div className="container-kk flex min-h-0 flex-1 flex-col justify-end pb-4 pt-[4.75rem] sm:pb-5 sm:pt-28 md:pb-7 md:pt-32">
