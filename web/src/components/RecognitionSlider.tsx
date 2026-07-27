@@ -83,29 +83,28 @@ export function RecognitionSlider({
           className="grid items-stretch gap-5 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-7"
         >
           {/* Media — inner image carousel when a story has multiple photos */}
-          <div className="relative overflow-hidden rounded-[28px] border border-kk-border bg-white shadow-sm">
-            <div className="relative aspect-[16/11] sm:aspect-[16/10] lg:aspect-auto lg:min-h-[520px]">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={image.src}
-                  className="absolute inset-0"
-                  initial={reduce ? false : { opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={reduce ? undefined : { opacity: 0 }}
-                  transition={{ duration: 0.45 }}
-                >
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 52vw"
-                    quality={92}
-                    priority={storyIndex === 0 && imageIndex === 0}
-                  />
-                </motion.div>
-              </AnimatePresence>
-            </div>
+          <div className="relative aspect-[16/11] overflow-hidden rounded-[28px] shadow-sm sm:aspect-[16/10] lg:aspect-auto lg:min-h-[520px]">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={image.src}
+                className="absolute inset-0"
+                initial={reduce ? false : { opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={reduce ? undefined : { opacity: 0 }}
+                transition={{ duration: 0.45 }}
+              >
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  className="h-full w-full"
+                  sizes="(max-width: 1024px) 100vw, 52vw"
+                  quality={92}
+                  priority={storyIndex === 0 && imageIndex === 0}
+                />
+              </motion.div>
+            </AnimatePresence>
 
             {story.images.length > 1 ? (
               <div
