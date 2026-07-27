@@ -14,7 +14,7 @@ export const services = [
     icon: "Cpu",
     summary:
       "Smart IoT solutions that streamline operations and enhance connectivity.",
-    body: "Our IoT technologies provide sophisticated connectivity solutions for industries including healthcare and manufacturing. By implementing IoT systems, we enable real-time data collection and analysis, leading to improved decision-making and operational efficiency. We specialise in scalable IoT architectures — like the award-winning AnankeIoT platform — that integrate seamlessly with existing operations.",
+    body: "Our IoT technologies provide sophisticated connectivity solutions for industries including healthcare and manufacturing. By implementing IoT systems, we enable real-time data collection and analysis, leading to improved decision-making and operational efficiency. We specialise in scalable IoT architectures, like the award-winning AnankeIoT platform, that integrate seamlessly with existing operations.",
     image: "/media/gallery/event-jul-02.jpg",
     imagePosition: "object-center",
   },
@@ -24,7 +24,7 @@ export const services = [
     icon: "FlaskConical",
     summary:
       "Pioneering biomedical R&D for sustainable health solutions.",
-    body: "Our research and development initiatives focus on pioneering innovations that address critical health issues. We invest in comprehensive market research and scientific exploration to stay ahead in the biomedical field. Through collaborations with academic institutions and healthcare providers, our R&D aligns with real-world needs and regulatory standards — from IEEE-published methods to WIPO-recognised patents.",
+    body: "Our research and development initiatives focus on pioneering innovations that address critical health issues. We invest in comprehensive market research and scientific exploration to stay ahead in the biomedical field. Through collaborations with academic institutions and healthcare providers, our R&D aligns with real-world needs and regulatory standards, from IEEE-published methods to WIPO-recognised patents.",
     image: "/media/awards/german-tour.jpeg",
   },
   {
@@ -33,9 +33,9 @@ export const services = [
     icon: "GraduationCap",
     summary:
       "Lecturing at top Sri Lankan universities and mentoring the next generation of innovators.",
-    body: "A passionate researcher and innovator committed to advancing technology and education. Alongside entrepreneurship, Keerthi dedicates himself to mentoring and inspiring young students, sharing knowledge and experience through lectures at top universities in Sri Lanka — nurturing the next generation of thinkers, innovators, and leaders.",
+    body: "A passionate researcher and innovator committed to advancing technology and education. Alongside entrepreneurship, Keerthi dedicates himself to mentoring and inspiring young students, sharing knowledge and experience through lectures at top universities in Sri Lanka, nurturing the next generation of thinkers, innovators, and leaders.",
     image: "/media/portraits/lecturer.jpg",
-    // Portrait source — keep the face in frame inside landscape cards
+    // Portrait source: keep the face in frame inside landscape cards
     imagePosition: "object-[50%_18%]",
   },
 ] as const;
@@ -45,7 +45,7 @@ export const products = [
   {
     name: "JENDO",
     tagline: "Non-invasive vascular health monitor",
-    body: "AI-powered device detecting endothelial dysfunction — the earliest indicator of cardiovascular disease — in about 15 minutes. Backed by US- and Japan-granted patents.",
+    body: "AI-powered device detecting endothelial dysfunction, the earliest indicator of cardiovascular disease, in about 15 minutes. Backed by US and Japan granted patents.",
     image: "/media/products/jendo-device.jpg",
     href: "https://jendo.health/",
     external: true,
@@ -54,11 +54,11 @@ export const products = [
   {
     name: "MindDrone",
     tagline: "Sri Lanka’s first mind-controlled drone",
-    body: "A brain–computer interface that lets users fly a drone using their brain waves — locally built neurotech that relaxes and sharpens focus through calm, thought-driven control.",
+    body: "A brain-computer interface that lets users fly a drone using their brain waves. Locally built neurotech that relaxes and sharpens focus through calm, thought-driven control.",
     image: "/media/products/myndrone.jpg",
     logo: true,
     href: "/blog/mind-controlled-drone-diabetic-retinopathy",
-    tags: ["Brain–Computer Interface", "Neurotech"],
+    tags: ["Brain-Computer Interface", "Neurotech"],
   },
 ] as const;
 
@@ -93,17 +93,17 @@ export const productShowcase = [
 
 export const heroStats = [
   { value: 12, suffix: "+", label: "Years building Jendo Innovations" },
-  { value: 28, suffix: "", label: "Eisenhower Fellows — selected from 500+" },
+  { value: 28, suffix: "", label: "Eisenhower Fellows, selected from 500+" },
   { value: 800, suffix: "+", label: "Patients clinically tested" },
-  { value: 15, suffix: " min", label: "Early heart-disease detection" },
+  { value: 15, suffix: " min", label: "Early heart disease detection" },
 ] as const;
 
-/** Fellowships only — used on Achievements page */
+/** Fellowships only, used on Achievements page */
 export const fellowships = [
   {
     title: "Eisenhower Fellowship 2026",
     subtitle: "Innovative Entrepreneurs Program",
-    body: "Selected as one of 28 fellows from more than 500 global applicants. Fellowship focus: designing a South Asian Regulatory Framework for AI Medical Devices — a proud moment for Sri Lanka's deep-tech ecosystem.",
+    body: "Selected as one of 28 fellows from more than 500 global applicants. Fellowship focus: designing a South Asian Regulatory Framework for AI Medical Devices, a proud moment for Sri Lanka's deep-tech ecosystem.",
     image: "/media/portraits/eisenhower-2026.jpg",
     href: "/blog/eisenhower-fellowship-2026",
     externalHref: "https://lnkd.in/gCx4b4SQ",
@@ -112,7 +112,7 @@ export const fellowships = [
   {
     title: "Chevening CRISP Fellowship 2026",
     subtitle: "St Cross College, University of Oxford",
-    body: "Selected for the Chevening Research Science and Innovation Leadership Fellowship — exploring cutting-edge MedTech innovations and bringing these insights back to Sri Lanka to drive impact in healthcare and technology.",
+    body: "Selected for the Chevening Research Science and Innovation Leadership Fellowship. This opportunity focuses on exploring cutting-edge MedTech innovations and bringing these insights back to Sri Lanka to drive impact in healthcare and technology.",
     image: "/media/gallery/oxford-chevening-b.jpeg",
     href: "/blog/chevening-crisp-oxford",
     externalHref: "https://www.chevening.org/",
@@ -128,18 +128,18 @@ export const recognition = [
   {
     id: "eisenhower-2026",
     kicker:
-      "Latest global recognition — selected as one of 28 fellows from 500+ applicants for Eisenhower Fellowships 2026.",
-    title: "Eisenhower Fellowship 2026 — Innovative Entrepreneurs Program",
+      "Latest global recognition: selected as one of 28 fellows from 500+ applicants for Eisenhower Fellowships 2026.",
+    title: "Eisenhower Fellowship 2026: Innovative Entrepreneurs Program",
     paragraphs: [
       "Sri Lanka’s Keerthi Kodithuwakku, Chairman and CEO of Jendo Innovations Inc., has been selected as one of 28 fellows for the prestigious Eisenhower Fellowships 2026 Innovative Entrepreneurs Program.",
-      "Chosen from more than 500 global applicants, this honour recognises 12+ years of building Jendo into a pioneering biomedical company, with US & Japan granted patents for non-invasive vascular health monitoring.",
+      "Chosen from more than 500 global applicants, this honour recognises 12+ years of building Jendo into a pioneering biomedical company with US and Japan granted patents for non-invasive vascular health monitoring.",
       "Fellowship focus: designing a South Asian Regulatory Framework for AI Medical Devices — a proud moment for Sri Lanka’s deep tech ecosystem.",
     ],
     tags: ["Eisenhower", "Global Fellows", "MedTech Policy"],
     images: [
       {
         src: "/media/portraits/eisenhower-2026.jpg",
-        alt: "Keerthi Kodithuwakku — Eisenhower Fellowship 2026 announcement",
+        alt: "Keerthi Kodithuwakku: Eisenhower Fellowship 2026 announcement",
       },
     ],
     href: "/blog/eisenhower-fellowship-2026",
@@ -193,7 +193,7 @@ export const recognition = [
     images: [
       {
         src: "/media/awards/ict-leader-trophy.jpg",
-        alt: "ICT Leader of the Year 2025 — receiving the award on stage",
+        alt: "ICT Leader of the Year 2025: receiving the award on stage",
       },
     ],
     href: "/blog/ict-leader-of-the-year",
@@ -321,7 +321,7 @@ export const ventures = [
     href: "https://jendo.health/",
     image: "/media/products/jendo-device-kit.jpg",
     position: "object-[50%_45%]",
-    highlights: ["US & Japan patents", "15-minute screening", "Bahrain pilot"],
+    highlights: ["US and Japan patents", "15-minute screening", "Bahrain pilot"],
   },
   {
     name: "Effective Solutions",
@@ -340,33 +340,33 @@ export const about = {
   title: "Pioneering biomedical and IoT innovations for a better tomorrow",
   lead: "Keerthi Kodithuwakku is a biomedical technopreneur and innovation strategist from Sri Lanka, working at the intersection of medicine, engineering, and artificial intelligence to advance preventive healthcare in low and middle-income settings.",
   lead2:
-    "He is Chairman/CEO of Jendo Innovations, Founder/CEO of Effective Solutions, and CEO & Director of Koding Private Limited — building AI-enabled medical devices, IoT platforms, and software talent from Sri Lanka to the world.",
+    "He is Chairman and CEO of Jendo Innovations, Founder and CEO of Effective Solutions, and CEO and Director of Koding Private Limited. He builds AI-enabled medical devices, IoT platforms, and software talent from Sri Lanka to the world.",
   oxford:
-    "He is the inventor of US- and Japan-granted patents for a novel non-invasive vascular health monitoring system — frontier technology recognised by global institutions including WIPO, WHO, and ITU for its potential to transform early detection of cardiovascular and metabolic diseases.",
+    "He is the inventor of US and Japan granted patents for a novel non-invasive vascular health monitoring system. This frontier technology is recognised by global institutions including WIPO, WHO, and ITU for its potential to transform early detection of cardiovascular and metabolic diseases.",
   mission:
-    "Enable AI-driven medical devices and early-screening technologies to eliminate preventable diseases — particularly vascular and metabolic conditions — by aligning technological innovation with policy frameworks in collaboration with global institutions and thought leaders.",
+    "Enable AI-driven medical devices and early-screening technologies to eliminate preventable diseases, particularly vascular and metabolic conditions. This is achieved by aligning technological innovation with policy frameworks in collaboration with global institutions and thought leaders.",
   values:
-    "Integrity, innovation, collaboration, and excellence. Every project reflects a commitment to sustainable development and the well-being of the communities we serve — from primary care clinics to national digital programmes.",
+    "Integrity, innovation, collaboration, and excellence. Every project reflects a commitment to sustainable development and the well-being of the communities we serve, from primary care clinics to national digital programmes.",
   education: [
-    "MBA — University of Colombo",
-    "BSc Engineering (Hons) Electronics & Telecommunication with Minor in Entrepreneurship — University of Moratuwa",
-    "MIT Global Startup Labs — founding programme for Effective Solutions",
+    "MBA, University of Colombo",
+    "BSc Engineering (Hons) Electronics & Telecommunication with Minor in Entrepreneurship, University of Moratuwa",
+    "MIT Global Startup Labs, founding programme for Effective Solutions",
   ],
   roles: [
-    "Program Director — Neo Ventures Innovations Accelerator (NIBM)",
-    "Secretary — University of Moratuwa Alumni Association",
-    "Advisory Committee Member — University of Moratuwa",
-    "Visiting Lecturer — leading Sri Lankan universities",
-    "Founder — Entrepreneurship Society",
+    "Program Director at Neo Ventures Innovations Accelerator (NIBM)",
+    "Secretary of University of Moratuwa Alumni Association",
+    "Advisory Committee Member at University of Moratuwa",
+    "Visiting Lecturer at leading Sri Lankan universities",
+    "Founder of Entrepreneurship Society",
   ],
   jkxStory:
-    "John Keells X, an open innovation challenge by John Keells Holdings PLC, held its inaugural competition in 2016, recognizing innovative and disruptive ideas. The winning team, Jendo — co-founded by Keerthi Kodithuwakku, Isuru Rajakaruna, and Charith Vithanage — won Rs 2 million for their groundbreaking non-invasive cardiovascular health monitoring technology. Out of 148 applications, 10 finalists were shortlisted and given 60 days to develop their ideas, with mentorship from JKH leadership.",
+    "John Keells X, an open innovation challenge by John Keells Holdings PLC, held its inaugural competition in 2016, recognizing innovative and disruptive ideas. The winning team Jendo, co-founded by Keerthi Kodithuwakku, Isuru Rajakaruna, and Charith Vithanage, won Rs 2 million for their groundbreaking non-invasive cardiovascular health monitoring technology. Out of 148 applications, 10 finalists were shortlisted and given 60 days to develop their ideas with mentorship from JKH leadership.",
   journey:
-    "Effective Solutions (Pvt) Ltd emerged from MIT Global Startup Labs, founded by five engineering graduates from the University of Moratuwa in 2013. The company expanded to Japan and England, transforming business requirements into functional digital solutions — later launching JENDO, MYNDRONE, and the award-winning AnankeIoT platform.",
+    "Effective Solutions (Pvt) Ltd emerged from MIT Global Startup Labs, founded by five engineering graduates from the University of Moratuwa in 2013. The company expanded to Japan and England, transforming business requirements into functional digital solutions. Later it launched JENDO, MYNDRONE, and the award-winning AnankeIoT platform.",
   journey2:
     "Through strategic partnerships and relentless dedication, Effective Solutions became a recognized leader in biomedical and IoT innovation. Co-founding Jendo Innovations further solidified a commitment to research, patents, and clinical-grade product development.",
   collaboration:
-    "Committed to building strong partnerships with stakeholders in healthcare, defense, technology, and governance — strategic alliances that drive impactful solutions, enhance national resilience, and advance technology across industries.",
+    "Committed to building strong partnerships with stakeholders in healthcare, defense, technology, and governance. These strategic alliances drive impactful solutions, enhance national resilience, and advance technology across industries.",
 } as const;
 
 export const featuredAwards = [
