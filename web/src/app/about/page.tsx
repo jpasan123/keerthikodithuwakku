@@ -69,11 +69,11 @@ export default function AboutPage() {
         <div className="grid md:grid-cols-2 gap-10">
           <Reveal>
             <SectionHeading eyebrow="Mission" title="Dedicated to global innovation" />
-            <p className="text-kk-muted leading-relaxed -mt-6">{about.mission}</p>
+            <p className="mt-4 text-kk-muted leading-relaxed">{about.mission}</p>
           </Reveal>
           <Reveal delay={0.08}>
             <SectionHeading eyebrow="Values" title="Principles that shape the culture" />
-            <p className="text-kk-muted leading-relaxed -mt-6">{about.values}</p>
+            <p className="mt-4 text-kk-muted leading-relaxed">{about.values}</p>
           </Reveal>
         </div>
       </Section>
@@ -89,7 +89,7 @@ export default function AboutPage() {
               title="From vision to reality"
               description={about.journey}
             />
-            <p className="text-sm text-kk-muted leading-relaxed -mt-4 mb-6">
+            <p className="mt-4 mb-6 text-sm text-kk-muted leading-relaxed">
               {about.journey2}
             </p>
             <ul className="space-y-3 text-sm text-kk-muted">

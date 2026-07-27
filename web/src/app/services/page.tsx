@@ -61,7 +61,7 @@ export default function ServicesPage() {
                     title={service.title}
                     description={service.body}
                   />
-                  <p className="text-sm text-kk-muted -mt-8">{service.summary}</p>
+                  <p className="mt-4 text-sm font-medium text-kk-muted">{service.summary}</p>
                 </Reveal>
               </div>
             );
