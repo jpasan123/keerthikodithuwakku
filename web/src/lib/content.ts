@@ -166,14 +166,20 @@ export const recognition = [
       {
         src: "/media/gallery/oxford-chevening-b.jpeg",
         alt: "Chevening fellowship certificate presentation with the British High Commission",
+        fit: "cover",
+        position: "object-[50%_22%]",
       },
       {
         src: "/media/gallery/oxford-chevening-a.jpeg",
         alt: "Chevening pre-departure programme meeting",
+        fit: "cover",
+        position: "object-[50%_42%]",
       },
       {
         src: "/media/portraits/oxford-chevening-1.jpeg",
         alt: "Keerthi Kodithuwakku at the Chevening pre-departure programme",
+        fit: "cover",
+        position: "object-[52%_18%]",
       },
     ],
     href: "/blog/chevening-crisp-oxford",

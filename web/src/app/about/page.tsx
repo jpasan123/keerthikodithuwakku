@@ -41,12 +41,12 @@ export default function AboutPage() {
             </ul>
           </Reveal>
           <Reveal delay={0.1}>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-kk-border bg-kk-surface">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-kk-border bg-kk-surface">
               <Image
                 src="/media/hero/boardroom-hq.jpg"
                 alt="Keerthi Kodithuwakku"
                 fill
-                className="object-contain object-center"
+                className="object-cover object-[62%_35%]"
                 sizes="(max-width: 1024px) 100vw, 45vw"
                 priority
                 quality={88}

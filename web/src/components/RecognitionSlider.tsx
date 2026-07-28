@@ -15,7 +15,7 @@ export type RecognitionItem = {
   images: readonly {
     src: string;
     alt: string;
-    /** Default contain — shows the full photo without cropping faces or edges. */
+    /** Per-image crop control for keeping the important subject in frame. */
     fit?: "cover" | "contain";
     position?: string;
   }[];
@@ -89,11 +89,11 @@ export function RecognitionSlider({
           className="grid items-stretch gap-5 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-7"
         >
           {/* Media — inner image carousel when a story has multiple photos */}
-          <div className="relative aspect-[16/11] overflow-hidden rounded-[28px] border border-kk-border bg-kk-surface shadow-sm sm:aspect-[16/10] lg:aspect-auto lg:min-h-[520px]">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-[28px] border border-kk-border bg-kk-surface shadow-sm sm:aspect-[16/10] lg:aspect-[4/3]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={image.src}
-                className="absolute inset-0 flex items-center justify-center p-1 sm:p-1.5"
+                className="absolute inset-0"
                 initial={reduce ? false : { opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={reduce ? undefined : { opacity: 0 }}
