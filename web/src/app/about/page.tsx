@@ -21,9 +21,9 @@ export default function AboutPage() {
         title={about.title}
         description={about.lead}
         image="/media/hero/leadership-hq.jpg"
-        position="object-[85%_28%]"
+        position="object-[62%_18%]"
         mobileImage="/media/hero/about-keerthi-mobile.jpg"
-        mobilePosition="object-[50%_8%]"
+        mobilePosition="object-[50%_12%]"
       />
 
       <Section>
@@ -46,7 +46,7 @@ export default function AboutPage() {
                 src="/media/hero/boardroom-hq.jpg"
                 alt="Keerthi Kodithuwakku"
                 fill
-                className="object-cover object-[50%_56%]"
+                className="object-cover object-[24%_32%]"
                 sizes="(max-width: 1024px) 100vw, 45vw"
                 priority
                 quality={88}

@@ -26,14 +26,6 @@ function XIcon({ className }: { className?: string }) {
   );
 }
 
-function UpworkIcon({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} aria-hidden fill="currentColor">
-      <path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.046-2.671-5.912H7.828v7.199c0 1.337-.964 2.45-2.301 2.45-1.337 0-2.301-1.113-2.301-2.45V3.472H0v7.199c0 2.965 2.413 5.393 5.379 5.393 2.965 0 5.379-2.428 5.379-5.393v-1.21c.526 1.096 1.197 2.21 2.029 3.216l-1.723 8.102h2.861l1.237-5.817c1.063.679 2.285 1.109 3.399 1.109 3.012 0 5.456-2.456 5.456-5.47 0-3.014-2.444-5.471-5.456-5.471z" />
-    </svg>
-  );
-}
-
 const socialBtn =
   "inline-flex size-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/80 backdrop-blur-md transition hover:border-kk-accent/60 hover:bg-kk-accent/15 hover:text-kk-accent";
 
@@ -161,15 +153,6 @@ export function Footer() {
                 className={socialBtn}
               >
                 <XIcon className="size-4" />
-              </a>
-              <a
-                href={site.social.upwork}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Upwork"
-                className={`${socialBtn} hover:border-[#14A800]/50 hover:text-[#6dde5a]`}
-              >
-                <UpworkIcon className="size-4" />
               </a>
             </div>
           </div>

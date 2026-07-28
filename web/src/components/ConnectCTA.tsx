@@ -79,14 +79,6 @@ export function ConnectCTA() {
               >
                 LinkedIn
               </Button>
-              <Button
-                href={site.social.upwork}
-                external
-                variant="secondary"
-                className="!bg-white/12 !text-white !border-white/30 hover:!border-kk-accent hover:!text-kk-accent backdrop-blur"
-              >
-                Upwork
-              </Button>
             </div>
             <div className="mt-8 flex items-center gap-2">
               {backgrounds.map((b, i) => (

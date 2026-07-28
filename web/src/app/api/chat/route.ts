@@ -118,12 +118,15 @@ export async function POST(request: Request) {
 
   const origin = request.headers.get("origin");
   const host = request.headers.get("host");
-  if (origin && host) {
+  if (origin && host && process.env.NODE_ENV === "production") {
     try {
       const originHost = new URL(origin).host;
       const normalize = (value: string) =>
         value.toLowerCase().replace(/^127\.0\.0\.1(?=[:/]|$)/, "localhost");
-      if (normalize(originHost) !== normalize(host)) {
+      const stripWww = (value: string) => value.replace(/^www\./, "");
+      if (
+        stripWww(normalize(originHost)) !== stripWww(normalize(host))
+      ) {
         return NextResponse.json({ error: "Invalid request origin." }, { status: 403 });
       }
     } catch {
@@ -133,7 +136,11 @@ export async function POST(request: Request) {
 
   if (isRateLimited(request)) {
     return NextResponse.json(
-      { error: "Too many messages. Please wait a few minutes and try again." },
+      {
+        error: "Too many messages. Please wait a few minutes and try again.",
+        reply: "Please wait a few minutes and try again.",
+        source: "local",
+      },
       { status: 429 },
     );
   }
@@ -166,11 +173,16 @@ export async function POST(request: Request) {
 
   const lastUser = messages[messages.length - 1].content;
   const apiKey = process.env.GEMINI_API_KEY?.trim();
-  const model = process.env.GEMINI_MODEL?.trim() || "gemini-2.5-flash-lite";
+  const primaryModel =
+    process.env.GEMINI_MODEL?.trim() || "gemini-2.0-flash-lite";
+  const fallbackModel = "gemini-2.0-flash";
 
   if (apiKey) {
     try {
-      const reply = await askGemini(apiKey, model, messages);
+      let reply = await askGemini(apiKey, primaryModel, messages);
+      if (!reply && primaryModel !== fallbackModel) {
+        reply = await askGemini(apiKey, fallbackModel, messages);
+      }
       if (reply) {
         return NextResponse.json({ reply, source: "gemini" });
       }

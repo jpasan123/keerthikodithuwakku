@@ -11,13 +11,13 @@ type ChatMessage = { role: "user" | "assistant"; content: string };
 
 const SUGGESTIONS = [
   "Who is Keerthi?",
-  "How do I book a meeting?",
   "What is JENDO?",
-  "Latest awards & fellowships",
+  "How do I book a meeting?",
+  "What awards has he received?",
 ] as const;
 
 const WELCOME =
-  "Hi — I'm Keerthi's site assistant. Ask about his work, JENDO, MindDrone, awards, or how to book an appointment.";
+  "Hi — I'm Keerthi's site assistant. Ask about his work, JENDO, awards, or appointments.";
 
 export function ChatBot() {
   const reduce = useReducedMotion();
@@ -76,18 +76,27 @@ export function ChatBot() {
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ messages: nextMessages }),
       });
-      const data = (await response.json()) as { reply?: string; error?: string };
+      const data = (await response.json()) as {
+        reply?: string;
+        error?: string;
+        source?: string;
+      };
 
-      if (!response.ok || !data.reply) {
+      if (data.reply?.trim()) {
+        setMessages((prev) => [...prev, { role: "assistant", content: data.reply!.trim() }]);
+        return;
+      }
+
+      if (!response.ok) {
         throw new Error(data.error || "Something went wrong.");
       }
 
-      setMessages((prev) => [...prev, { role: "assistant", content: data.reply! }]);
+      throw new Error("Empty reply.");
     } catch (error) {
       const fallback =
         error instanceof Error
-          ? error.message
-          : "I could not answer just now. Please try Get Appointment.";
+          ? `${error.message} Please try Get Appointment or the Contact page.`
+          : "I could not answer just now. Please try Get Appointment or the Contact page.";
       setMessages((prev) => [...prev, { role: "assistant", content: fallback }]);
     } finally {
       setSending(false);
@@ -220,7 +229,7 @@ export function ChatBot() {
                   id="kk-chat-input"
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
-                  placeholder="Ask about Keerthi…"
+                  placeholder="Ask a question…"
                   maxLength={1000}
                   disabled={sending}
                   className="min-h-11 flex-1 rounded-2xl border border-kk-border bg-kk-bg/50 px-3.5 py-2.5 text-sm outline-none transition focus:border-kk-accent focus:bg-white disabled:opacity-70"

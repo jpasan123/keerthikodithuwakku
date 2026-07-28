@@ -92,18 +92,6 @@ export default function ContactPage() {
                 </li>
               </ul>
             </div>
-
-            <div className="mt-8">
-              <p className="text-sm font-semibold text-kk-ink mb-3">Freelance & consulting</p>
-              <a
-                href={site.social.upwork}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-[#14A800]/35 bg-[#14A800]/5 px-4 py-2 text-sm font-semibold text-[#0f7a00] hover:bg-[#14A800]/10 transition-colors"
-              >
-                Find Keerthi on Upwork
-              </a>
-            </div>
           </Reveal>
 
           <Reveal delay={0.08}>

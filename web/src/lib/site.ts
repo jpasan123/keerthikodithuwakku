@@ -12,7 +12,6 @@ export const site = {
     linkedin: "https://www.linkedin.com/in/keerthi-kodithuwakku-b98149219",
     facebook: "https://www.facebook.com/keerthi.priyankara.3",
     x: "https://x.com/mkkeerthi",
-    upwork: "https://www.upwork.com/freelancers/~019b8fa787ebec69f6",
   },
   ventures: {
     jendo: "https://jendo.health/",
