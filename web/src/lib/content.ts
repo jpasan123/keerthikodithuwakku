@@ -140,6 +140,8 @@ export const recognition = [
       {
         src: "/media/portraits/eisenhower-2026.jpg",
         alt: "Keerthi Kodithuwakku: Eisenhower Fellowship 2026 announcement",
+        fit: "cover",
+        position: "object-[50%_22%]",
       },
     ],
     href: "/blog/eisenhower-fellowship-2026",

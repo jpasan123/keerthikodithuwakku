@@ -12,7 +12,13 @@ export type RecognitionItem = {
   title: string;
   paragraphs: readonly string[];
   tags?: readonly string[];
-  images: readonly { src: string; alt: string }[];
+  images: readonly {
+    src: string;
+    alt: string;
+    /** Default contain — shows the full photo without cropping faces or edges. */
+    fit?: "cover" | "contain";
+    position?: string;
+  }[];
   href: string;
   cta: string;
   /** When true, primary CTA opens externalHref instead of href */
@@ -83,11 +89,11 @@ export function RecognitionSlider({
           className="grid items-stretch gap-5 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-7"
         >
           {/* Media — inner image carousel when a story has multiple photos */}
-          <div className="relative aspect-[16/11] overflow-hidden rounded-[28px] shadow-sm sm:aspect-[16/10] lg:aspect-auto lg:min-h-[520px]">
+          <div className="relative aspect-[16/11] overflow-hidden rounded-[28px] border border-kk-border bg-kk-surface shadow-sm sm:aspect-[16/10] lg:aspect-auto lg:min-h-[520px]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={image.src}
-                className="absolute inset-0"
+                className="absolute inset-0 flex items-center justify-center p-1 sm:p-1.5"
                 initial={reduce ? false : { opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={reduce ? undefined : { opacity: 0 }}
@@ -97,8 +103,9 @@ export function RecognitionSlider({
                   src={image.src}
                   alt={image.alt}
                   fill
-                  style={{ objectFit: 'cover' }}
-                  className="h-full w-full"
+                  className={`${
+                    image.fit === "cover" ? "object-cover" : "object-contain"
+                  } ${image.position ?? "object-center"}`}
                   sizes="(max-width: 1024px) 100vw, 52vw"
                   quality={92}
                   priority={storyIndex === 0 && imageIndex === 0}
