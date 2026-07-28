@@ -48,16 +48,18 @@ export function Header() {
       <header className="pointer-events-none fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-4 sm:pt-4">
         <motion.div
           layout={!reduce}
-          className={`pointer-events-auto mx-auto flex items-center justify-between gap-2 rounded-full border shadow-[0_10px_40px_rgba(12,14,10,0.18)] backdrop-blur-2xl transition-[max-width,padding,background-color] duration-500 sm:gap-3 ${
+          className={`pointer-events-auto mx-auto flex items-center rounded-full border shadow-[0_10px_40px_rgba(12,14,10,0.18)] backdrop-blur-2xl transition-[max-width,padding,background-color,gap] duration-500 ${
             scrolled
-              ? "max-w-3xl border-white/25 bg-[rgba(18,21,15,0.7)] px-2.5 py-1.5 sm:px-3 sm:py-2 lg:max-w-4xl"
-              : "max-w-2xl border-white/20 bg-[rgba(18,21,15,0.5)] px-2.5 py-2 sm:max-w-3xl sm:px-4 sm:py-2.5 lg:max-w-5xl"
+              ? "w-fit max-w-[calc(100%-1.5rem)] justify-start gap-2 border-white/25 bg-[rgba(18,21,15,0.7)] px-2 py-1.5 sm:gap-2.5 sm:px-2.5 sm:py-2"
+              : "max-w-2xl justify-between gap-2 border-white/20 bg-[rgba(18,21,15,0.5)] px-2.5 py-2 sm:max-w-3xl sm:gap-3 sm:px-4 sm:py-2.5 lg:max-w-5xl"
           }`}
         >
           <Link
             href="/"
             aria-label={site.name}
-            className="group flex min-w-0 shrink items-center gap-2.5 sm:gap-3"
+            className={`group flex min-w-0 shrink items-center ${
+              scrolled ? "gap-0" : "gap-2.5 sm:gap-3"
+            }`}
             onClick={() => setOpen(false)}
           >
             <Image
@@ -77,10 +79,7 @@ export function Header() {
             ) : null}
           </Link>
 
-          <nav
-            className="hidden items-center gap-0.5 lg:flex"
-            aria-label="Primary"
-          >
+          <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Primary">
             {nav.map((item) => {
               const active =
                 item.href === "/"
@@ -102,7 +101,7 @@ export function Header() {
             })}
           </nav>
 
-          <div className="flex shrink-0 items-center gap-2">
+          <div className={`flex shrink-0 items-center ${scrolled ? "gap-1.5" : "gap-2"}`}>
             {/* CTA appears from tablet up so the bar never looks empty */}
             <Link
               href="/contact"
