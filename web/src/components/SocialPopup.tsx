@@ -7,8 +7,6 @@ import { useEffect, useState } from "react";
 import {
   FacebookIcon,
   LinkedInIcon,
-  PlayMediaIcon,
-  XIcon,
 } from "@/components/SocialIcons";
 import { lockPageScroll, unlockPageScroll } from "@/lib/scrollLock";
 import { site } from "@/lib/site";
@@ -59,28 +57,12 @@ export function SocialPopup() {
       label: "LinkedIn",
       icon: LinkedInIcon,
       tone: "bg-[#0A66C2] text-white hover:bg-[#0958a8]",
-      external: true,
     },
     {
       href: site.social.facebook,
       label: "Facebook",
       icon: FacebookIcon,
       tone: "bg-[#1877F2] text-white hover:bg-[#1464cf]",
-      external: true,
-    },
-    {
-      href: site.social.x,
-      label: "X",
-      icon: XIcon,
-      tone: "bg-kk-ink text-white hover:bg-black",
-      external: true,
-    },
-    {
-      href: "/achievements#media",
-      label: "Watch media",
-      icon: PlayMediaIcon,
-      tone: "bg-[#FF0033] text-white hover:bg-[#e0002d]",
-      external: false,
     },
   ] as const;
 
@@ -138,31 +120,17 @@ export function SocialPopup() {
           <div className="mt-5 grid grid-cols-2 gap-2.5">
             {links.map((item) => {
               const Icon = item.icon;
-              const className = `inline-flex items-center justify-center gap-2 rounded-2xl px-3 py-3.5 text-sm font-semibold shadow-sm transition-colors ${item.tone}`;
-              if (item.external) {
-                return (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={className}
-                  >
-                    <Icon className="size-5" />
-                    {item.label}
-                  </a>
-                );
-              }
               return (
-                <Link
+                <a
                   key={item.label}
                   href={item.href}
-                  onClick={dismiss}
-                  className={className}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`inline-flex items-center justify-center gap-2 rounded-2xl px-3 py-3.5 text-sm font-semibold shadow-sm transition-colors ${item.tone}`}
                 >
                   <Icon className="size-5" />
                   {item.label}
-                </Link>
+                </a>
               );
             })}
           </div>
