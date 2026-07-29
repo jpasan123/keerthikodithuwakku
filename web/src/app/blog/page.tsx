@@ -22,8 +22,10 @@ export default function BlogPage() {
         eyebrow="Blog"
         title="Stories from the MedTech journey"
         description="Fellowships, product milestones, and leadership updates — curated without duplicate or third-party filler imagery."
-        image="/media/hero/keerthi-irobotics-desktop.jpg"
-        position="object-[50%_45%]"
+        image="/media/hero/speaking-stage-hq.jpg"
+        position="object-[58%_32%]"
+        mobileImage="/media/hero/speaking-mobile-v2.jpg"
+        mobilePosition="object-[48%_18%]"
       />
 
       <Section>

@@ -30,22 +30,22 @@ export function PageHero({
         alt=""
         fill
         priority
-        className={`object-cover md:hidden ${mobilePos}`}
-        sizes="200vw"
-        quality={95}
+        className={`!h-full !w-full object-cover md:hidden ${mobilePos}`}
+        sizes="100vw"
+        quality={90}
       />
       <Image
         src={image}
         alt=""
         fill
         priority
-        className={`object-cover hidden md:block ${position}`}
+        className={`!h-full !w-full object-cover hidden md:block ${position}`}
         sizes="100vw"
-        quality={95}
+        quality={90}
       />
-      {/* Lighter overlay so hero photos stay clear */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/15 to-black/8" />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent" />
+      {/* Soft overlays — keep the landscape photo visible and sharp */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/15" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/15 to-transparent" />
       <div className="relative container-kk pb-16 pt-28 md:pb-24 md:pt-32">
         <Reveal>
           <p className="text-xs font-bold tracking-[0.14em] uppercase text-kk-accent mb-3">
