@@ -21,10 +21,10 @@ const slides = [
     text: "Chairman & CEO of Jendo Innovations and Effective Solutions — advancing AI-enabled preventive healthcare and digital transformation.",
   },
   {
-    src: "/media/hero/keerthi-irobotics-hq.jpg",
-    mobileSrc: "/media/hero/keerthi-irobotics-hq.jpg",
-    desktopPosition: "md:object-[52%_40%] lg:object-[54%_42%]",
-    mobilePosition: "object-[50%_38%]",
+    src: "/media/hero/keerthi-irobotics-desktop.jpg",
+    mobileSrc: "/media/hero/keerthi-irobotics-mobile.jpg",
+    desktopPosition: "object-[50%_45%]",
+    mobilePosition: "object-[50%_40%]",
     eyebrow: "MedTech Founder & Technopreneur",
     title: "Recognised leadership in business and innovation",
     text: "From national awards to global fellowships — building ventures that turn research into real clinical and commercial impact.",
@@ -65,29 +65,24 @@ const SLIDE_MS = 5500;
 
 export function HeroSlider() {
   const [index, setIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
+  const [paused, setPaused] = useState(false);
   const reduce = useReducedMotion();
 
   useEffect(() => {
-    const mq = window.matchMedia("(max-width: 767px)");
-    const sync = () => setIsMobile(mq.matches);
-    sync();
-    mq.addEventListener("change", sync);
-    return () => mq.removeEventListener("change", sync);
-  }, []);
-
-  useEffect(() => {
-    if (reduce) return;
+    if (reduce || paused) return;
     const t = window.setInterval(() => {
       setIndex((i) => (i + 1) % slides.length);
     }, SLIDE_MS);
     return () => window.clearInterval(t);
-  }, [reduce]);
+  }, [reduce, paused]);
 
   const slide = slides[index];
   const marqueeRow = [...marqueeItems, ...marqueeItems];
-  // Mild Ken Burns — heavy zoom softens lower-res hero photos on large screens
-  const kenBurns = !reduce && !isMobile;
+
+  function goToSlide(next: number) {
+    setPaused(true);
+    setIndex(next);
+  }
 
   return (
     <section className="relative flex h-[100svh] max-h-[100svh] min-h-[480px] flex-col overflow-hidden bg-[#0c0e0a] supports-[height:100dvh]:h-[100dvh] supports-[height:100dvh]:max-h-[100dvh] max-[500px]:min-h-0">
@@ -97,46 +92,45 @@ export function HeroSlider() {
         return (
           <motion.div
             key={s.eyebrow}
-            className={`absolute inset-0 ${
+            className={`absolute inset-0 overflow-hidden ${
               i === index ? "z-[1]" : "z-0 pointer-events-none"
             }`}
             initial={false}
             animate={{
               opacity: i === index ? 1 : 0,
-              scale: i === index && kenBurns ? 1.02 : 1,
+              scale: 1,
             }}
             transition={{
               opacity: { duration: 1.05, ease: "easeInOut" },
-              scale: { duration: SLIDE_MS / 1000, ease: "linear" },
             }}
             aria-hidden={i !== index}
           >
-            {/* Mobile-first asset — correct crop on first paint, no hydration flash */}
+            {/* Full-bleed cover on every breakpoint — never letterbox */}
             <Image
               src={s.mobileSrc}
               alt=""
               fill
-              priority={i === 0}
-              className={`object-cover md:hidden ${s.mobilePosition}`}
-              sizes="(max-width: 767px) 100vw, 100vw"
-              quality={100}
+              priority={i === 0 || i === 1}
+              className={`!h-full !w-full object-cover object-center md:hidden ${s.mobilePosition}`}
+              sizes="100vw"
+              quality={90}
             />
             <Image
               src={s.src}
               alt=""
               fill
-              priority={i === 0}
-              className={`object-cover hidden md:block ${s.desktopPosition}`}
+              priority={i === 0 || i === 1}
+              className={`!h-full !w-full object-cover object-center hidden md:block ${s.desktopPosition}`}
               sizes="100vw"
-              quality={100}
+              quality={90}
             />
           </motion.div>
         );
       })}
 
-      {/* Lighter overlays on mobile so the hero photo stays sharp and readable */}
-      <div className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-t from-black/72 via-black/18 to-black/10 md:from-black/75 md:via-black/30 md:to-black/25" />
-      <div className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-r from-black/40 via-black/10 to-transparent md:from-black/60 md:via-black/25" />
+      {/* Readable text without crushing the photo into black bars */}
+      <div className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-t from-black/70 via-black/20 to-black/15 md:from-black/68 md:via-black/22 md:to-black/20" />
+      <div className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-r from-black/45 via-black/12 to-transparent md:from-black/50 md:via-black/15" />
 
       <div className="relative z-[3] flex h-full min-h-0 flex-col">
         {/* Lower-third placement — balanced above the recognition bar, not floating mid-screen */}
@@ -183,7 +177,7 @@ export function HeroSlider() {
                 key={s.src + s.eyebrow}
                 type="button"
                 aria-label={`Slide ${i + 1}`}
-                onClick={() => setIndex(i)}
+                onClick={() => goToSlide(i)}
                 className={`h-1.5 rounded-full transition-all duration-500 ${
                   i === index ? "w-9 bg-kk-accent sm:w-10" : "w-3.5 bg-white/50 hover:bg-white/80 sm:w-4"
                 }`}
