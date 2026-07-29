@@ -22,8 +22,8 @@ export default function BlogPage() {
         eyebrow="Blog"
         title="Stories from the MedTech journey"
         description="Fellowships, product milestones, and leadership updates — curated without duplicate or third-party filler imagery."
-        image="/media/blog/business-best.jpg"
-        position="object-[50%_30%]"
+        image="/media/hero/portrait-hq.jpg"
+        position="object-[55%_28%]"
       />
 
       <Section>
