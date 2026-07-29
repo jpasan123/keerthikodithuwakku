@@ -20,8 +20,10 @@ export default function ContactPage() {
         eyebrow="Contact"
         title="Let’s start a conversation"
         description={contactIntro}
-        image="/media/hero/speaking-stage.jpg"
-        position="object-[70%_18%]"
+        image="/media/gallery/kk-hq-07.jpg"
+        position="object-[62%_40%]"
+        mobileImage="/media/gallery/kk-hq-07.jpg"
+        mobilePosition="object-[58%_38%]"
       />
 
       <Section>
