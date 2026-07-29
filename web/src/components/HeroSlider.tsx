@@ -21,10 +21,10 @@ const slides = [
     text: "Chairman & CEO of Jendo Innovations and Effective Solutions — advancing AI-enabled preventive healthcare and digital transformation.",
   },
   {
-    src: "/media/hero/portrait-hq.jpg",
-    mobileSrc: "/media/hero/portrait-hq.jpg",
-    desktopPosition: "object-[58%_28%]",
-    mobilePosition: "object-[52%_22%]",
+    src: "/media/hero/keerthi-irobotics-hq.jpg",
+    mobileSrc: "/media/hero/keerthi-irobotics-hq.jpg",
+    desktopPosition: "md:object-[52%_40%] lg:object-[54%_42%]",
+    mobilePosition: "object-[50%_38%]",
     eyebrow: "MedTech Founder & Technopreneur",
     title: "Recognised leadership in business and innovation",
     text: "From national awards to global fellowships — building ventures that turn research into real clinical and commercial impact.",
@@ -86,7 +86,7 @@ export function HeroSlider() {
 
   const slide = slides[index];
   const marqueeRow = [...marqueeItems, ...marqueeItems];
-  // Ken Burns zooms and crops more — keep it desktop-only
+  // Mild Ken Burns — heavy zoom softens lower-res hero photos on large screens
   const kenBurns = !reduce && !isMobile;
 
   return (
@@ -103,7 +103,7 @@ export function HeroSlider() {
             initial={false}
             animate={{
               opacity: i === index ? 1 : 0,
-              scale: i === index && kenBurns ? 1.035 : 1,
+              scale: i === index && kenBurns ? 1.02 : 1,
             }}
             transition={{
               opacity: { duration: 1.05, ease: "easeInOut" },
@@ -118,7 +118,7 @@ export function HeroSlider() {
               fill
               priority={i === 0}
               className={`object-cover md:hidden ${s.mobilePosition}`}
-              sizes="(max-width: 767px) 200vw, 100vw"
+              sizes="(max-width: 767px) 100vw, 100vw"
               quality={100}
             />
             <Image
@@ -128,7 +128,7 @@ export function HeroSlider() {
               priority={i === 0}
               className={`object-cover hidden md:block ${s.desktopPosition}`}
               sizes="100vw"
-              quality={95}
+              quality={100}
             />
           </motion.div>
         );

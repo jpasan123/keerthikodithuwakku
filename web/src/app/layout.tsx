@@ -35,13 +35,13 @@ export const metadata: Metadata = {
     url: site.url,
     siteName: site.name,
     type: "website",
-    images: [{ url: "/media/hero/portrait-hq.jpg" }],
+    images: [{ url: "/media/hero/keerthi-irobotics-hq.jpg" }],
   },
   twitter: {
     card: "summary_large_image",
     title: site.title,
     description: site.description,
-    images: ["/media/hero/portrait-hq.jpg"],
+    images: ["/media/hero/keerthi-irobotics-hq.jpg"],
   },
   icons: {
     icon: "/favicon.svg",
