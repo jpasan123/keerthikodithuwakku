@@ -21,7 +21,7 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="Services"
         title="Transforming futures through technology"
-        description="Four pillars of work — from medical devices and connected systems to research leadership and teaching the next generation."
+        description="Four pillars of work: from medical devices and connected systems to research leadership and teaching the next generation."
         image="/media/gallery/kk-hq-01.jpg"
         position="object-[68%_28%]"
       />
@@ -73,7 +73,7 @@ export default function ServicesPage() {
         <SectionHeading
           eyebrow="Products & innovations"
           title="Devices and systems built from the ground up"
-          description="Two flagship innovations — patented MedTech hardware and Sri Lanka’s first mind-controlled drone."
+          description="Two flagship innovations: patented MedTech hardware and Sri Lanka’s first mind-controlled drone."
         />
         <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-2 md:gap-8">
           {products.map((product, i) => {

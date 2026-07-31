@@ -79,7 +79,7 @@ export default function ContactPage() {
                     rel="noopener noreferrer"
                     className="text-kk-muted hover:text-kk-accent transition-colors"
                   >
-                    Jendo Innovations — jendo.health
+                    Jendo Innovations, jendo.health
                   </a>
                 </li>
                 <li>
@@ -89,7 +89,7 @@ export default function ContactPage() {
                     rel="noopener noreferrer"
                     className="text-kk-muted hover:text-kk-accent transition-colors"
                   >
-                    Effective Solutions — effectivesolutions.lk
+                    Effective Solutions, effectivesolutions.lk
                   </a>
                 </li>
               </ul>
@@ -112,7 +112,7 @@ export default function ContactPage() {
           <div className="overflow-hidden rounded-3xl border border-kk-border shadow-sm">
             <iframe
               src={mapEmbedSrc}
-              title="Location — Trace Expert City, Colombo"
+              title="Location: Trace Expert City, Colombo"
               className="h-[420px] w-full border-0"
               loading="lazy"
               allowFullScreen

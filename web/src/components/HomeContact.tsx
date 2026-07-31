@@ -13,7 +13,7 @@ export function HomeContact() {
       <SectionHeading
         eyebrow="Get in touch"
         title="Contact, appointments & collaborations"
-        description="Send a message or visit us at Trace Expert City — we respond to partnership, speaking, and venture inquiries."
+        description="Send a message or visit us at Trace Expert City: we respond to partnership, speaking, and venture inquiries."
       />
 
       <div className="grid gap-8 lg:grid-cols-2 lg:gap-10">
@@ -23,7 +23,7 @@ export function HomeContact() {
               Send a message
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-kk-muted">
-              Send your details securely — the inquiry goes directly to Keerthi&apos;s office.
+              Send your details securely, the inquiry goes directly to Keerthi&apos;s office.
             </p>
             <div className="mt-6 flex-1">
               <ContactForm />
@@ -89,13 +89,13 @@ export function HomeContact() {
                 Trace Expert City, Colombo
               </h3>
               <p className="mt-1.5 text-sm text-kk-muted">
-                Bay 09 · AC19 — open for meetings by appointment.
+                Bay 09 · AC19, open for meetings by appointment.
               </p>
             </div>
             <div className="relative min-h-[320px] flex-1 md:min-h-[420px]">
               <iframe
                 src={mapEmbedSrc}
-                title="Location — Trace Expert City, Colombo"
+                title="Location: Trace Expert City, Colombo"
                 className="absolute inset-0 h-full w-full border-0"
                 loading="lazy"
                 allowFullScreen

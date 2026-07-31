@@ -60,7 +60,7 @@ export default function AboutPage() {
         <SectionHeading
           eyebrow="Ventures"
           title="Companies building the next chapter"
-          description="Jendo and Effective Solutions — MedTech and IoT platforms advancing Sri Lankan innovation globally."
+          description="Jendo and Effective Solutions: MedTech and IoT platforms advancing Sri Lankan innovation globally."
         />
         <VenturesShowcase items={ventures} />
       </Section>
@@ -109,7 +109,7 @@ export default function AboutPage() {
           <Reveal>
             <SectionHeading
               eyebrow="The origin story"
-              title="Winning John Keells X — where Jendo began"
+              title="Winning John Keells X: where Jendo began"
               description={about.jkxStory}
             />
           </Reveal>

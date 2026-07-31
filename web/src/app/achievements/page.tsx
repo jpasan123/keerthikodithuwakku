@@ -39,7 +39,7 @@ export default function AchievementsPage() {
               Recognition built on research, patents, and impact
             </h1>
             <p className="mt-5 max-w-2xl text-lg text-white/90 leading-relaxed">
-              From national ICT awards to global fellowships — a timeline of
+              From national ICT awards to global fellowships, a timeline of
               milestones that reflect sustained innovation leadership.
             </p>
           </Reveal>
@@ -145,7 +145,7 @@ export default function AchievementsPage() {
         <SectionHeading
           eyebrow="Media"
           title="Television and interview features"
-          description="Compact player — muted autoplay on arrival, then advances. Hover to pause; unmute with YouTube controls."
+          description="Compact player: muted autoplay on arrival, then advances. Hover to pause; unmute with YouTube controls."
         />
         <VideoCarousel videos={achievements.videos} />
       </Section>

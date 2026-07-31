@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { Button } from "./Button";
 import { site } from "@/lib/site";
 
-/** Wide, clean landscapes only — no close-up faces / cutout stage composites */
+/** Wide, clean landscapes only, no close-up faces / cutout stage composites */
 const backgrounds = [
   {
     src: "/media/gallery/boardroom-hq.jpg",
@@ -51,7 +51,7 @@ export function ConnectCTA() {
         aria-hidden
       />
       <div className="grid lg:grid-cols-2 min-h-0 lg:min-h-[420px]">
-        {/* Copy panel — always readable, never fighting a cropped face */}
+        {/* Copy panel, always readable, never fighting a cropped face */}
         <div className="relative order-2 lg:order-1 flex items-center">
           <div className="absolute inset-0 bg-gradient-to-br from-[#12150f] via-[#1a1f16] to-[#2a2418]" />
           <div className="absolute inset-0 opacity-40 bg-[radial-gradient(ellipse_at_20%_20%,rgba(241,130,0,0.22),transparent_55%)]" />
@@ -96,7 +96,7 @@ export function ConnectCTA() {
           </div>
         </div>
 
-        {/* Image panel — fixed aspect so subjects are not sliced by a short banner */}
+        {/* Image panel, fixed aspect so subjects are not sliced by a short banner */}
         <div className="relative order-1 lg:order-2 aspect-[16/11] sm:aspect-[16/10] lg:aspect-auto lg:min-h-full overflow-hidden">
           <AnimatePresence mode="wait">
             <motion.div

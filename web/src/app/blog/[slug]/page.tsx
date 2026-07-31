@@ -41,26 +41,31 @@ export default async function BlogPostPage({ params }: Props) {
     <>
       <article>
         <header className="border-b border-kk-border bg-kk-surface">
-          <div className="container-kk max-w-3xl pb-12 pt-28 md:pb-16 md:pt-32">
-            <Link
-              href="/blog"
-              className="inline-flex items-center gap-2 text-sm font-medium text-kk-muted hover:text-kk-accent transition-colors mb-6"
-            >
-              <ArrowLeft className="size-4" /> Back to blog
-            </Link>
-            <time className="text-xs font-bold tracking-[0.12em] uppercase text-kk-accent">
-              {new Date(post.date).toLocaleDateString("en-GB", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })}
-            </time>
-            <h1 className="mt-3 font-display text-3xl md:text-5xl leading-[1.12] text-kk-ink">
-              {post.title}
-            </h1>
-            <p className="mt-4 text-lg text-kk-muted leading-relaxed">
-              {post.excerpt}
-            </p>
+          <div className="container-kk max-w-3xl pb-12 pt-32 md:pb-16 md:pt-36">
+            <div className="flex flex-col gap-5 md:gap-6">
+              <Link
+                href="/blog"
+                className="inline-flex w-fit items-center gap-2 text-sm font-medium text-kk-muted hover:text-kk-accent transition-colors"
+              >
+                <ArrowLeft className="size-4 shrink-0" />
+                Back to blog
+              </Link>
+              <div className="space-y-3 md:space-y-4">
+                <time className="block text-xs font-bold tracking-[0.12em] uppercase text-kk-accent">
+                  {new Date(post.date).toLocaleDateString("en-GB", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </time>
+                <h1 className="font-display text-3xl md:text-5xl leading-[1.12] text-kk-ink">
+                  {post.title}
+                </h1>
+                <p className="text-lg text-kk-muted leading-relaxed">
+                  {post.excerpt}
+                </p>
+              </div>
+            </div>
           </div>
         </header>
 

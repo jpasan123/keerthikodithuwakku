@@ -7,7 +7,7 @@ import { Button } from "./Button";
 
 /**
  * Each slide carries a desktop (cinematic landscape) image AND a
- * mobile image where Keerthi is centered — so tall phones never crop
+ * mobile image where Keerthi is centered, so tall phones never crop
  * to a logo or another person. Positions are tuned per orientation.
  */
 const slides = [
@@ -18,7 +18,7 @@ const slides = [
     mobilePosition: "object-[41%_54%]",
     eyebrow: "ICT Leader of the Year 2025",
     title: "Building global MedTech innovation from Sri Lanka",
-    text: "Chairman & CEO of Jendo Innovations and Effective Solutions — advancing AI-enabled preventive healthcare and digital transformation.",
+    text: "Chairman & CEO of Jendo Innovations and Effective Solutions: advancing AI-enabled preventive healthcare and digital transformation.",
   },
   {
     src: "/media/hero/speaking-stage-hq.jpg",
@@ -27,7 +27,7 @@ const slides = [
     mobilePosition: "object-[48%_18%]",
     eyebrow: "MedTech Founder & Technopreneur",
     title: "Recognised leadership in business and innovation",
-    text: "From national awards to global fellowships — building ventures that turn research into real clinical and commercial impact.",
+    text: "From national awards to global fellowships: building ventures that turn research into real clinical and commercial impact.",
   },
   {
     src: "/media/gallery/speaking-hq.jpg",
@@ -36,7 +36,7 @@ const slides = [
     mobilePosition: "object-[42%_20%]",
     eyebrow: "Speaker & Innovation Strategist",
     title: "Sharing the innovation journey on global stages",
-    text: "Leading deep-tech ventures with measurable clinical and commercial impact — from research to breakthrough products.",
+    text: "Leading deep-tech ventures with measurable clinical and commercial impact: from research to breakthrough products.",
   },
   {
     src: "/media/hero/network-hq.jpg",
@@ -105,7 +105,7 @@ export function HeroSlider() {
             }}
             aria-hidden={i !== index}
           >
-            {/* Full-bleed cover on every breakpoint — never letterbox */}
+            {/* Full-bleed cover on every breakpoint, never letterbox */}
             <Image
               src={s.mobileSrc}
               alt=""
@@ -133,7 +133,7 @@ export function HeroSlider() {
       <div className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-r from-black/45 via-black/12 to-transparent md:from-black/50 md:via-black/15" />
 
       <div className="relative z-[3] flex h-full min-h-0 flex-col">
-        {/* Lower-third placement — balanced above the recognition bar, not floating mid-screen */}
+        {/* Lower-third placement, balanced above the recognition bar, not floating mid-screen */}
         <div className="container-kk flex min-h-0 flex-1 flex-col justify-end pb-5 pt-[5rem] sm:pb-6 sm:pt-28 md:pb-9 md:pt-32 lg:pb-11">
           <motion.div
             key={slide.title}
@@ -199,7 +199,7 @@ export function HeroSlider() {
           />
 
           <div className="relative flex items-stretch">
-            {/* Fixed label — stays while achievements scroll */}
+            {/* Fixed label, stays while achievements scroll */}
             <div className="relative z-[2] hidden shrink-0 items-center border-r border-white/12 bg-white/6 px-5 sm:flex md:px-6">
               <p className="whitespace-nowrap text-[0.65rem] font-bold uppercase tracking-[0.22em] text-kk-accent">
                 Recognition

@@ -6,17 +6,17 @@ const faqs: Faq[] = [
   {
     match: /who|keerthi|about|bio|profile/i,
     reply:
-      "Keerthi Kodithuwakku is a MedTech founder and technopreneur from Sri Lanka — Chairman & CEO of Jendo Innovations, Founder & CEO of Effective Solutions, and CEO & Director of Koding. He builds AI-enabled preventive healthcare and IoT solutions.",
+      "Keerthi Kodithuwakku is a MedTech founder and technopreneur from Sri Lanka: Chairman & CEO of Jendo Innovations, Founder & CEO of Effective Solutions, and CEO & Director of Koding. He builds AI-enabled preventive healthcare and IoT solutions.",
   },
   {
     match: /jendo|jendo\.health|vascular|heart|endothelial/i,
     reply:
-      "JENDO is an AI-powered, non-invasive vascular health monitor that detects endothelial dysfunction — an early sign of cardiovascular disease — in about 15 minutes. It has US and Japan granted patents. Learn more at jendo.health or the Services page.",
+      "JENDO is an AI-powered, non-invasive vascular health monitor that detects endothelial dysfunction: an early sign of cardiovascular disease: in about 15 minutes. It has US and Japan granted patents. Learn more at jendo.health or the Services page.",
   },
   {
     match: /mind\s*drone|myndrone|drone|brain|bci|neuro/i,
     reply:
-      "MindDrone (MynDrone) is Sri Lanka's first mind-controlled drone — a brain–computer interface that lets users fly a drone using brain waves. Read more on the Blog or Services pages.",
+      "MindDrone (MynDrone) is Sri Lanka's first mind-controlled drone: a brain–computer interface that lets users fly a drone using brain waves. Read more on the Blog or Services pages.",
   },
   {
     match:
@@ -31,7 +31,7 @@ const faqs: Faq[] = [
   {
     match: /effective solutions|ananke|iot|koding/i,
     reply:
-      "Effective Solutions (Founder & CEO) delivers IoT, AI, and digital transformation across private sector, government, and defense, with presence in Sri Lanka, Japan, and England — including the award-winning AnankeIoT platform. Koding is also part of his venture stack.",
+      "Effective Solutions (Founder & CEO) delivers IoT, AI, and digital transformation across private sector, government, and defense, with presence in Sri Lanka, Japan, and England: including the award-winning AnankeIoT platform. Koding is also part of his venture stack.",
   },
   {
     match: /education|university|moratuwa|mba|lecturer|mentor/i,

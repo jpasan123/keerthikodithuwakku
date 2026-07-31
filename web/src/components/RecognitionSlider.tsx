@@ -82,8 +82,8 @@ export function RecognitionSlider({
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="grid w-full items-start gap-5 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] md:items-center md:gap-7"
           >
-            {/* Image — standalone; size follows the photo, not the text */}
-            <div className="relative w-full leading-none">
+            {/* Image, capped height so tall portraits stay balanced with the card */}
+            <div className="relative w-full overflow-hidden rounded-[22px] shadow-sm sm:rounded-[28px] aspect-[4/3] max-h-[220px] sm:max-h-[260px] md:max-h-[300px] lg:max-h-[340px]">
               <AnimatePresence mode="wait" initial={false}>
                 <motion.div
                   key={image.src}
@@ -91,13 +91,13 @@ export function RecognitionSlider({
                   animate={{ opacity: 1 }}
                   exit={reduce ? undefined : { opacity: 0 }}
                   transition={{ duration: 0.35 }}
+                  className="relative h-full w-full"
                 >
                   <Image
                     src={image.src}
                     alt={image.alt}
-                    width={image.width}
-                    height={image.height}
-                    className="block h-auto w-full rounded-[22px] shadow-sm sm:rounded-[28px]"
+                    fill
+                    className="object-cover object-[50%_20%]"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 52vw"
                     quality={95}
                     priority={storyIndex === 0 && imageIndex === 0}
@@ -130,7 +130,7 @@ export function RecognitionSlider({
               ) : null}
             </div>
 
-            {/* Description — its own frame; height from content only */}
+            {/* Description, its own frame; height from content only */}
             <article className="flex flex-col rounded-[22px] border border-kk-border bg-white p-5 shadow-sm sm:rounded-[28px] sm:p-6 md:p-7 lg:p-8 xl:p-10">
               <h3 className="font-display text-xl leading-snug text-kk-ink sm:text-2xl md:text-[1.65rem] lg:text-[1.85rem]">
                 {story.title}

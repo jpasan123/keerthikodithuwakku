@@ -6,7 +6,7 @@ import { sendPageView } from "@/lib/gtag";
 
 /**
  * Tracks page views on client-side navigations (Next.js App Router).
- * Without this, GA4 only records the first page load — not /about, /blog, etc.
+ * Without this, GA4 only records the first page load, not /about, /blog, etc.
  */
 export function GoogleAnalyticsPageView({ gaId }: { gaId: string }) {
   const pathname = usePathname();

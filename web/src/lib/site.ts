@@ -2,7 +2,7 @@ export const site = {
   name: "Keerthi Kodithuwakku",
   title: "Keerthi Kodithuwakku | MedTech Founder & Technopreneur",
   description:
-    "Biomedical innovator, Chairman & CEO of Jendo Innovations and Effective Solutions — building AI-enabled preventive healthcare from Sri Lanka to the world.",
+    "Biomedical innovator, Chairman & CEO of Jendo Innovations and Effective Solutions: building AI-enabled preventive healthcare from Sri Lanka to the world.",
   url: "https://keerthikodithuwakku.com",
   email: "keerthi@jendoinnovations.com",
   phone: "+94 76 621 0120",

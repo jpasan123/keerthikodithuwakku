@@ -32,7 +32,7 @@ const socialBtn =
 export function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-white/10 bg-[#0c0e0a] text-white">
-      {/* Atmosphere — soft depth, not flat white */}
+      {/* Atmosphere, soft depth, not flat white */}
       <div
         className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#151911] via-[#0c0e0a] to-[#0a0c08]"
         aria-hidden

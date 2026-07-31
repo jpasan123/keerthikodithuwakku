@@ -66,7 +66,7 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* 1) Latest recognition — featured slider (one story at a time) */}
+      {/* 1) Latest recognition, featured slider (one story at a time) */}
       <Section surface>
         <SectionHeading
           eyebrow="Recognition"
@@ -82,7 +82,7 @@ export default function HomePage() {
             <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[2rem] rounded-t-[45%] border border-kk-border bg-kk-border shadow-lg md:max-w-none">
               <Image
                 src="/media/about/pioneers.png"
-                alt="Keerthi Kodithuwakku — biomedical innovation leadership"
+                alt="Keerthi Kodithuwakku: biomedical innovation leadership"
                 fill
                 className="object-cover object-[50%_20%]"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -132,7 +132,7 @@ export default function HomePage() {
               offers.
             </>
           }
-          description="Strategy, technology, and leadership support — built the way high-growth founders expect to work."
+          description="Strategy, technology, and leadership support: built the way high-growth founders expect to work."
         />
         <div className="grid gap-6 md:grid-cols-3 md:gap-7">
           {uvp.map((item, i) => (
@@ -172,7 +172,7 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* 5) Expertise — numbered services once */}
+      {/* 5) Expertise, numbered services once */}
       <Section surface>
         <div className="grid gap-10 lg:grid-cols-[1.05fr_1fr] lg:gap-14">
           <Reveal>
@@ -246,12 +246,12 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* 7) Media proof — gallery + video (different formats, not blog repeats) */}
+      {/* 7) Media proof, gallery + video (different formats, not blog repeats) */}
       <Section surface>
         <SectionHeading
           eyebrow="Gallery"
           title="Leadership and collaboration in focus"
-          description="Selected photographs — click any image to open full size."
+          description="Selected photographs: click any image to open full size."
         />
         <GalleryLightbox items={gallery} />
       </Section>
@@ -265,12 +265,12 @@ export default function HomePage() {
         <VideoCarousel videos={achievements.videos} />
       </Section>
 
-      {/* 8) Speaking highlights — no fellowship/alumni overlap */}
+      {/* 8) Speaking highlights, no fellowship/alumni overlap */}
       <Section surface>
         <SectionHeading
           eyebrow="Impact"
           title="Selected speaking & programme moments"
-          description="Distinct from fellowships and blog stories — conference and workshop highlights."
+          description="Distinct from fellowships and blog stories: conference and workshop highlights."
         />
         <div className="grid gap-6 md:grid-cols-3 md:gap-7">
           {highlights.map((item, i) => (
@@ -307,12 +307,12 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* 9) Blog once — excludes Recognition stories */}
+      {/* 9) Blog once, excludes Recognition stories */}
       <Section>
         <SectionHeading
           eyebrow="Insights"
           title="Latest from the blog"
-          description="Awards, alumni leadership, regulatory journeys, and venture milestones — shown once here."
+          description="Awards, alumni leadership, regulatory journeys, and venture milestones: shown once here."
         />
         <FeaturedStories items={featuredStories} />
         <div className="mt-8 text-center">

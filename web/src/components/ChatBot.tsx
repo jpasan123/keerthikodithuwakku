@@ -17,7 +17,7 @@ const SUGGESTIONS = [
 ] as const;
 
 const WELCOME =
-  "Hi — I'm Keerthi's site assistant. Ask about his work, JENDO, awards, or appointments.";
+  "Hi: I'm Keerthi's site assistant. Ask about his work, JENDO, awards, or appointments.";
 
 export function ChatBot() {
   const reduce = useReducedMotion();

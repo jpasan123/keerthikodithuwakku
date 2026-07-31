@@ -62,7 +62,7 @@ export function VideoCarousel({
       onMouseLeave={() => setPaused(false)}
     >
       <div className="relative aspect-video overflow-hidden rounded-2xl border border-kk-border bg-kk-ink shadow-[0_16px_40px_rgba(12,14,10,0.1)]">
-        {/* Poster stays visible until iframe paints — avoids black flash */}
+        {/* Poster stays visible until iframe paints, avoids black flash */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={thumbPath(current.id)}

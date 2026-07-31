@@ -40,7 +40,7 @@ export const services = [
   },
 ] as const;
 
-/** Products & innovations — surfaced on the Services page */
+/** Products & innovations, surfaced on the Services page */
 export const products = [
   {
     name: "JENDO",
@@ -121,8 +121,8 @@ export const fellowships = [
 ] as const;
 
 /**
- * Home Recognition — featured slider (WP-style), latest first.
- * Each story shown once here — not again in Insights / Gallery cards.
+ * Home Recognition, featured slider (WP-style), latest first.
+ * Each story shown once here, not again in Insights / Gallery cards.
  */
 export const recognition = [
   {
@@ -133,7 +133,7 @@ export const recognition = [
     paragraphs: [
       "Sri Lanka’s Keerthi Kodithuwakku, Chairman and CEO of Jendo Innovations Inc., has been selected as one of 28 fellows for the prestigious Eisenhower Fellowships 2026 Innovative Entrepreneurs Program.",
       "Chosen from more than 500 global applicants, this honour recognises 12+ years of building Jendo into a pioneering biomedical company with US and Japan granted patents for non-invasive vascular health monitoring.",
-      "Fellowship focus: designing a South Asian Regulatory Framework for AI Medical Devices — a proud moment for Sri Lanka’s deep tech ecosystem.",
+      "Fellowship focus: designing a South Asian Regulatory Framework for AI Medical Devices: a proud moment for Sri Lanka’s deep tech ecosystem.",
     ],
     tags: ["Eisenhower", "Global Fellows", "MedTech Policy"],
     images: [
@@ -188,11 +188,11 @@ export const recognition = [
   {
     id: "ict-leader-2025",
     kicker:
-      "National ICT honour — recognised among Sri Lanka’s foremost technology leaders by the Computer Society of Sri Lanka.",
-    title: "ICT Leader of the Year 2025 — National ICT Awards",
+      "National ICT honour: recognised among Sri Lanka’s foremost technology leaders by the Computer Society of Sri Lanka.",
+    title: "ICT Leader of the Year 2025: National ICT Awards",
     paragraphs: [
       "One of the highest national honors in Sri Lanka’s ICT sector, conferred annually by the Computer Society of Sri Lanka.",
-      "Achieved at the age of 35 — among the youngest awardees in the history of the honor — recognising MedTech entrepreneurship and contribution to the country’s digital innovation ecosystem.",
+      "Achieved at the age of 35, among the youngest awardees in the history of the honor, recognising MedTech entrepreneurship and contribution to the country’s digital innovation ecosystem.",
       "Coverage across the Daily Mirror, Sunday Times, and the Ministry of Digital Economy highlighted years of building technology that connects research, patents, and real-world healthcare outcomes.",
     ],
     tags: ["CSSL", "National Awards", "ICT Leadership"],
@@ -209,7 +209,7 @@ export const recognition = [
   },
 ] as const;
 
-/** Home Insights — exclude stories already in Recognition */
+/** Home Insights, exclude stories already in Recognition */
 export const featuredStorySlugs = [
   {
     slug: "alumni-association-moratuwa",
@@ -234,7 +234,7 @@ export const featuredStorySlugs = [
 ] as const;
 
 /**
- * Home gallery — excludes Recognition / Impact / Insights / Partnerships
+ * Home gallery, excludes Recognition / Impact / Insights / Partnerships
  * hero images so the same photo never repeats on one screen.
  */
 export const gallery = [
@@ -242,15 +242,15 @@ export const gallery = [
   { src: "/media/gallery/event-jul-04.jpg", alt: "Advanced production facility tour" },
   { src: "/media/gallery/speaking-hq.jpg", alt: "Keynote speaking engagement" },
   { src: "/media/gallery/team-hq-02.jpg", alt: "Leadership team collaboration" },
-  { src: "/media/gallery/team-hq-01.jpg", alt: "Conference address — Chemex" },
+  { src: "/media/gallery/team-hq-01.jpg", alt: "Conference address: Chemex" },
   { src: "/media/gallery/kk-hq-06.jpg", alt: "St Antony’s College, University of Oxford" },
-  { src: "/media/gallery/kk-hq-05.jpg", alt: "Jendo team — technology breakthrough" },
+  { src: "/media/gallery/kk-hq-05.jpg", alt: "Jendo team: technology breakthrough" },
   { src: "/media/gallery/kk-hq-04.jpg", alt: "Business strategy session" },
   { src: "/media/gallery/kk-hq-03.jpg", alt: "Speaking engagement" },
   { src: "/media/gallery/kk-hq-02.jpg", alt: "Executive collaboration" },
   { src: "/media/gallery/kk-hq-01.jpg", alt: "Professional portrait" },
-  { src: "/media/gallery/event-jul-07.jpg", alt: "Formal portrait — international visit" },
-  { src: "/media/gallery/event-jul-01.jpg", alt: "Technical presentation — regulatory pathway" },
+  { src: "/media/gallery/event-jul-07.jpg", alt: "Formal portrait: international visit" },
+  { src: "/media/gallery/event-jul-01.jpg", alt: "Technical presentation: regulatory pathway" },
   { src: "/media/gallery/event-jul-02.jpg", alt: "The Age of AI exhibition" },
   { src: "/media/gallery/event-jul-03.jpg", alt: "Professional engagement July 2026" },
   { src: "/media/gallery/event-jul-05.jpg", alt: "Industry visit July 2026" },
@@ -260,34 +260,34 @@ export const gallery = [
   { src: "/media/gallery/oxford-hq.jpg", alt: "Healthcare industry exhibition and networking" },
   { src: "/media/gallery/event-hq-02.jpg", alt: "Strategic briefing presentation" },
   { src: "/media/gallery/kk-oxford-arch.jpg", alt: "University of Oxford campus architecture" },
-  { src: "/media/gallery/chevening-event.jpg", alt: "Guest speaker — Morph Lab, Imperial College London" },
+  { src: "/media/gallery/chevening-event.jpg", alt: "Guest speaker: Morph Lab, Imperial College London" },
   { src: "/media/portraits/keerthi-ceo.jpeg", alt: "Chairman & CEO portrait" },
   { src: "/media/awards/ada-derana.jpeg", alt: "TV Derana science initiative" },
-  { src: "/media/news/feature-speaking.jpg", alt: "CSSL National ICT Awards — stage presentation" },
+  { src: "/media/news/feature-speaking.jpg", alt: "CSSL National ICT Awards: stage presentation" },
   { src: "/media/about/collaboration.jpg", alt: "Strategic collaboration" },
   { src: "/media/awards/jkx-victory.jpg", alt: "John Keells X victory 2016" },
   { src: "/media/awards/young-innovator-2024.jpg", alt: "Young Innovator 2024" },
   { src: "/media/gallery/kk-hq-07.jpg", alt: "Roundtable discussion with international partners" },
-  { src: "/media/publications/pub-mindfulness-a.jpg", alt: "Seedstars Sri Lanka — stage presentation" },
+  { src: "/media/publications/pub-mindfulness-a.jpg", alt: "Seedstars Sri Lanka: stage presentation" },
 ] as const;
 
 export const highlights = [
   {
     title: "Sri Lanka’s Impact at the Global AI for Health Summit",
     excerpt:
-      "Represented Sri Lanka at the 2nd Global Initiative on AI for Health (GIAI4H) summit in Singapore, hosted by NUS alongside WIPO, WHO, and ITU — showcasing AI-driven cardiovascular health solutions.",
+      "Represented Sri Lanka at the 2nd Global Initiative on AI for Health (GIAI4H) summit in Singapore, hosted by NUS alongside WIPO, WHO, and ITU, showcasing AI-driven cardiovascular health solutions.",
     image: "/media/news/giai4h-singapore.jpg",
     href: "/achievements",
   },
   {
-    title: "ASNAC 2025 — Congress of Sri Lankan Neurologists",
+    title: "ASNAC 2025: Congress of Sri Lankan Neurologists",
     excerpt:
-      "Presented on AI-driven diagnostics, brain–computer interfaces, and non-invasive monitoring — encouraging researchers to protect and scale their work through patents.",
+      "Presented on AI-driven diagnostics, brain–computer interfaces, and non-invasive monitoring, encouraging researchers to protect and scale their work through patents.",
     image: "/media/news/asnac-2025.jpg",
     href: "/achievements",
   },
   {
-    title: "An IP-Driven Technopreneur — Scale Up Your IP",
+    title: "An IP-Driven Technopreneur: Scale Up Your IP",
     excerpt:
       "Speaker at the WIPO / NIA workshop at the University of Colombo, helping startups and university spin-offs use intellectual property to bridge lab research and market needs.",
     image: "/media/news/ip-workshop.jpg",
@@ -306,7 +306,7 @@ export const uvp = [
   {
     eyebrow: "Global reach",
     title: "Cross-border expertise",
-    body: "Teams and partnerships across Sri Lanka, Japan, the UK, and the US — bringing diverse insight to every engagement.",
+    body: "Teams and partnerships across Sri Lanka, Japan, the UK, and the US: bringing diverse insight to every engagement.",
     image: "/media/hero/network-hq.jpg",
     href: "/about",
   },
@@ -325,7 +325,7 @@ export const ventures = [
     name: "Jendo Innovations",
     role: "Chairman & CEO",
     summary:
-      "Deep-tech MedTech venture building an AI-powered, non-invasive vascular health monitoring system — detecting endothelial dysfunction, the earliest indicator of cardiovascular disease, in about 15 minutes.",
+      "Deep-tech MedTech venture building an AI-powered, non-invasive vascular health monitoring system: detecting endothelial dysfunction, the earliest indicator of cardiovascular disease, in about 15 minutes.",
     href: "https://jendo.health/",
     image: "/media/products/jendo-device-kit.jpg",
     position: "object-[50%_45%]",
@@ -335,7 +335,7 @@ export const ventures = [
     name: "Effective Solutions",
     role: "Founder & CEO",
     summary:
-      "Award-winning technology company founded in 2013 by University of Moratuwa engineers — delivering IoT, AI, and digital transformation across private sector, government, and defense, with presence in Sri Lanka, Japan, and England.",
+      "Award-winning technology company founded in 2013 by University of Moratuwa engineers: delivering IoT, AI, and digital transformation across private sector, government, and defense, with presence in Sri Lanka, Japan, and England.",
     href: "https://www.effectivesolutions.lk/",
     image: "/media/gallery/boardroom-hq.jpg",
     position: "object-[50%_35%]",
@@ -381,32 +381,32 @@ export const featuredAwards = [
   {
     title: "Global Patent Recognitions",
     subtitle: "United States · Japan · Sri Lanka",
-    body: "Jendo has been recognized globally for its innovative approach to vascular health monitoring through prestigious patents awarded in multiple countries — including the granted USPTO Patent 10,912,464 B2. Each patent underscores a commitment to groundbreaking research, technological advancement, and protecting intellectual property while expanding globally.",
+    body: "Jendo has been recognized globally for its innovative approach to vascular health monitoring through prestigious patents awarded in multiple countries: including the granted USPTO Patent 10,912,464 B2. Each patent underscores a commitment to groundbreaking research, technological advancement, and protecting intellectual property while expanding globally.",
     image: "/media/awards/global-patents.png",
   },
   {
     title: "ICT Leader of the Year 2025",
-    subtitle: "National ICT Awards — CSSL",
-    body: "One of the highest national honors in Sri Lanka's ICT sector, conferred annually by the Computer Society of Sri Lanka. Achieved at the age of 35 — among the youngest awardees in the history of the honor. Recognised across the Daily Mirror, Sunday Times, and the Ministry of Digital Economy.",
+    subtitle: "National ICT Awards: CSSL",
+    body: "One of the highest national honors in Sri Lanka's ICT sector, conferred annually by the Computer Society of Sri Lanka. Achieved at the age of 35, among the youngest awardees in the history of the honor. Recognised across the Daily Mirror, Sunday Times, and the Ministry of Digital Economy.",
     image: "/media/awards/ict-leader-2025.jpeg",
   },
   {
     title: "Young Innovator of the Year 2024",
     subtitle: "University of Sri Jayewardenepura",
-    body: "Awarded by the Faculty of Allied Health Sciences, acknowledging leadership in MedTech innovation and meaningful contributions toward advancing modern healthcare — bridging technology and healthcare to improve accessibility, diagnostics, and patient outcomes.",
+    body: "Awarded by the Faculty of Allied Health Sciences, acknowledging leadership in MedTech innovation and meaningful contributions toward advancing modern healthcare: bridging technology and healthcare to improve accessibility, diagnostics, and patient outcomes.",
     image: "/media/awards/young-innovator-2024.jpg",
   },
   {
-    title: "CEO of the Year 2022 — AI Category",
-    subtitle: "National CEO Awards — The CEO Magazine",
-    body: "Honors leadership in leveraging artificial intelligence to drive innovation, operational excellence, and meaningful societal impact — reflecting the collective efforts of a high-performing team applying AI to solve complex challenges.",
+    title: "CEO of the Year 2022: AI Category",
+    subtitle: "National CEO Awards: The CEO Magazine",
+    body: "Honors leadership in leveraging artificial intelligence to drive innovation, operational excellence, and meaningful societal impact: reflecting the collective efforts of a high-performing team applying AI to solve complex challenges.",
     image: "/media/portraits/keerthi-ceo.jpeg",
   },
 ] as const;
 
 export const achievements = {
   stats: [
-    { value: 28, suffix: "", label: "Eisenhower Fellows — from 500+ applicants" },
+    { value: 28, suffix: "", label: "Eisenhower Fellows: from 500+ applicants" },
     { value: 3, suffix: "", label: "Countries with patent recognition" },
     { value: 12, suffix: "+", label: "Years building Jendo" },
     { value: 7, suffix: "+", label: "National & global awards" },
@@ -415,69 +415,69 @@ export const achievements = {
     {
       year: "2026 / 2025",
       items: [
-        "Eisenhower Fellowships 2026 — Innovative Entrepreneurs Program (1 of 28 fellows from 500+ global applicants)",
-        "Chevening CRISP Fellowship — St Cross College, University of Oxford",
-        "ICT Leader of the Year 2025 — National ICT Awards (CSSL)",
+        "Eisenhower Fellowships 2026: Innovative Entrepreneurs Program (1 of 28 fellows from 500+ global applicants)",
+        "Chevening CRISP Fellowship: St Cross College, University of Oxford",
+        "ICT Leader of the Year 2025: National ICT Awards (CSSL)",
         "WIPO International Patent Drafting Training Program, Geneva",
-        "Global Initiative on AI for Health — GIAI4H, Singapore",
-        "Planet 43 — JAPAC Deep Tech Accelerator Program",
-        "AsiaBerlin Summit 2025 — exploring partnerships with German medical distributors",
-        "WIPO Master Class on Intellectual Property — completed",
-        "Brain–Computer Interface Forum, Shangri-La Hambantota — \"Unlocking the Potential of BCI: What Sri Lanka Has to Offer\"",
-        "Techno Entrepreneurship Forum 2025 — University of Colombo",
+        "Global Initiative on AI for Health: GIAI4H, Singapore",
+        "Planet 43: JAPAC Deep Tech Accelerator Program",
+        "AsiaBerlin Summit 2025: exploring partnerships with German medical distributors",
+        "WIPO Master Class on Intellectual Property: completed",
+        "Brain–Computer Interface Forum, Shangri-La Hambantota: \"Unlocking the Potential of BCI: What Sri Lanka Has to Offer\"",
+        "Techno Entrepreneurship Forum 2025: University of Colombo",
         "Presented at the International Conference of the Neurologists' Association of Sri Lanka (ASNAC)",
-        "Speaker — \"Scale Up Your IP\" workshop (WIPO + NIA), University of Colombo",
+        "Speaker: \"Scale Up Your IP\" workshop (WIPO + NIA), University of Colombo",
         "Presented at LATTO Meeting / Mini-Conference at SLINTEC on commercializing deep-tech innovations",
-        "Secretary — Alumni Association, University of Moratuwa",
+        "Secretary: Alumni Association, University of Moratuwa",
         "Speaker at Mora Ventures 6.0",
       ],
     },
     {
       year: "2024",
       items: [
-        "Young Innovator of the Year — University of Sri Jayewardenepura",
+        "Young Innovator of the Year: University of Sri Jayewardenepura",
         "WIPO Conversation on IP and Frontier Technologies",
         "WIPO Global Case Study on Artificial Intelligence in Health",
-        "Engaged at Asian Productivity Organization (APO) HQ, Tokyo — completed the APO Program",
-        "Speaker at Mora Ventures 6.0 — \"Introduction to Entrepreneurship and Innovation\"",
+        "Engaged at Asian Productivity Organization (APO) HQ, Tokyo: completed the APO Program",
+        "Speaker at Mora Ventures 6.0: \"Introduction to Entrepreneurship and Innovation\"",
       ],
     },
     {
       year: "2023",
       items: [
-        "Industrial exhibition in Tokyo — exploring the impact of Sri Lankan biomedical technology",
+        "Industrial exhibition in Tokyo: exploring the impact of Sri Lankan biomedical technology",
         "Rotary District Conference, Malaysia",
       ],
     },
     {
       year: "2022",
       items: [
-        "CEO of the Year — Artificial Intelligence Category, National CEO Awards",
-        "Commonwealth Digital Health Award — Runners-Up (Faculty of Medicine, University of Colombo)",
-        "01 Awards — Gold, Best Use of Mobile (Healthcare & Personal Services) for Jendo devices",
-        "01 Awards — Gold, Best Digital-Enabled Product/Service for the AnankeIoT Platform",
+        "CEO of the Year: Artificial Intelligence Category, National CEO Awards",
+        "Commonwealth Digital Health Award: Runners-Up (Faculty of Medicine, University of Colombo)",
+        "01 Awards: Gold, Best Use of Mobile (Healthcare & Personal Services) for Jendo devices",
+        "01 Awards: Gold, Best Digital-Enabled Product/Service for the AnankeIoT Platform",
       ],
     },
     {
       year: "2019",
       items: [
-        "Best IoT Startup of the Year — National ICT Awards, for the AnankeIoT Platform (Effective Solutions)",
+        "Best IoT Startup of the Year: National ICT Awards, for the AnankeIoT Platform (Effective Solutions)",
       ],
     },
     {
       year: "2018",
       items: [
-        "Emerging ICT Leader of the Year — National ICT Awards (highest national ICT honor under age 30, CSSL)",
-        "Best Startup of the Year — National ICT Awards, awarded to Jendo Innovations",
+        "Emerging ICT Leader of the Year: National ICT Awards (highest national ICT honor under age 30, CSSL)",
+        "Best Startup of the Year: National ICT Awards, awarded to Jendo Innovations",
       ],
     },
     {
       year: "2016",
       items: [
-        "Winner — John Keells X Open Innovation Challenge (Rs 2 million, from 148 applications)",
+        "Winner: John Keells X Open Innovation Challenge (Rs 2 million, from 148 applications)",
         "National Science Foundation Grant Winner",
-        "Sri Lankan Startup Delegation — 4YFN MWC, Barcelona",
-        "Sri Lankan Delegation — Japan IT Week 2016",
+        "Sri Lankan Startup Delegation: 4YFN MWC, Barcelona",
+        "Sri Lankan Delegation: Japan IT Week 2016",
       ],
     },
   ],
@@ -486,35 +486,35 @@ export const achievements = {
     {
       id: "eFdcP4RWKRg",
       title:
-        'Building and Commercializing MedTech IP from Sri Lanka — Morph Lab, Imperial',
+        'Building and Commercializing MedTech IP from Sri Lanka, Morph Lab, Imperial',
     },
     {
       id: "PmWH84RqYiE",
       title:
-        "The Journey Towards a US Patent — Keerthi Kodithuwakku, Jendo Innovations",
+        "The Journey Towards a US Patent: Keerthi Kodithuwakku, Jendo Innovations",
     },
     {
       id: "WKAR3etccU4",
-      title: "New invention for identifying heart patients — Jendo",
+      title: "New invention for identifying heart patients: Jendo",
     },
     {
       id: "-bqUvBCFQxk",
-      title: "Sri Lanka's very first mind-controlled drone — Jendo Innovation",
+      title: "Sri Lanka's very first mind-controlled drone: Jendo Innovation",
     },
     {
       id: "MKTUO5NX1Qg",
-      title: "Effective Solutions — interview at 4YFN 2017, Barcelona",
+      title: "Effective Solutions: interview at 4YFN 2017, Barcelona",
     },
     {
       id: "F-KEnSZ2KzI",
-      title: "Business Today — CEO of Effective Solutions (2021)",
+      title: "Business Today: CEO of Effective Solutions (2021)",
     },
     {
       id: "bcE8pwGF3Zw",
-      title: "Aluth Parliament — Sri Lanka's $2 billion IT industry goal",
+      title: "Aluth Parliament: Sri Lanka's $2 billion IT industry goal",
     },
   ],
-  /** Each card uses a unique image — no shared clinical/product shots */
+  /** Each card uses a unique image, no shared clinical/product shots */
   publications: [
     {
       title:
@@ -545,13 +545,13 @@ export const achievements = {
       image: "/media/publications/pub-wipo.jpg",
     },
     {
-      title: "Jendo — Heart Disease Prediction using Machine Learning",
+      title: "Jendo: Heart Disease Prediction using Machine Learning",
       href: "https://www.wipo.int/en/web/ip-advantage/w/stories/jendo-heart-disease-prediction-using-machine-learning",
       source: "WIPO IP Advantage",
       image: "/media/publications/pub-wipo-jendo-v2.jpg",
     },
     {
-      title: "Research profile — Keerthi M. Kodithuwakku",
+      title: "Research profile: Keerthi M. Kodithuwakku",
       href: "https://www.researchgate.net/scientific-contributions/Keerthi-M-Kodithuwakku-2217200196",
       source: "ResearchGate",
       image: "/media/publications/pub-profile.jpg",
@@ -560,7 +560,7 @@ export const achievements = {
 } as const;
 
 export const contactIntro =
-  "We'd love to hear from you. Whether you are exploring a partnership, speaking engagement, research collaboration, or an introduction to Jendo's technology — connect with us for inquiries and collaborations.";
+  "We'd love to hear from you. Whether you are exploring a partnership, speaking engagement, research collaboration, or an introduction to Jendo's technology: connect with us for inquiries and collaborations.";
 
 export const mapEmbedSrc =
   "https://www.google.com/maps?q=Trace+Expert+City,+Maradana,+Colombo+10,+Sri+Lanka&output=embed";

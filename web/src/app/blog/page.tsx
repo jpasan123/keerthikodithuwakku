@@ -21,7 +21,7 @@ export default function BlogPage() {
       <PageHero
         eyebrow="Blog"
         title="Stories from the MedTech journey"
-        description="Fellowships, product milestones, and leadership updates — curated without duplicate or third-party filler imagery."
+        description="Fellowships, product milestones, and leadership updates: curated without duplicate or third-party filler imagery."
         image="/media/hero/speaking-stage-hq.jpg"
         position="object-[58%_32%]"
         mobileImage="/media/hero/speaking-mobile-v2.jpg"

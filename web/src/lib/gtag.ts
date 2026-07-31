@@ -14,7 +14,7 @@ declare global {
   }
 }
 
-/** Send a GA4 page_view — used on every App Router navigation. */
+/** Send a GA4 page_view, used on every App Router navigation. */
 export function sendPageView(gaId: string, path: string, title?: string) {
   if (!gaId || typeof window.gtag !== "function") return;
 

@@ -114,7 +114,7 @@ export function SocialPopup() {
             Follow Keerthi
           </h2>
           <p className="mt-2.5 text-sm text-kk-muted leading-relaxed">
-            MedTech leadership, patents, and global collaborations — join the network.
+            MedTech leadership, patents, and global collaborations, join the network.
           </p>
 
           <div className="mt-5 grid grid-cols-2 gap-2.5">
