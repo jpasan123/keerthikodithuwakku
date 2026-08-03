@@ -31,9 +31,9 @@ const slides = [
   },
   {
     src: "/media/gallery/speaking-hq.jpg",
-    mobileSrc: "/media/hero/speaking-mobile-v2.jpg",
+    mobileSrc: "/media/publications/pub-mindfulness-a.jpg",
     desktopPosition: "object-[45%_28%]",
-    mobilePosition: "object-[42%_20%]",
+    mobilePosition: "object-[50%_16%]",
     eyebrow: "Speaker & Innovation Strategist",
     title: "Sharing the innovation journey on global stages",
     text: "Leading deep-tech ventures with measurable clinical and commercial impact: from research to breakthrough products.",

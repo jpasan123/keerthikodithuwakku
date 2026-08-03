@@ -125,22 +125,55 @@ export function Header() {
             </button>
           </div>
         </motion.div>
+      </header>
 
-        {/* Mobile menu, slides down from the header bar */}
-        <AnimatePresence>
-          {open ? (
-            <motion.div
+      {/* Mobile drawer — slides in from the right */}
+      <AnimatePresence>
+        {open ? (
+          <>
+            <motion.button
+              type="button"
+              aria-label="Close menu overlay"
+              className="fixed inset-0 z-[60] bg-black/55 backdrop-blur-sm lg:hidden"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              onClick={() => setOpen(false)}
+            />
+            <motion.aside
               id="mobile-nav"
-              className="pointer-events-auto mx-auto mt-2 w-full overflow-hidden rounded-3xl border border-white/15 bg-[#12150f]/95 shadow-2xl backdrop-blur-2xl lg:hidden"
-              initial={reduce ? false : { opacity: 0, height: 0, y: -8 }}
-              animate={{ opacity: 1, height: "auto", y: 0 }}
-              exit={reduce ? undefined : { opacity: 0, height: 0, y: -8 }}
-              transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
+              className="fixed inset-y-0 right-0 z-[70] flex w-[min(100%,20.5rem)] flex-col border-l border-white/10 bg-[#12150f]/97 shadow-2xl backdrop-blur-2xl lg:hidden"
+              initial={reduce ? false : { x: "100%" }}
+              animate={{ x: 0 }}
+              exit={reduce ? undefined : { x: "100%" }}
+              transition={{ duration: 0.34, ease: [0.22, 1, 0.36, 1] }}
               role="dialog"
               aria-modal="true"
               aria-label="Mobile navigation"
             >
-              <nav className="flex flex-col gap-1 px-3 py-3" aria-label="Mobile">
+              <div className="flex items-center justify-between border-b border-white/10 px-4 py-4">
+                <div className="flex items-center gap-2.5">
+                  <Image
+                    src="/media/brand/logo.png"
+                    alt=""
+                    width={36}
+                    height={36}
+                    className="size-9 rounded-lg object-cover"
+                  />
+                  <span className="text-sm font-semibold text-white">Menu</span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setOpen(false)}
+                  aria-label="Close menu"
+                  className="inline-flex size-10 items-center justify-center rounded-full border border-white/20 text-white transition hover:border-kk-accent hover:text-kk-accent"
+                >
+                  <X className="size-5" />
+                </button>
+              </div>
+
+              <nav className="flex flex-1 flex-col gap-1 overflow-y-auto px-3 py-4" aria-label="Mobile">
                 {nav.map((item, i) => {
                   const active =
                     item.href === "/"
@@ -149,9 +182,9 @@ export function Header() {
                   return (
                     <motion.div
                       key={item.href}
-                      initial={reduce ? false : { opacity: 0, y: -6 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.03 + i * 0.04, duration: 0.24 }}
+                      initial={reduce ? false : { opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.05 + i * 0.04, duration: 0.28 }}
                     >
                       <Link
                         href={item.href}
@@ -172,7 +205,7 @@ export function Header() {
                 })}
               </nav>
 
-              <div className="border-t border-white/10 px-3 py-3">
+              <div className="border-t border-white/10 p-4">
                 <Link
                   href="/contact"
                   onClick={() => setOpen(false)}
@@ -182,24 +215,8 @@ export function Header() {
                   <ArrowUpRight className="size-4" />
                 </Link>
               </div>
-            </motion.div>
-          ) : null}
-        </AnimatePresence>
-      </header>
-
-      {/* Dim overlay when mobile menu is open */}
-      <AnimatePresence>
-        {open ? (
-          <motion.button
-            type="button"
-            aria-label="Close menu overlay"
-            className="fixed inset-0 z-40 bg-black/40 backdrop-blur-[2px] lg:hidden"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            onClick={() => setOpen(false)}
-          />
+            </motion.aside>
+          </>
         ) : null}
       </AnimatePresence>
     </>
