@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Plus_Jakarta_Sans } from "next/font/google";
+import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ChatBot } from "@/components/ChatBot";
@@ -16,10 +16,10 @@ const plusJakarta = Plus_Jakarta_Sans({
   weight: ["400", "500", "600", "700"],
 });
 
-const instrument = Instrument_Serif({
-  variable: "--font-instrument",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -56,7 +56,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${plusJakarta.variable} ${instrument.variable} antialiased bg-kk-bg text-kk-ink`}
+        className={`${plusJakarta.variable} ${outfit.variable} antialiased bg-kk-bg text-kk-ink`}
       >
         <GoogleAnalytics />
         <SmoothScroll />

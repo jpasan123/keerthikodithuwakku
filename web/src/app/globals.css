@@ -21,7 +21,7 @@
   --color-kk-border: var(--kk-border);
   --color-kk-soft: var(--kk-soft);
   --font-sans: var(--font-plus-jakarta);
-  --font-display: var(--font-instrument);
+  --font-display: var(--font-outfit);
 }
 
 * {
@@ -60,7 +60,9 @@ body {
 }
 
 .font-display {
-  font-family: var(--font-instrument), Georgia, serif;
+  font-family: var(--font-outfit), var(--font-plus-jakarta), system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.025em;
 }
 
 .container-kk {
