@@ -52,9 +52,9 @@ export function InfiniteGallery({ items }: { items: readonly Item[] }) {
 
   return (
     <div className="relative">
-      {/* Full-bleed horizontal reel with soft edge fades */}
+      {/* Full-bleed horizontal reel — no edge fade mask (avoids white shadow) */}
       <div
-        className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]"
+        className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 overflow-hidden"
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
         onFocusCapture={() => setPaused(true)}
@@ -62,7 +62,6 @@ export function InfiniteGallery({ items }: { items: readonly Item[] }) {
       >
         <div
           className={`flex w-max gap-4 py-2 sm:gap-5 md:gap-6 ${paused ? "[animation-play-state:paused]" : ""} animate-kk-gallery-scroll`}
-          aria-hidden={false}
         >
           {loop.map((item, i) => {
             const sourceIndex = i % unique.length;
@@ -71,17 +70,17 @@ export function InfiniteGallery({ items }: { items: readonly Item[] }) {
                 key={`${item.src}-${i}`}
                 type="button"
                 onClick={() => setActive(sourceIndex)}
-                className="group relative h-[260px] w-[360px] shrink-0 cursor-zoom-in overflow-hidden rounded-[22px] border border-kk-border bg-kk-ink/5 shadow-[0_10px_36px_rgba(12,14,10,0.08)] transition duration-500 hover:-translate-y-1.5 hover:border-kk-accent/35 hover:shadow-[0_24px_52px_rgba(12,14,10,0.14)] sm:h-[300px] sm:w-[420px] md:h-[340px] md:w-[480px] lg:h-[380px] lg:w-[540px]"
+                className="group relative h-[280px] w-[420px] shrink-0 cursor-zoom-in overflow-hidden rounded-[22px] border border-kk-border bg-kk-surface shadow-[0_10px_36px_rgba(12,14,10,0.08)] transition duration-500 hover:-translate-y-1.5 hover:border-kk-accent/35 hover:shadow-[0_24px_52px_rgba(12,14,10,0.14)] sm:h-[300px] sm:w-[450px] md:h-[320px] md:w-[480px]"
                 aria-label={`Open image: ${item.alt}`}
               >
                 <Image
                   src={item.src}
                   alt={item.alt}
                   fill
-                  className="object-cover transition duration-700 group-hover:scale-[1.06]"
-                  sizes="(max-width: 768px) 360px, 540px"
-                  quality={88}
-                  loading={i < 6 ? "eager" : "lazy"}
+                  className="object-contain object-center p-1 transition duration-700 group-hover:scale-[1.02]"
+                  sizes="(max-width: 768px) 420px, (max-width: 1200px) 480px, 640px"
+                  quality={95}
+                  loading={i < 8 ? "eager" : "lazy"}
                 />
                 <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-kk-ink/70 via-kk-ink/10 to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
                 <span className="pointer-events-none absolute inset-x-0 bottom-0 p-4 text-left text-sm font-medium leading-snug text-white opacity-0 translate-y-2 transition duration-300 group-hover:opacity-100 group-hover:translate-y-0">

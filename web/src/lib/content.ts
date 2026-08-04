@@ -140,8 +140,7 @@ export const recognition = [
       {
         src: "/media/portraits/eisenhower-2026.jpg?v=20260728",
         alt: "Keerthi Kodithuwakku: Eisenhower Fellowship 2026 announcement",
-        width: 640,
-        height: 480,
+        fit: "contain",
       },
     ],
     href: "/blog/eisenhower-fellowship-2026",
@@ -164,20 +163,17 @@ export const recognition = [
       {
         src: "/media/gallery/oxford-chevening-b.jpeg",
         alt: "Chevening fellowship certificate presentation with the British High Commission",
-        width: 1024,
-        height: 1024,
+        fit: "contain",
       },
       {
         src: "/media/gallery/oxford-chevening-a.jpeg",
         alt: "Chevening pre-departure programme meeting",
-        width: 1440,
-        height: 810,
+        fit: "contain",
       },
       {
         src: "/media/portraits/oxford-chevening-1.jpeg",
         alt: "Keerthi Kodithuwakku at the Chevening pre-departure programme",
-        width: 1440,
-        height: 810,
+        fit: "contain",
       },
     ],
     href: "/blog/chevening-crisp-oxford",
@@ -200,8 +196,7 @@ export const recognition = [
       {
         src: "/media/awards/ict-leader-trophy.jpg",
         alt: "ICT Leader of the Year 2025: receiving the award on stage",
-        width: 760,
-        height: 944,
+        fit: "contain",
       },
     ],
     href: "/blog/ict-leader-of-the-year",
