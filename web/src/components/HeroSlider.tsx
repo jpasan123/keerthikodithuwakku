@@ -30,9 +30,9 @@ const slides = [
     text: "From national awards to global fellowships: building ventures that turn research into real clinical and commercial impact.",
   },
   {
-    src: "/media/gallery/speaking-hq.jpg",
+    src: "/media/hero/speaking-banquet-hq.jpg",
     mobileSrc: "/media/publications/pub-mindfulness-a.jpg",
-    desktopPosition: "object-[45%_28%]",
+    desktopPosition: "object-[58%_32%]",
     mobilePosition: "object-[50%_16%]",
     eyebrow: "Speaker & Innovation Strategist",
     title: "Sharing the innovation journey on global stages",
