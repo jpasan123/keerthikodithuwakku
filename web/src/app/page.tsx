@@ -4,7 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 import { ConnectCTA } from "@/components/ConnectCTA";
 import { Counter } from "@/components/Counter";
 import { FeaturedStories } from "@/components/FeaturedStories";
-import { GalleryLightbox } from "@/components/GalleryLightbox";
+import { InfiniteGallery } from "@/components/InfiniteGallery";
 import { HeroSlider } from "@/components/HeroSlider";
 import { HomeContact } from "@/components/HomeContact";
 import { RecognitionSlider } from "@/components/RecognitionSlider";
@@ -251,9 +251,9 @@ export default function HomePage() {
         <SectionHeading
           eyebrow="Gallery"
           title="Leadership and collaboration in focus"
-          description="Selected photographs: click any image to open full size."
+          description="A continuous reel of selected moments — hover to pause, click to view full size."
         />
-        <GalleryLightbox items={gallery} />
+        <InfiniteGallery items={gallery} />
       </Section>
 
       <Section>

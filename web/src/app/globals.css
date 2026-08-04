@@ -110,9 +110,35 @@ body {
   animation-play-state: paused;
 }
 
+@keyframes kk-gallery-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-33.333% - 10px));
+  }
+}
+
+.animate-kk-gallery-scroll {
+  animation: kk-gallery-scroll 70s linear infinite;
+  will-change: transform;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-kk-marquee {
     animation: none;
+  }
+
+  .animate-kk-gallery-scroll {
+    animation: none;
+    overflow-x: auto;
+    max-width: 100%;
+    padding-bottom: 0.5rem;
+    scroll-snap-type: x mandatory;
+  }
+
+  .animate-kk-gallery-scroll > * {
+    scroll-snap-align: start;
   }
 
   *,
