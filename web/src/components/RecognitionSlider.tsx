@@ -80,10 +80,10 @@ export function RecognitionSlider({
             animate={{ opacity: 1, y: 0 }}
             exit={reduce ? undefined : { opacity: 0 }}
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="grid w-full items-start gap-5 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] md:items-center md:gap-7"
+            className="grid w-full items-stretch gap-5 md:grid-cols-2 md:gap-8 lg:gap-10"
           >
-            {/* Image, capped height so tall portraits stay balanced with the card */}
-            <div className="relative w-full overflow-hidden rounded-[22px] bg-[#f5f4f0] shadow-sm sm:rounded-[28px] aspect-[4/3] max-h-[220px] sm:max-h-[260px] md:max-h-[300px] lg:max-h-[340px]">
+            {/* Image panel — large cinematic frame (reverted from small contain box) */}
+            <div className="relative w-full min-h-[260px] overflow-hidden rounded-[22px] shadow-[0_12px_40px_rgba(12,14,10,0.08)] sm:min-h-[300px] sm:rounded-[28px] md:min-h-[400px] lg:min-h-[460px] aspect-[16/11] md:aspect-[4/3]">
               <AnimatePresence mode="wait" initial={false}>
                 <motion.div
                   key={image.src}
@@ -97,7 +97,7 @@ export function RecognitionSlider({
                     src={image.src}
                     alt={image.alt}
                     fill
-                    className="object-contain object-center p-2 sm:p-3"
+                    className="object-cover object-center"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 52vw"
                     quality={95}
                     priority={storyIndex === 0 && imageIndex === 0}

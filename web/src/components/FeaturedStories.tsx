@@ -43,12 +43,12 @@ export function FeaturedStories({ items }: { items: readonly FeaturedStory[] }) 
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
           className="grid overflow-hidden rounded-[22px] border border-kk-border bg-white shadow-sm sm:rounded-[28px] md:grid-cols-2"
         >
-          <div className="relative aspect-[16/11] bg-[#f5f4f0] sm:aspect-[4/5] md:aspect-auto md:min-h-[420px]">
+          <div className="relative aspect-[16/11] bg-kk-ink/5 sm:aspect-[4/5] md:aspect-auto md:min-h-[420px]">
             <Image
               src={story.image}
               alt=""
               fill
-              className="object-contain object-center p-3 sm:p-4"
+              className="object-cover object-center"
               sizes="(max-width: 768px) 100vw, 50vw"
               quality={92}
               priority={index === 0}
