@@ -82,8 +82,8 @@ export function RecognitionSlider({
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="grid w-full items-start gap-5 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] md:items-center md:gap-7"
           >
-            {/* Image — standalone; size follows the photo, not the text */}
-            <div className="relative w-full leading-none">
+            {/* Image — capped height, full photo visible, vertically centered vs content */}
+            <div className="relative flex w-full items-center justify-center">
               <AnimatePresence mode="wait" initial={false}>
                 <motion.div
                   key={image.src}
@@ -91,43 +91,44 @@ export function RecognitionSlider({
                   animate={{ opacity: 1 }}
                   exit={reduce ? undefined : { opacity: 0 }}
                   transition={{ duration: 0.35 }}
+                  className="relative inline-block max-w-full leading-none"
                 >
                   <Image
                     src={image.src}
                     alt={image.alt}
                     width={image.width}
                     height={image.height}
-                    className="block h-auto w-full rounded-[22px] shadow-sm sm:rounded-[28px]"
+                    className="block h-auto max-h-[260px] w-auto max-w-full rounded-[22px] shadow-sm sm:max-h-[300px] sm:rounded-[28px] md:max-h-[340px] lg:max-h-[360px]"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 52vw"
                     quality={95}
                     priority={storyIndex === 0 && imageIndex === 0}
                   />
+
+                  {story.images.length > 1 ? (
+                    <div
+                      className="absolute bottom-3 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full bg-black/35 px-3 py-2 backdrop-blur-sm sm:bottom-4"
+                      role="tablist"
+                      aria-label={`${story.title} images`}
+                    >
+                      {story.images.map((img, i) => (
+                        <button
+                          key={img.src}
+                          type="button"
+                          role="tab"
+                          aria-selected={i === imageIndex}
+                          aria-label={`Image ${i + 1}`}
+                          onClick={() => setImageIndex(i)}
+                          className={`h-2 rounded-full transition-all ${
+                            i === imageIndex
+                              ? "w-6 bg-kk-accent"
+                              : "w-2 bg-white/55 hover:bg-white/80"
+                          }`}
+                        />
+                      ))}
+                    </div>
+                  ) : null}
                 </motion.div>
               </AnimatePresence>
-
-              {story.images.length > 1 ? (
-                <div
-                  className="absolute bottom-3 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full bg-black/35 px-3 py-2 backdrop-blur-sm sm:bottom-4"
-                  role="tablist"
-                  aria-label={`${story.title} images`}
-                >
-                  {story.images.map((img, i) => (
-                    <button
-                      key={img.src}
-                      type="button"
-                      role="tab"
-                      aria-selected={i === imageIndex}
-                      aria-label={`Image ${i + 1}`}
-                      onClick={() => setImageIndex(i)}
-                      className={`h-2 rounded-full transition-all ${
-                        i === imageIndex
-                          ? "w-6 bg-kk-accent"
-                          : "w-2 bg-white/55 hover:bg-white/80"
-                      }`}
-                    />
-                  ))}
-                </div>
-              ) : null}
             </div>
 
             {/* Description — its own frame; height from content only */}
