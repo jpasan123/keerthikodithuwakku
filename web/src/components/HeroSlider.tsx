@@ -30,15 +30,6 @@ const slides = [
     text: "From national awards to global fellowships: building ventures that turn research into real clinical and commercial impact.",
   },
   {
-    src: "/media/hero/speaking-banquet-hq.jpg",
-    mobileSrc: "/media/publications/pub-mindfulness-a.jpg",
-    desktopPosition: "object-[58%_32%]",
-    mobilePosition: "object-[50%_16%]",
-    eyebrow: "Speaker & Innovation Strategist",
-    title: "Sharing the innovation journey on global stages",
-    text: "Leading deep-tech ventures with measurable clinical and commercial impact: from research to breakthrough products.",
-  },
-  {
     src: "/media/hero/network-hq.jpg",
     mobileSrc: "/media/hero/network-hq.jpg",
     desktopPosition: "object-[50%_38%]",
