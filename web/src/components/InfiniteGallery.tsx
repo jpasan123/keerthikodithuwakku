@@ -70,14 +70,14 @@ export function InfiniteGallery({ items }: { items: readonly Item[] }) {
                 key={`${item.src}-${i}`}
                 type="button"
                 onClick={() => setActive(sourceIndex)}
-                className="group relative h-[280px] w-[420px] shrink-0 cursor-zoom-in overflow-hidden rounded-[22px] border border-kk-border bg-kk-surface shadow-[0_10px_36px_rgba(12,14,10,0.08)] transition duration-500 hover:-translate-y-1.5 hover:border-kk-accent/35 hover:shadow-[0_24px_52px_rgba(12,14,10,0.14)] sm:h-[300px] sm:w-[450px] md:h-[320px] md:w-[480px]"
+                className="group relative h-[280px] w-[420px] shrink-0 cursor-zoom-in overflow-hidden rounded-[22px] border border-kk-border/80 bg-kk-ink shadow-[0_10px_36px_rgba(12,14,10,0.08)] transition duration-500 hover:-translate-y-1.5 hover:border-kk-accent/35 hover:shadow-[0_24px_52px_rgba(12,14,10,0.14)] sm:h-[300px] sm:w-[450px] md:h-[320px] md:w-[480px]"
                 aria-label={`Open image: ${item.alt}`}
               >
                 <Image
                   src={item.src}
                   alt={item.alt}
                   fill
-                  className="object-contain object-center p-1 transition duration-700 group-hover:scale-[1.02]"
+                  className="object-cover object-center transition duration-700 group-hover:scale-[1.04]"
                   sizes="(max-width: 768px) 420px, (max-width: 1200px) 480px, 640px"
                   quality={95}
                   loading={i < 8 ? "eager" : "lazy"}

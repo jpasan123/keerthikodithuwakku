@@ -15,7 +15,7 @@ export type RecognitionItem = {
   images: readonly {
     src: string;
     alt: string;
-    /** Default contain — shows the full photo/banner without cropping. */
+    /** Default cover — fills the frame edge-to-edge. Use contain only for banner graphics. */
     fit?: "cover" | "contain";
     position?: string;
   }[];
@@ -88,12 +88,16 @@ export function RecognitionSlider({
           transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
           className="grid items-stretch gap-5 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-7"
         >
-          {/* Media — tall panel; full image visible inside the frame */}
-          <div className="relative aspect-[16/11] overflow-hidden rounded-[28px] border border-kk-border bg-kk-surface shadow-sm sm:aspect-[16/10] lg:aspect-auto lg:min-h-[520px]">
+          {/* Media — edge-to-edge photos; contain only for banner graphics */}
+          <div
+            className={`relative aspect-[16/11] overflow-hidden rounded-[28px] border border-kk-border shadow-sm sm:aspect-[16/10] lg:aspect-auto lg:min-h-[520px] ${
+              image.fit === "contain" ? "bg-kk-surface" : "bg-kk-ink"
+            }`}
+          >
             <AnimatePresence mode="wait">
               <motion.div
                 key={image.src}
-                className="absolute inset-0 flex items-center justify-center p-1 sm:p-1.5"
+                className="absolute inset-0"
                 initial={reduce ? false : { opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={reduce ? undefined : { opacity: 0 }}
@@ -104,7 +108,7 @@ export function RecognitionSlider({
                   alt={image.alt}
                   fill
                   className={`${
-                    image.fit === "cover" ? "object-cover" : "object-contain"
+                    image.fit === "contain" ? "object-contain" : "object-cover"
                   } ${image.position ?? "object-center"}`}
                   sizes="(max-width: 1024px) 100vw, 640px"
                   quality={95}
