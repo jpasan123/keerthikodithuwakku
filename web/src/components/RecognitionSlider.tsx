@@ -83,7 +83,7 @@ export function RecognitionSlider({
             className="grid w-full items-start gap-5 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] md:items-center md:gap-7"
           >
             {/* Image, capped height so tall portraits stay balanced with the card */}
-            <div className="relative w-full overflow-hidden rounded-[22px] shadow-sm sm:rounded-[28px] aspect-[4/3] max-h-[220px] sm:max-h-[260px] md:max-h-[300px] lg:max-h-[340px]">
+            <div className="relative w-full overflow-hidden rounded-[22px] bg-[#f5f4f0] shadow-sm sm:rounded-[28px] aspect-[4/3] max-h-[220px] sm:max-h-[260px] md:max-h-[300px] lg:max-h-[340px]">
               <AnimatePresence mode="wait" initial={false}>
                 <motion.div
                   key={image.src}
@@ -97,7 +97,7 @@ export function RecognitionSlider({
                     src={image.src}
                     alt={image.alt}
                     fill
-                    className="object-cover object-[50%_20%]"
+                    className="object-contain object-center p-2 sm:p-3"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 52vw"
                     quality={95}
                     priority={storyIndex === 0 && imageIndex === 0}

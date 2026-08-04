@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { ArrowLeft } from "lucide-react";
 import { ConnectCTA } from "@/components/ConnectCTA";
+import { ContentImage } from "@/components/ContentImage";
 import { getAllPosts, getPostBySlug, getPostSlugs } from "@/lib/blog";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -70,16 +70,14 @@ export default async function BlogPostPage({ params }: Props) {
         </header>
 
         <div className="container-kk py-10">
-          <div className="relative aspect-[16/9] max-w-4xl mx-auto overflow-hidden rounded-3xl border border-kk-border mb-10">
-            <Image
+          <figure className="mx-auto mb-10 max-w-4xl overflow-hidden rounded-3xl border border-kk-border bg-[#f5f4f0]">
+            <ContentImage
               src={post.image}
               alt=""
-              fill
-              className="object-cover"
-              sizes="(max-width: 896px) 100vw, 896px"
               priority
+              sizes="(max-width: 896px) 100vw, 896px"
             />
-          </div>
+          </figure>
 
           <div className="prose-kk mx-auto max-w-2xl space-y-5 text-kk-muted leading-relaxed [&_h2]:font-display [&_h2]:text-2xl [&_h2]:text-kk-ink [&_h2]:mt-10 [&_h2]:mb-3 [&_p]:text-base md:[&_p]:text-lg [&_strong]:text-kk-ink">
             <MDXRemote source={post.content} />

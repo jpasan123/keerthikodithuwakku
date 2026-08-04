@@ -43,16 +43,16 @@ export function PageHero({
         quality={90}
       />
 
-      {/* Deep scrims so copy always reads on busy event photos */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/88 via-black/55 to-black/25 md:from-black/90 md:via-black/50 md:to-black/20" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-black/30" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(241,130,0,0.14),transparent_55%)]" />
+      {/* Match home hero: lighter scrims so photos stay clear while copy reads */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/68 via-black/18 to-black/12 md:from-black/65 md:via-black/20 md:to-black/15" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/52 via-black/14 to-transparent md:from-black/55 md:via-black/16" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(241,130,0,0.1),transparent_50%)]" />
 
       <div className="relative container-kk pb-16 pt-28 md:pb-24 md:pt-36">
         <Reveal>
           <p className="mb-4 flex items-center gap-3 text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-white sm:text-xs">
             <span className="inline-block h-px w-7 shrink-0 bg-kk-accent sm:w-9" aria-hidden />
-            <span className="text-kk-accent">{eyebrow}</span>
+            <span className="text-kk-accent drop-shadow-[0_1px_8px_rgba(0,0,0,0.35)]">{eyebrow}</span>
           </p>
           <h1 className="font-display max-w-3xl text-[2rem] leading-[1.18] text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.55)] sm:text-4xl md:text-[2.75rem] lg:text-[3.25rem]">
             {title}

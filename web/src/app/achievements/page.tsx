@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { ConnectCTA } from "@/components/ConnectCTA";
+import { ContentImageFrame } from "@/components/ContentImage";
 import { Counter } from "@/components/Counter";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
@@ -24,9 +25,9 @@ export default function AchievementsPage() {
         title="Recognition built on research, patents, and impact"
         description="From national ICT awards to global fellowships, a timeline of milestones that reflect sustained innovation leadership."
         image="/media/hero/ict-leader-stage-hq.jpg"
-        position="object-[58%_48%]"
+        position="object-[50%_40%]"
         mobileImage="/media/awards/ict-leader-trophy.jpg"
-        mobilePosition="object-[52%_38%]"
+        mobilePosition="object-[50%_42%]"
       />
 
       <Section className="!pt-10 md:!pt-14">
@@ -53,15 +54,12 @@ export default function AchievementsPage() {
           {fellowships.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.06}>
               <article className="group h-full overflow-hidden rounded-3xl border border-kk-border bg-white hover:shadow-xl hover:shadow-kk-ink/5 hover:-translate-y-1 transition-all duration-300">
-                <div className="relative aspect-[16/10] overflow-hidden">
-                  <Image
-                    src={item.image}
-                    alt=""
-                    fill
-                    className="object-cover transition duration-700 group-hover:scale-[1.04]"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                </div>
+                <ContentImageFrame
+                  src={item.image}
+                  alt=""
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="transition duration-700 group-hover:scale-[1.02]"
+                />
                 <div className="p-6">
                   <p className="text-xs font-bold tracking-[0.12em] uppercase text-kk-accent">
                     {item.subtitle}
@@ -89,12 +87,12 @@ export default function AchievementsPage() {
           {featuredAwards.map((award, i) => (
             <Reveal key={award.title} delay={i * 0.04}>
               <article className="grid md:grid-cols-[minmax(0,380px)_1fr] overflow-hidden rounded-3xl border border-kk-border bg-white">
-                <div className="relative aspect-[16/10] md:aspect-auto md:min-h-[240px]">
+                <div className="relative aspect-[16/10] overflow-hidden bg-[#f5f4f0] md:aspect-auto md:min-h-[240px]">
                   <Image
                     src={award.image}
                     alt=""
                     fill
-                    className="object-cover"
+                    className="object-contain object-center p-2 md:p-3"
                     sizes="(max-width: 768px) 100vw, 380px"
                   />
                 </div>

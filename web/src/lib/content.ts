@@ -112,7 +112,7 @@ export const fellowships = [
   {
     title: "Chevening CRISP Fellowship 2026",
     subtitle: "St Cross College, University of Oxford",
-    body: "Selected for the Chevening Research Science and Innovation Leadership Fellowship. This opportunity focuses on exploring cutting-edge MedTech innovations and bringing these insights back to Sri Lanka to drive impact in healthcare and technology.",
+    body: "Selected for the Chevening Research, Science and Innovation Leadership Fellowship at St Cross College, Oxford. The programme brought exposure to cutting-edge MedTech research, global best practices, and a network of scholars — with insights now shaping healthcare innovation, mentoring, and STEM leadership in Sri Lanka.",
     image: "/media/gallery/oxford-chevening-b.jpeg",
     href: "/blog/chevening-crisp-oxford",
     externalHref: "https://www.chevening.org/",
@@ -152,12 +152,12 @@ export const recognition = [
   {
     id: "chevening-2026",
     kicker:
-      "A new milestone at St Cross College, Oxford, with inspiration to bring cutting-edge medtech insights back to Sri Lanka.",
+      "A defining chapter at St Cross College, Oxford — bringing world-class MedTech insights back to Sri Lanka.",
     title: "Chevening CRISP Fellowship 2026 at University of Oxford",
     paragraphs: [
-      "Honoured to be selected for the Chevening Research Science and Innovation Leadership Fellowship at St Cross College, Oxford.",
-      "At the Chevening pre-departure programme, I had the privilege of meeting His Excellency Andrew Patrick, the British High Commissioner, and learning more about the fellowship and its global opportunities.",
-      "I look forward to exploring cutting-edge medtech innovations and bringing these insights back to Sri Lanka to drive impact in healthcare and technology.",
+      "The prestigious Chevening Research, Science and Innovation Leadership Fellowship at St Cross College, University of Oxford, recognised years of work at the intersection of MedTech, entrepreneurship, and healthcare innovation in Sri Lanka.",
+      "At the Chevening pre-departure programme, Keerthi met His Excellency Andrew Patrick, British High Commissioner to Sri Lanka, and gained insight into the fellowship's global community of scholars and its opportunities for collaboration on the world stage.",
+      "Time at Oxford shaped a broader understanding of how healthcare technology can be developed and scaled responsibly — strengthening local healthcare technology, mentoring young innovators, and encouraging STEM and innovation-led careers.",
     ],
     tags: ["Oxford", "Chevening", "MedTech Leadership"],
     images: [
