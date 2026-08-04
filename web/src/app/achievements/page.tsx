@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { ConnectCTA } from "@/components/ConnectCTA";
 import { ContentImageFrame } from "@/components/ContentImage";
@@ -53,23 +54,31 @@ export default function AchievementsPage() {
         <div className="grid md:grid-cols-2 gap-6 mb-4">
           {fellowships.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.06}>
-              <article className="group h-full overflow-hidden rounded-3xl border border-kk-border bg-white hover:shadow-xl hover:shadow-kk-ink/5 hover:-translate-y-1 transition-all duration-300">
+              <article className="group/card flex h-full flex-col overflow-hidden rounded-3xl border border-kk-border bg-white hover:shadow-xl hover:shadow-kk-ink/5 hover:-translate-y-1 transition-all duration-300">
                 <ContentImageFrame
                   src={item.image}
                   alt=""
+                  fit="cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="transition duration-700 group-hover:scale-[1.02]"
+                  className="rounded-none border-0"
                 />
-                <div className="p-6">
+                <div className="flex flex-1 flex-col p-6">
                   <p className="text-xs font-bold tracking-[0.12em] uppercase text-kk-accent">
                     {item.subtitle}
                   </p>
                   <h3 className="mt-2 font-display text-2xl text-kk-ink">
                     {item.title}
                   </h3>
-                  <p className="mt-3 text-sm text-kk-muted leading-relaxed">
+                  <p className="mt-3 flex-1 text-sm text-kk-muted leading-relaxed line-clamp-4">
                     {item.body}
                   </p>
+                  <Link
+                    href={item.href}
+                    className="mt-5 inline-flex w-fit items-center gap-1.5 rounded-full border border-kk-border bg-kk-soft px-4 py-2.5 text-sm font-semibold text-kk-ink transition hover:border-kk-accent/50 hover:text-kk-accent"
+                  >
+                    Read more
+                    <ArrowUpRight className="size-4 transition-transform group-hover/card:translate-x-0.5 group-hover/card:-translate-y-0.5" />
+                  </Link>
                 </div>
               </article>
             </Reveal>
