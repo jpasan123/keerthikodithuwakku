@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { ConnectCTA } from "@/components/ConnectCTA";
 import { Counter } from "@/components/Counter";
+import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { Section, SectionHeading } from "@/components/Section";
 import { TimelineFlow } from "@/components/TimelineFlow";
@@ -18,43 +19,25 @@ export const metadata: Metadata = {
 export default function AchievementsPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-kk-ink min-h-[46vh] flex items-end">
-        <Image
-          src="/media/hero/award-stage.jpg"
-          alt=""
-          fill
-          priority
-          className="object-cover object-[45%_30%]"
-          sizes="100vw"
-          quality={90}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/15 to-black/8" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent" />
-        <div className="relative container-kk pb-20 pt-28 md:pb-28 md:pt-32">
-          <Reveal>
-            <p className="text-xs font-bold tracking-[0.14em] uppercase text-kk-accent mb-3">
-              Achievements
-            </p>
-            <h1 className="font-display max-w-3xl text-4xl md:text-6xl leading-[1.08] text-white drop-shadow-[0_2px_16px_rgba(0,0,0,0.4)]">
-              Recognition built on research, patents, and impact
-            </h1>
-            <p className="mt-5 max-w-2xl text-lg text-white/90 leading-relaxed">
-              From national ICT awards to global fellowships, a timeline of
-              milestones that reflect sustained innovation leadership.
-            </p>
-          </Reveal>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Achievements"
+        title="Recognition built on research, patents, and impact"
+        description="From national ICT awards to global fellowships, a timeline of milestones that reflect sustained innovation leadership."
+        image="/media/hero/speaking-stage-hq.jpg"
+        position="object-[58%_28%]"
+        mobileImage="/media/hero/speaking-mobile-v2.jpg"
+        mobilePosition="object-[48%_18%]"
+      />
 
-      <Section>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+      <Section className="!pt-10 md:!pt-14">
+        <div className="mb-16 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
           {achievements.stats.map((stat, i) => (
             <Reveal key={stat.label} delay={i * 0.05}>
-              <div className="h-full rounded-2xl border border-kk-border bg-white p-5 hover:border-kk-accent/40 transition-colors">
-                <p className="font-display text-3xl md:text-4xl text-kk-ink">
+              <div className="h-full rounded-2xl border border-kk-border bg-white p-5 shadow-[0_10px_40px_rgba(12,14,10,0.04)] transition-colors hover:border-kk-accent/40">
+                <p className="font-display text-3xl text-kk-ink md:text-4xl">
                   <Counter value={stat.value} suffix={stat.suffix} />
                 </p>
-                <p className="mt-1.5 text-sm text-kk-muted leading-snug">
+                <p className="mt-1.5 text-sm leading-snug text-kk-muted">
                   {stat.label}
                 </p>
               </div>
