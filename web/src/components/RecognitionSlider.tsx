@@ -82,8 +82,8 @@ export function RecognitionSlider({
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="grid w-full items-start gap-5 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] md:items-center md:gap-7"
           >
-            {/* Image — capped height, full photo visible, vertically centered vs content */}
-            <div className="relative flex w-full items-center justify-center">
+            {/* Image — full column width, natural aspect (reference layout) */}
+            <div className="relative w-full leading-none">
               <AnimatePresence mode="wait" initial={false}>
                 <motion.div
                   key={image.src}
@@ -91,14 +91,14 @@ export function RecognitionSlider({
                   animate={{ opacity: 1 }}
                   exit={reduce ? undefined : { opacity: 0 }}
                   transition={{ duration: 0.35 }}
-                  className="relative inline-block max-w-full leading-none"
+                  className="relative w-full"
                 >
                   <Image
                     src={image.src}
                     alt={image.alt}
                     width={image.width}
                     height={image.height}
-                    className="block h-auto max-h-[260px] w-auto max-w-full rounded-[22px] shadow-sm sm:max-h-[300px] sm:rounded-[28px] md:max-h-[340px] lg:max-h-[360px]"
+                    className="block h-auto w-full rounded-[22px] shadow-sm sm:rounded-[28px]"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 52vw"
                     quality={95}
                     priority={storyIndex === 0 && imageIndex === 0}
