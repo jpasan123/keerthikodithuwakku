@@ -37,12 +37,14 @@ export default async function BlogPostPage({ params }: Props) {
     .filter((p) => p.slug !== slug)
     .slice(0, 2);
 
+  const articleColumn = "mx-auto w-full max-w-4xl";
+
   return (
     <>
       <article>
         <header className="border-b border-kk-border bg-kk-surface">
           <div className="container-kk pb-12 pt-32 md:pb-16 md:pt-36">
-            <div className="flex flex-col gap-5 md:gap-6">
+            <div className={`${articleColumn} flex flex-col gap-5 md:gap-6`}>
               <Link
                 href="/blog"
                 className="inline-flex w-fit items-center gap-2 text-sm font-medium text-kk-muted hover:text-kk-accent transition-colors"
@@ -58,10 +60,10 @@ export default async function BlogPostPage({ params }: Props) {
                     day: "numeric",
                   })}
                 </time>
-                <h1 className="font-display text-3xl md:text-[2.75rem] lg:text-5xl leading-[1.12] text-kk-ink max-w-4xl">
+                <h1 className="font-display text-3xl md:text-[2.75rem] lg:text-[3.25rem] leading-[1.12] text-kk-ink">
                   {post.title}
                 </h1>
-                <p className="text-lg md:text-xl text-kk-muted leading-relaxed max-w-3xl">
+                <p className="text-lg md:text-xl text-kk-muted leading-relaxed">
                   {post.excerpt}
                 </p>
               </div>
@@ -70,41 +72,43 @@ export default async function BlogPostPage({ params }: Props) {
         </header>
 
         <div className="container-kk py-10 md:py-14">
-          <figure className="mx-auto mb-10 md:mb-12 w-full max-w-xl sm:max-w-2xl md:max-w-[720px]">
-            <ContentImageFrame
-              src={post.image}
-              alt=""
-              fit="contain"
-              aspect="aspect-[16/10]"
-              priority
-              sizes="(max-width: 768px) 90vw, 720px"
-              className="rounded-2xl border border-kk-border shadow-[0_12px_40px_rgba(12,14,10,0.06)]"
-            />
-          </figure>
+          <div className={articleColumn}>
+            <figure className="mb-10 md:mb-12 w-full overflow-hidden rounded-2xl border border-kk-border shadow-[0_16px_48px_rgba(12,14,10,0.08)]">
+              <ContentImageFrame
+                src={post.image}
+                alt=""
+                fit="cover"
+                aspect="aspect-[16/10]"
+                priority
+                sizes="(max-width: 896px) 100vw, 896px"
+                className="rounded-none border-0"
+              />
+            </figure>
 
-          <div className="prose-kk space-y-5 text-kk-muted leading-relaxed [&_h2]:font-display [&_h2]:text-2xl md:[&_h2]:text-3xl [&_h2]:text-kk-ink [&_h2]:mt-10 [&_h2]:mb-3 [&_p]:text-base md:[&_p]:text-lg [&_strong]:text-kk-ink">
-            <MDXRemote source={post.content} />
-          </div>
-
-          {related.length > 0 ? (
-            <div className="mt-16 pt-10 border-t border-kk-border">
-              <p className="text-xs font-bold tracking-[0.12em] uppercase text-kk-accent mb-4">
-                Related
-              </p>
-              <ul className="space-y-3">
-                {related.map((item) => (
-                  <li key={item.slug}>
-                    <Link
-                      href={`/blog/${item.slug}`}
-                      className="font-semibold text-kk-ink hover:text-kk-accent transition-colors"
-                    >
-                      {item.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+            <div className="prose-kk space-y-5 text-kk-muted leading-relaxed [&_h2]:font-display [&_h2]:text-2xl md:[&_h2]:text-3xl [&_h2]:text-kk-ink [&_h2]:mt-10 [&_h2]:mb-3 [&_p]:text-base md:[&_p]:text-lg [&_strong]:text-kk-ink">
+              <MDXRemote source={post.content} />
             </div>
-          ) : null}
+
+            {related.length > 0 ? (
+              <div className="mt-16 pt-10 border-t border-kk-border">
+                <p className="text-xs font-bold tracking-[0.12em] uppercase text-kk-accent mb-4">
+                  Related
+                </p>
+                <ul className="space-y-3">
+                  {related.map((item) => (
+                    <li key={item.slug}>
+                      <Link
+                        href={`/blog/${item.slug}`}
+                        className="font-semibold text-kk-ink hover:text-kk-accent transition-colors"
+                      >
+                        {item.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+          </div>
         </div>
       </article>
 
