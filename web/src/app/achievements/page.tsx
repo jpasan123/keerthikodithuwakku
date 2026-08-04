@@ -23,10 +23,10 @@ export default function AchievementsPage() {
         eyebrow="Achievements"
         title="Recognition built on research, patents, and impact"
         description="From national ICT awards to global fellowships, a timeline of milestones that reflect sustained innovation leadership."
-        image="/media/hero/speaking-stage-hq.jpg"
-        position="object-[58%_28%]"
-        mobileImage="/media/hero/speaking-mobile-v2.jpg"
-        mobilePosition="object-[48%_18%]"
+        image="/media/hero/ict-leader-stage-hq.jpg"
+        position="object-[58%_48%]"
+        mobileImage="/media/awards/ict-leader-trophy.jpg"
+        mobilePosition="object-[52%_38%]"
       />
 
       <Section className="!pt-10 md:!pt-14">
