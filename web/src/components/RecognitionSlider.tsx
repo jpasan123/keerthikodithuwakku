@@ -80,10 +80,10 @@ export function RecognitionSlider({
             animate={{ opacity: 1, y: 0 }}
             exit={reduce ? undefined : { opacity: 0 }}
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="grid w-full items-start gap-5 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] md:items-center md:gap-7"
+            className="grid overflow-hidden rounded-[22px] border border-kk-border bg-white shadow-sm sm:rounded-[28px] md:grid-cols-2 md:items-stretch"
           >
-            {/* Image — standalone; size follows the photo, not the text */}
-            <div className="relative w-full leading-none">
+            {/* Image — height locked to the content column on desktop */}
+            <div className="relative min-h-[280px] bg-kk-ink sm:min-h-[320px] md:min-h-full">
               <AnimatePresence mode="wait" initial={false}>
                 <motion.div
                   key={image.src}
@@ -91,14 +91,14 @@ export function RecognitionSlider({
                   animate={{ opacity: 1 }}
                   exit={reduce ? undefined : { opacity: 0 }}
                   transition={{ duration: 0.35 }}
+                  className="relative aspect-[4/5] w-full sm:aspect-[16/11] md:absolute md:inset-0 md:aspect-auto md:h-full"
                 >
                   <Image
                     src={image.src}
                     alt={image.alt}
-                    width={image.width}
-                    height={image.height}
-                    className="block h-auto w-full rounded-[22px] shadow-sm sm:rounded-[28px]"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 52vw"
+                    fill
+                    className="object-cover object-center"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     quality={95}
                     priority={storyIndex === 0 && imageIndex === 0}
                   />
@@ -130,8 +130,8 @@ export function RecognitionSlider({
               ) : null}
             </div>
 
-            {/* Description — its own frame; height from content only */}
-            <article className="flex flex-col rounded-[22px] border border-kk-border bg-white p-5 shadow-sm sm:rounded-[28px] sm:p-6 md:p-7 lg:p-8 xl:p-10">
+            {/* Description — drives row height; image column matches on desktop */}
+            <article className="flex flex-col justify-center p-5 sm:p-6 md:p-7 lg:p-8 xl:p-9">
               <h3 className="font-display text-xl leading-snug text-kk-ink sm:text-2xl md:text-[1.65rem] lg:text-[1.85rem]">
                 {story.title}
               </h3>
