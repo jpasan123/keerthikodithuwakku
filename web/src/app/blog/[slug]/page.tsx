@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { ArrowLeft } from "lucide-react";
 import { ConnectCTA } from "@/components/ConnectCTA";
-import { ContentImage } from "@/components/ContentImage";
+import { ContentImageFrame } from "@/components/ContentImage";
 import { getAllPosts, getPostBySlug, getPostSlugs } from "@/lib/blog";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -70,12 +70,15 @@ export default async function BlogPostPage({ params }: Props) {
         </header>
 
         <div className="container-kk py-10 md:py-14">
-          <figure className="mb-10 md:mb-12 overflow-hidden rounded-3xl border border-kk-border bg-kk-ink shadow-[0_20px_60px_rgba(12,14,10,0.08)]">
-            <ContentImage
+          <figure className="mx-auto mb-10 md:mb-12 w-full max-w-xl sm:max-w-2xl md:max-w-[720px]">
+            <ContentImageFrame
               src={post.image}
               alt=""
+              fit="contain"
+              aspect="aspect-[16/10]"
               priority
-              sizes="(max-width: 1120px) 100vw, 1120px"
+              sizes="(max-width: 768px) 90vw, 720px"
+              className="rounded-2xl border border-kk-border shadow-[0_12px_40px_rgba(12,14,10,0.06)]"
             />
           </figure>
 

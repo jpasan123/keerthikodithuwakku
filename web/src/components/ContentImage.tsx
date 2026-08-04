@@ -60,7 +60,7 @@ export function ContentImageFrame({
 }: ContentImageProps & { aspect?: string }) {
   return (
     <div
-      className={`relative ${aspect} overflow-hidden bg-kk-ink ${className}`}
+      className={`relative ${aspect} overflow-hidden ${fit === "contain" ? "bg-[#f5f4f0]" : "bg-kk-ink"} ${className}`}
     >
       {fit === "contain" ? (
         <Image
