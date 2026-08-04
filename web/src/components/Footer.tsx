@@ -18,10 +18,10 @@ function LinkedInIcon({ className }: { className?: string }) {
   );
 }
 
-function XIcon({ className }: { className?: string }) {
+function MailIcon({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" className={className} aria-hidden fill="currentColor">
-      <path d="M17.5 3h2.8l-6.1 7 7.2 11h-5.6l-4.4-6.5L6.1 21H3.3l6.5-7.5L3 3h5.8l4 5.9L17.5 3zm-1 16.1h1.5L7.6 4.8H6L16.5 19.1z" />
+      <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z" />
     </svg>
   );
 }
@@ -146,13 +146,11 @@ export function Footer() {
                 <FacebookIcon className="size-4" />
               </a>
               <a
-                href={site.social.x}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="X"
+                href={`mailto:${site.email}`}
+                aria-label="Email"
                 className={socialBtn}
               >
-                <XIcon className="size-4" />
+                <MailIcon className="size-4" />
               </a>
             </div>
           </div>

@@ -60,7 +60,7 @@ export function InfiniteGallery({ items }: { items: readonly Item[] }) {
         onBlurCapture={() => setPaused(false)}
       >
         <div
-          className={`flex w-max gap-4 py-2 sm:gap-5 md:gap-6 ${paused ? "[animation-play-state:paused]" : ""} animate-kk-gallery-scroll`}
+          className={`flex w-max items-stretch gap-5 py-3 sm:gap-6 ${paused ? "[animation-play-state:paused]" : ""} animate-kk-gallery-scroll`}
         >
           {loop.map((item, i) => {
             const sourceIndex = i % unique.length;
@@ -69,27 +69,26 @@ export function InfiniteGallery({ items }: { items: readonly Item[] }) {
                 key={`${item.src}-${i}`}
                 type="button"
                 onClick={() => setActive(sourceIndex)}
-                className="kk-gallery-card group relative h-[300px] w-[400px] shrink-0 overflow-hidden rounded-[22px] border border-kk-border/70 bg-kk-surface shadow-[0_10px_36px_rgba(12,14,10,0.07)] transition duration-500 hover:-translate-y-1 hover:border-kk-accent/40 hover:shadow-[0_20px_48px_rgba(12,14,10,0.12)] sm:h-[320px] sm:w-[430px] md:h-[340px] md:w-[460px]"
+                className="kk-gallery-card group relative h-[260px] w-[400px] shrink-0 overflow-hidden rounded-[20px] bg-[#0c0e0a] shadow-[0_12px_40px_rgba(12,14,10,0.12)] transition duration-500 hover:-translate-y-1.5 hover:shadow-[0_22px_50px_rgba(12,14,10,0.18)] sm:h-[280px] sm:w-[420px] md:h-[286px] md:w-[440px]"
                 aria-label={`Open image: ${item.alt}`}
               >
                 <Image
                   src={item.src}
                   alt={item.alt}
                   fill
-                  className="object-contain object-center p-0.5 transition duration-500 group-hover:brightness-[1.03]"
-                  sizes="(max-width: 768px) 430px, (max-width: 1200px) 460px, 640px"
+                  className="object-cover object-center transition duration-700 group-hover:scale-[1.06]"
+                  sizes="(max-width: 768px) 420px, 440px"
                   quality={95}
                   loading={i < 8 ? "eager" : "lazy"}
                 />
 
-                {/* Hover caption — orange accent, professional scrim */}
-                <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-kk-ink/85 via-kk-ink/25 to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
-                <span className="pointer-events-none absolute inset-x-0 bottom-0 p-4 sm:p-5 opacity-0 translate-y-3 transition duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-kk-ink/90 via-kk-ink/20 to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
+                <span className="pointer-events-none absolute inset-x-0 bottom-0 p-4 opacity-0 translate-y-2 transition duration-300 group-hover:opacity-100 group-hover:translate-y-0 sm:p-5">
                   <span
-                    className="mb-2.5 block h-0.5 w-9 rounded-full bg-kk-accent shadow-[0_0_12px_rgba(241,130,0,0.55)]"
+                    className="mb-2 block h-0.5 w-8 rounded-full bg-kk-accent"
                     aria-hidden
                   />
-                  <span className="block text-left text-sm font-semibold leading-snug text-kk-accent sm:text-[0.95rem]">
+                  <span className="block text-left text-sm font-semibold leading-snug text-kk-accent">
                     {item.alt}
                   </span>
                 </span>
