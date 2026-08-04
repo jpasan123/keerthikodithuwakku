@@ -120,8 +120,25 @@ body {
 }
 
 .animate-kk-gallery-scroll {
-  animation: kk-gallery-scroll 85s linear infinite;
+  animation: kk-gallery-scroll 150s linear infinite;
   will-change: transform;
+}
+
+/* Gallery — zoom cursor on cards, grab on track when paused */
+.kk-gallery-track {
+  cursor: default;
+}
+
+.kk-gallery-card {
+  cursor: zoom-in;
+}
+
+.kk-gallery-track:hover {
+  cursor: grab;
+}
+
+.kk-gallery-track:hover .kk-gallery-card {
+  cursor: zoom-in;
 }
 
 @media (prefers-reduced-motion: reduce) {

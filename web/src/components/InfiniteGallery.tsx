@@ -52,9 +52,8 @@ export function InfiniteGallery({ items }: { items: readonly Item[] }) {
 
   return (
     <div className="relative">
-      {/* Full-bleed horizontal reel — no edge fade mask (avoids white shadow) */}
       <div
-        className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 overflow-hidden"
+        className="kk-gallery-track relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 overflow-hidden"
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
         onFocusCapture={() => setPaused(true)}
@@ -70,21 +69,29 @@ export function InfiniteGallery({ items }: { items: readonly Item[] }) {
                 key={`${item.src}-${i}`}
                 type="button"
                 onClick={() => setActive(sourceIndex)}
-                className="group relative h-[280px] w-[420px] shrink-0 cursor-zoom-in overflow-hidden rounded-[22px] border border-kk-border/80 bg-kk-ink shadow-[0_10px_36px_rgba(12,14,10,0.08)] transition duration-500 hover:-translate-y-1.5 hover:border-kk-accent/35 hover:shadow-[0_24px_52px_rgba(12,14,10,0.14)] sm:h-[300px] sm:w-[450px] md:h-[320px] md:w-[480px]"
+                className="kk-gallery-card group relative h-[300px] w-[400px] shrink-0 overflow-hidden rounded-[22px] border border-kk-border/70 bg-kk-surface shadow-[0_10px_36px_rgba(12,14,10,0.07)] transition duration-500 hover:-translate-y-1 hover:border-kk-accent/40 hover:shadow-[0_20px_48px_rgba(12,14,10,0.12)] sm:h-[320px] sm:w-[430px] md:h-[340px] md:w-[460px]"
                 aria-label={`Open image: ${item.alt}`}
               >
                 <Image
                   src={item.src}
                   alt={item.alt}
                   fill
-                  className="object-cover object-center transition duration-700 group-hover:scale-[1.04]"
-                  sizes="(max-width: 768px) 420px, (max-width: 1200px) 480px, 640px"
+                  className="object-contain object-center p-0.5 transition duration-500 group-hover:brightness-[1.03]"
+                  sizes="(max-width: 768px) 430px, (max-width: 1200px) 460px, 640px"
                   quality={95}
                   loading={i < 8 ? "eager" : "lazy"}
                 />
-                <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-kk-ink/70 via-kk-ink/10 to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
-                <span className="pointer-events-none absolute inset-x-0 bottom-0 p-4 text-left text-sm font-medium leading-snug text-white opacity-0 translate-y-2 transition duration-300 group-hover:opacity-100 group-hover:translate-y-0">
-                  {item.alt}
+
+                {/* Hover caption — orange accent, professional scrim */}
+                <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-kk-ink/85 via-kk-ink/25 to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
+                <span className="pointer-events-none absolute inset-x-0 bottom-0 p-4 sm:p-5 opacity-0 translate-y-3 transition duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                  <span
+                    className="mb-2.5 block h-0.5 w-9 rounded-full bg-kk-accent shadow-[0_0_12px_rgba(241,130,0,0.55)]"
+                    aria-hidden
+                  />
+                  <span className="block text-left text-sm font-semibold leading-snug text-kk-accent sm:text-[0.95rem]">
+                    {item.alt}
+                  </span>
                 </span>
               </button>
             );
@@ -93,13 +100,13 @@ export function InfiniteGallery({ items }: { items: readonly Item[] }) {
       </div>
 
       <p className="mt-5 text-center text-xs text-kk-muted sm:text-sm">
-        Auto-scrolling gallery — hover to pause, click any photo for full size.
+        Smooth auto-scroll — hover to pause · click to view full size
       </p>
 
       <AnimatePresence>
         {active !== null ? (
           <motion.div
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4"
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/92 p-4 cursor-zoom-out"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -153,7 +160,7 @@ export function InfiniteGallery({ items }: { items: readonly Item[] }) {
                 quality={95}
               />
             </motion.div>
-            <p className="absolute bottom-5 left-1/2 max-w-xl -translate-x-1/2 px-4 text-center text-sm text-white/80">
+            <p className="absolute bottom-5 left-1/2 max-w-xl -translate-x-1/2 px-4 text-center text-sm font-medium text-kk-accent">
               {unique[active].alt}
             </p>
           </motion.div>
