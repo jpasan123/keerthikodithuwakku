@@ -34,13 +34,14 @@ export default function BlogPage() {
             <Reveal key={post.slug} delay={(i % 3) * 0.05}>
               <Link
                 href={`/blog/${post.slug}`}
-                className="group flex h-full flex-col overflow-hidden rounded-3xl border border-kk-border bg-white hover:border-kk-accent/40 hover:shadow-lg hover:shadow-kk-ink/5 hover:-translate-y-1 transition-all duration-300"
+                className="group/card flex h-full flex-col overflow-hidden rounded-3xl border border-kk-border bg-white hover:border-kk-accent/40 hover:shadow-lg hover:shadow-kk-ink/5 hover:-translate-y-1 transition-all duration-300"
               >
                 <ContentImageFrame
                   src={post.image}
                   alt=""
+                  fit="cover"
                   sizes="(max-width: 768px) 100vw, 33vw"
-                  className="transition duration-700 group-hover:scale-[1.02]"
+                  className="rounded-none border-0"
                 />
                 <div className="flex flex-1 flex-col p-5">
                   <time className="text-xs font-semibold uppercase tracking-wide text-kk-accent">

@@ -60,7 +60,7 @@ export function ContentImageFrame({
 }: ContentImageProps & { aspect?: string }) {
   return (
     <div
-      className={`relative ${aspect} overflow-hidden bg-[#f5f4f0] ${className}`}
+      className={`relative ${aspect} overflow-hidden bg-kk-ink ${className}`}
     >
       {fit === "contain" ? (
         <Image
@@ -78,7 +78,7 @@ export function ContentImageFrame({
           fill
           priority={priority}
           sizes={sizes}
-          className={`object-cover ${position}`}
+          className={`object-cover ${position} transition duration-700 group-hover/card:scale-[1.05]`}
         />
       )}
     </div>

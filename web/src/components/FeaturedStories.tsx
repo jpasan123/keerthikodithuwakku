@@ -41,14 +41,14 @@ export function FeaturedStories({ items }: { items: readonly FeaturedStory[] }) 
           animate={{ opacity: 1, y: 0 }}
           exit={reduce ? undefined : { opacity: 0, y: -10 }}
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="grid overflow-hidden rounded-[22px] border border-kk-border bg-white shadow-sm sm:rounded-[28px] md:grid-cols-2"
+          className="group grid overflow-hidden rounded-[22px] border border-kk-border bg-white shadow-sm sm:rounded-[28px] md:grid-cols-2"
         >
-          <div className="relative aspect-[16/11] bg-kk-surface sm:aspect-[4/5] md:aspect-auto md:min-h-[420px]">
+          <div className="relative aspect-[16/10] overflow-hidden bg-kk-ink sm:aspect-[16/11] md:aspect-auto md:min-h-[420px]">
             <Image
               src={story.image}
               alt=""
               fill
-              className="object-contain object-center p-2 sm:p-3"
+              className="object-cover object-center transition duration-700 group-hover:scale-[1.03]"
               sizes="(max-width: 768px) 100vw, 50vw"
               quality={95}
               priority={index === 0}

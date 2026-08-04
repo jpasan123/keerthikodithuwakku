@@ -41,7 +41,7 @@ export default async function BlogPostPage({ params }: Props) {
     <>
       <article>
         <header className="border-b border-kk-border bg-kk-surface">
-          <div className="container-kk max-w-3xl pb-12 pt-32 md:pb-16 md:pt-36">
+          <div className="container-kk pb-12 pt-32 md:pb-16 md:pt-36">
             <div className="flex flex-col gap-5 md:gap-6">
               <Link
                 href="/blog"
@@ -58,10 +58,10 @@ export default async function BlogPostPage({ params }: Props) {
                     day: "numeric",
                   })}
                 </time>
-                <h1 className="font-display text-3xl md:text-5xl leading-[1.12] text-kk-ink">
+                <h1 className="font-display text-3xl md:text-[2.75rem] lg:text-5xl leading-[1.12] text-kk-ink max-w-4xl">
                   {post.title}
                 </h1>
-                <p className="text-lg text-kk-muted leading-relaxed">
+                <p className="text-lg md:text-xl text-kk-muted leading-relaxed max-w-3xl">
                   {post.excerpt}
                 </p>
               </div>
@@ -69,22 +69,22 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
         </header>
 
-        <div className="container-kk py-10">
-          <figure className="mx-auto mb-10 max-w-4xl overflow-hidden rounded-3xl border border-kk-border bg-[#f5f4f0]">
+        <div className="container-kk py-10 md:py-14">
+          <figure className="mb-10 md:mb-12 overflow-hidden rounded-3xl border border-kk-border bg-kk-ink shadow-[0_20px_60px_rgba(12,14,10,0.08)]">
             <ContentImage
               src={post.image}
               alt=""
               priority
-              sizes="(max-width: 896px) 100vw, 896px"
+              sizes="(max-width: 1120px) 100vw, 1120px"
             />
           </figure>
 
-          <div className="prose-kk mx-auto max-w-2xl space-y-5 text-kk-muted leading-relaxed [&_h2]:font-display [&_h2]:text-2xl [&_h2]:text-kk-ink [&_h2]:mt-10 [&_h2]:mb-3 [&_p]:text-base md:[&_p]:text-lg [&_strong]:text-kk-ink">
+          <div className="prose-kk space-y-5 text-kk-muted leading-relaxed [&_h2]:font-display [&_h2]:text-2xl md:[&_h2]:text-3xl [&_h2]:text-kk-ink [&_h2]:mt-10 [&_h2]:mb-3 [&_p]:text-base md:[&_p]:text-lg [&_strong]:text-kk-ink">
             <MDXRemote source={post.content} />
           </div>
 
           {related.length > 0 ? (
-            <div className="max-w-2xl mx-auto mt-16 pt-10 border-t border-kk-border">
+            <div className="mt-16 pt-10 border-t border-kk-border">
               <p className="text-xs font-bold tracking-[0.12em] uppercase text-kk-accent mb-4">
                 Related
               </p>
