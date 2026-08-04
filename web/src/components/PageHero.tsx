@@ -48,13 +48,13 @@ export function PageHero({
       <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/15 to-transparent" />
       <div className="relative container-kk pb-16 pt-28 md:pb-24 md:pt-32">
         <Reveal>
-          <p className="text-xs font-bold tracking-[0.14em] uppercase text-kk-accent mb-3">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-kk-accent">
             {eyebrow}
           </p>
-          <h1 className="font-display max-w-3xl text-4xl md:text-5xl lg:text-6xl leading-[1.08] text-white drop-shadow-[0_2px_16px_rgba(0,0,0,0.4)]">
+          <h1 className="font-display max-w-3xl text-[2rem] leading-[1.18] text-white drop-shadow-[0_2px_16px_rgba(0,0,0,0.4)] sm:text-4xl md:text-[2.75rem] lg:text-[3.25rem]">
             {title}
           </h1>
-          <p className="mt-5 max-w-2xl text-base md:text-lg text-white/90 leading-relaxed">
+          <p className="mt-5 max-w-2xl text-base leading-[1.65] text-white/90 md:text-lg">
             {description}
           </p>
         </Reveal>

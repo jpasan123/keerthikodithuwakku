@@ -142,13 +142,13 @@ export function HeroSlider() {
             transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-2xl"
           >
-            <p className="mb-2.5 text-[0.65rem] font-bold uppercase tracking-[0.16em] text-kk-accent drop-shadow sm:mb-3 sm:text-[0.68rem] md:mb-3.5 md:text-sm">
+            <p className="mb-2.5 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-kk-accent drop-shadow sm:mb-3 sm:text-[0.68rem] md:mb-3.5 md:text-sm">
               {slide.eyebrow}
             </p>
-            <h1 className="font-display text-[clamp(1.55rem,6.2vw,4.1rem)] leading-[1.12] tracking-tight text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.45)]">
+            <h1 className="font-display text-[clamp(1.5rem,5.6vw,3.55rem)] leading-[1.15] text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.45)]">
               {slide.title}
             </h1>
-            <p className="mt-3.5 max-w-xl text-[0.84rem] leading-relaxed text-white/92 drop-shadow line-clamp-3 sm:mt-4 sm:line-clamp-none sm:text-[0.95rem] md:mt-5 md:text-lg md:leading-relaxed">
+            <p className="mt-3.5 max-w-xl text-[0.84rem] font-normal leading-relaxed text-white/90 drop-shadow line-clamp-3 sm:mt-4 sm:line-clamp-none sm:text-[0.95rem] md:mt-5 md:text-lg md:leading-[1.65]">
               {slide.text}
             </p>
           </motion.div>
