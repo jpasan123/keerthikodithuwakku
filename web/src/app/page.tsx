@@ -259,7 +259,6 @@ export default function HomePage() {
         <SectionHeading
           eyebrow="On camera"
           title="Television, interviews & programme features"
-          description="Muted autoplay on arrival, then advances. Hover to pause."
         />
         <VideoCarousel videos={achievements.videos} />
       </Section>

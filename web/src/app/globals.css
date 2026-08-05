@@ -124,6 +124,20 @@ body {
   will-change: transform;
 }
 
+@keyframes kk-video-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-33.333% - 10px));
+  }
+}
+
+.animate-kk-video-scroll {
+  animation: kk-video-scroll 120s linear infinite;
+  will-change: transform;
+}
+
 /* Gallery — zoom cursor on cards, grab on track when paused */
 .kk-gallery-track {
   cursor: default;
@@ -141,12 +155,17 @@ body {
   cursor: zoom-in;
 }
 
+.kk-video-track {
+  cursor: default;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-kk-marquee {
     animation: none;
   }
 
-  .animate-kk-gallery-scroll {
+  .animate-kk-gallery-scroll,
+  .animate-kk-video-scroll {
     animation: none;
     overflow-x: auto;
     max-width: 100%;
@@ -154,7 +173,8 @@ body {
     scroll-snap-type: x mandatory;
   }
 
-  .animate-kk-gallery-scroll > * {
+  .animate-kk-gallery-scroll > *,
+  .animate-kk-video-scroll > * {
     scroll-snap-align: start;
   }
 

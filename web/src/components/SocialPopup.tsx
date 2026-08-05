@@ -11,7 +11,7 @@ import {
 import { lockPageScroll, unlockPageScroll } from "@/lib/scrollLock";
 import { site } from "@/lib/site";
 
-const STORAGE_KEY = "kk_social_popup_seen_v7";
+const STORAGE_KEY = "kk_social_popup_seen_v8";
 
 export function SocialPopup() {
   const [open, setOpen] = useState(false);
@@ -56,13 +56,11 @@ export function SocialPopup() {
       href: site.social.linkedin,
       label: "LinkedIn",
       icon: LinkedInIcon,
-      tone: "bg-[#0A66C2] text-white hover:bg-[#0958a8]",
     },
     {
       href: site.social.facebook,
       label: "Facebook",
       icon: FacebookIcon,
-      tone: "bg-[#1877F2] text-white hover:bg-[#1464cf]",
     },
   ] as const;
 
@@ -76,48 +74,51 @@ export function SocialPopup() {
       <button
         type="button"
         aria-label="Close"
-        className="absolute inset-0 bg-kk-ink/55 backdrop-blur-md"
+        className="absolute inset-0 bg-[#0c0e0a]/60 backdrop-blur-[10px]"
         onClick={dismiss}
       />
-      <div className="relative z-10 w-full max-w-[420px] overflow-hidden rounded-[28px] bg-white shadow-[0_32px_90px_rgba(15,23,42,0.32)] ring-1 ring-kk-ink/8 animate-[kk-popup-in_0.4s_cubic-bezier(0.22,1,0.36,1)]">
-        <div className="relative h-28 bg-gradient-to-br from-kk-ink via-[#1c2118] to-kk-accent/80">
-          <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_20%_20%,rgba(241,130,0,0.55),transparent_55%)]" />
-          <button
-            type="button"
-            onClick={dismiss}
-            aria-label="Close popup"
-            className="absolute top-3.5 right-3.5 inline-flex size-9 items-center justify-center rounded-full bg-white/15 text-white hover:bg-white/25 transition"
-          >
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.2">
-              <path d="M6 6l12 12M18 6L6 18" />
-            </svg>
-          </button>
-        </div>
 
-        <div className="relative px-7 pb-7 pt-0 text-center -mt-14">
-          <div className="mx-auto relative size-[112px] overflow-hidden rounded-full ring-4 ring-white shadow-lg">
+      <div className="relative z-10 w-full max-w-[400px] overflow-hidden rounded-[26px] bg-white shadow-[0_40px_100px_rgba(12,14,10,0.28)] ring-1 ring-kk-ink/8 animate-[kk-popup-in_0.42s_cubic-bezier(0.22,1,0.36,1)]">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-36 bg-[radial-gradient(ellipse_at_top,rgba(241,130,0,0.14),transparent_70%)]" />
+
+        <button
+          type="button"
+          onClick={dismiss}
+          aria-label="Close popup"
+          className="absolute top-4 right-4 z-20 inline-flex size-9 items-center justify-center rounded-full border border-kk-border/80 bg-white/90 text-kk-muted shadow-sm backdrop-blur transition hover:border-kk-ink/20 hover:text-kk-ink"
+        >
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2.2">
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
+
+        <div className="relative px-8 pb-8 pt-10 text-center">
+          <div className="mx-auto relative size-[104px] overflow-hidden rounded-full bg-kk-surface ring-[3px] ring-kk-accent/35 shadow-[0_12px_36px_rgba(12,14,10,0.16)]">
             <Image
               src="/media/portraits/social-avatar.jpg"
               alt="Keerthi Kodithuwakku"
               fill
-              className="object-cover object-[50%_20%]"
-              sizes="(max-width: 768px) 224px, 224px"
+              className="object-cover object-[50%_18%]"
+              sizes="208px"
               quality={95}
               priority
             />
           </div>
 
-          <p className="mt-4 text-[0.72rem] font-bold tracking-[0.14em] uppercase text-kk-accent">
-            Stay connected
+          <p className="mt-5 text-[0.68rem] font-semibold tracking-[0.18em] uppercase text-kk-accent">
+            Connect
           </p>
-          <h2 id="kk-social-title" className="mt-1 font-display text-[1.85rem] leading-tight text-kk-ink">
-            Follow Keerthi
+          <h2
+            id="kk-social-title"
+            className="mt-2 font-display text-[1.7rem] leading-[1.15] tracking-[-0.02em] text-kk-ink"
+          >
+            {site.name}
           </h2>
-          <p className="mt-2.5 text-sm text-kk-muted leading-relaxed">
-            MedTech leadership, patents, and global collaborations, join the network.
+          <p className="mx-auto mt-3 max-w-[280px] text-[0.95rem] leading-relaxed text-kk-muted">
+            MedTech leadership, patents, and global collaborations.
           </p>
 
-          <div className="mt-5 grid grid-cols-2 gap-2.5">
+          <div className="mt-6 flex items-center justify-center gap-3">
             {links.map((item) => {
               const Icon = item.icon;
               return (
@@ -126,29 +127,29 @@ export function SocialPopup() {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`inline-flex items-center justify-center gap-2 rounded-2xl px-3 py-3.5 text-sm font-semibold shadow-sm transition-colors ${item.tone}`}
+                  aria-label={item.label}
+                  className="inline-flex size-12 items-center justify-center rounded-full border border-kk-border bg-kk-surface text-kk-ink transition hover:border-kk-accent/50 hover:bg-kk-accent hover:text-white"
                 >
-                  <Icon className="size-5" />
-                  {item.label}
+                  <Icon className="size-[1.15rem]" />
                 </a>
               );
             })}
           </div>
 
-          <div className="mt-5 flex flex-col gap-2">
+          <div className="mt-7 flex flex-col gap-3">
             <Link
               href="/contact"
               onClick={dismiss}
-              className="inline-flex items-center justify-center rounded-full bg-kk-accent px-5 py-3 text-sm font-semibold text-white hover:bg-kk-accent-hover transition-colors"
+              className="inline-flex items-center justify-center rounded-full bg-kk-accent px-5 py-3.5 text-sm font-semibold text-white shadow-[0_12px_28px_rgba(241,130,0,0.28)] transition hover:bg-kk-accent-hover"
             >
               Get Appointment
             </Link>
             <button
               type="button"
               onClick={dismiss}
-              className="text-sm font-medium text-kk-muted hover:text-kk-ink transition-colors py-2"
+              className="text-sm font-medium text-kk-muted transition-colors hover:text-kk-ink py-1"
             >
-              Maybe later
+              Continue to site
             </button>
           </div>
         </div>

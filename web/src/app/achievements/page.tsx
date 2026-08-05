@@ -135,7 +135,6 @@ export default function AchievementsPage() {
         <SectionHeading
           eyebrow="Media"
           title="Television and interview features"
-          description="Compact player: muted autoplay on arrival, then advances. Hover to pause; unmute with YouTube controls."
         />
         <VideoCarousel videos={achievements.videos} />
       </Section>
