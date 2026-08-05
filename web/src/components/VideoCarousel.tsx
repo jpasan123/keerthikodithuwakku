@@ -42,7 +42,10 @@ export function VideoCarousel({ videos }: { videos: readonly Video[] }) {
   const [hovered, setHovered] = useState<number | null>(null);
   const [active, setActive] = useState<number | null>(null);
 
-  const close = useCallback(() => setActive(null), []);
+  const close = useCallback(() => {
+    setActive(null);
+    setHovered(null);
+  }, []);
   const prev = useCallback(
     () => setActive((i) => (i === null ? null : (i - 1 + unique.length) % unique.length)),
     [unique.length],
@@ -70,6 +73,7 @@ export function VideoCarousel({ videos }: { videos: readonly Video[] }) {
   if (!unique.length) return null;
 
   const activeVideo = active === null ? null : unique[active];
+  const lightboxOpen = active !== null;
 
   return (
     <div className="relative">
@@ -77,18 +81,20 @@ export function VideoCarousel({ videos }: { videos: readonly Video[] }) {
         className="kk-video-track relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 overflow-hidden"
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => {
-          setPaused(false);
-          setHovered(null);
+          if (!lightboxOpen) {
+            setPaused(false);
+            setHovered(null);
+          }
         }}
       >
         <div
           className={`flex w-max items-stretch gap-5 py-2 sm:gap-6 ${
-            paused || reduce ? "[animation-play-state:paused]" : ""
+            paused || reduce || lightboxOpen ? "[animation-play-state:paused]" : ""
           } animate-kk-video-scroll`}
         >
           {loop.map((video, i) => {
             const sourceIndex = i % unique.length;
-            const isHovered = hovered === i;
+            const isHovered = !lightboxOpen && hovered === i;
             return (
               <button
                 key={`${video.id}-${i}`}
@@ -137,71 +143,118 @@ export function VideoCarousel({ videos }: { videos: readonly Video[] }) {
       </div>
 
       <AnimatePresence>
-        {activeVideo ? (
+        {activeVideo && active !== null ? (
           <motion.div
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/92 p-4"
+            className="fixed inset-0 z-[120] flex flex-col bg-[#070807]/96 backdrop-blur-xl"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="kk-video-lightbox-title"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={close}
+            transition={{ duration: 0.22 }}
           >
-            <button
-              type="button"
-              onClick={close}
-              aria-label="Close video"
-              className="absolute right-4 top-4 z-20 inline-flex size-11 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur transition hover:bg-white/20"
-            >
-              <X className="size-5" />
-            </button>
-
-            <button
-              type="button"
-              onClick={(e) => {
-                e.stopPropagation();
-                prev();
-              }}
-              aria-label="Previous video"
-              className="absolute left-3 top-1/2 z-20 hidden -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-white/10 p-3 text-white backdrop-blur transition hover:bg-white/20 sm:inline-flex md:left-6"
-            >
-              <ChevronLeft className="size-5" />
-            </button>
-            <button
-              type="button"
-              onClick={(e) => {
-                e.stopPropagation();
-                next();
-              }}
-              aria-label="Next video"
-              className="absolute right-3 top-1/2 z-20 hidden -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-white/10 p-3 text-white backdrop-blur transition hover:bg-white/20 sm:inline-flex md:right-6"
-            >
-              <ChevronRight className="size-5" />
-            </button>
-
-            <motion.div
-              className="relative w-full max-w-5xl overflow-hidden rounded-2xl bg-black shadow-2xl"
-              initial={{ scale: 0.96, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.96, opacity: 0 }}
-              transition={{ duration: 0.25 }}
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="relative aspect-video w-full">
-                <iframe
-                  key={activeVideo.id}
-                  title={activeVideo.title}
-                  src={embedSrc(activeVideo.id, { mute: false, controls: true })}
-                  className="absolute inset-0 size-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  referrerPolicy="strict-origin-when-cross-origin"
-                />
-              </div>
-              <div className="border-t border-white/10 bg-[#0c0e0a] px-5 py-4">
-                <p className="text-sm font-medium text-white/90 sm:text-base">
+            {/* Top chrome */}
+            <div className="relative z-20 flex shrink-0 items-start justify-between gap-4 px-4 pt-[max(0.85rem,env(safe-area-inset-top))] pb-3 sm:px-6 sm:pt-5 sm:pb-4">
+              <div className="min-w-0 flex-1 pt-1">
+                <p className="text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-kk-accent">
+                  On camera
+                </p>
+                <h3
+                  id="kk-video-lightbox-title"
+                  className="mt-1 max-w-3xl font-display text-base leading-snug text-white sm:text-xl md:text-2xl"
+                >
                   {activeVideo.title}
+                </h3>
+                <p className="mt-1 text-xs text-white/45 sm:text-sm">
+                  {active + 1} / {unique.length}
                 </p>
               </div>
-            </motion.div>
+              <button
+                type="button"
+                onClick={close}
+                aria-label="Close video"
+                className="inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white backdrop-blur-md transition hover:border-kk-accent/50 hover:bg-kk-accent hover:text-white sm:size-12"
+              >
+                <X className="size-5" />
+              </button>
+            </div>
+
+            {/* Stage */}
+            <div className="relative flex min-h-0 flex-1 items-center justify-center px-2 sm:px-8 md:px-16 lg:px-20">
+              <button
+                type="button"
+                onClick={prev}
+                aria-label="Previous video"
+                className="absolute left-2 top-1/2 z-20 inline-flex size-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/40 text-white backdrop-blur-md transition hover:border-kk-accent/50 hover:bg-kk-accent sm:left-4 sm:size-12 md:left-6"
+              >
+                <ChevronLeft className="size-5" />
+              </button>
+              <button
+                type="button"
+                onClick={next}
+                aria-label="Next video"
+                className="absolute right-2 top-1/2 z-20 inline-flex size-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/40 text-white backdrop-blur-md transition hover:border-kk-accent/50 hover:bg-kk-accent sm:right-4 sm:size-12 md:right-6"
+              >
+                <ChevronRight className="size-5" />
+              </button>
+
+              <motion.div
+                key={activeVideo.id}
+                className="relative w-full max-w-[min(100%,1100px)] overflow-hidden rounded-xl bg-black shadow-[0_40px_120px_rgba(0,0,0,0.55)] ring-1 ring-white/10 sm:rounded-2xl"
+                style={{
+                  // Keep player large but leave room for chrome + filmstrip on all devices
+                  maxHeight: "min(72dvh, calc(100dvh - 11.5rem))",
+                }}
+                initial={{ opacity: 0, scale: 0.985, y: 8 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.99 }}
+                transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <div className="relative aspect-video w-full max-h-[inherit] bg-black">
+                  <iframe
+                    key={activeVideo.id}
+                    title={activeVideo.title}
+                    src={embedSrc(activeVideo.id, { mute: false, controls: true })}
+                    className="absolute inset-0 size-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    referrerPolicy="strict-origin-when-cross-origin"
+                  />
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Filmstrip / mobile nav */}
+            <div className="relative z-20 shrink-0 border-t border-white/8 bg-black/30 px-3 pb-[max(0.85rem,env(safe-area-inset-bottom))] pt-3 backdrop-blur-md sm:px-6 sm:pt-4">
+              <div className="mx-auto flex max-w-6xl gap-2.5 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                {unique.map((video, i) => {
+                  const selected = i === active;
+                  return (
+                    <button
+                      key={video.id}
+                      type="button"
+                      onClick={() => setActive(i)}
+                      aria-label={video.title}
+                      aria-current={selected ? "true" : undefined}
+                      className={`relative h-[58px] w-[104px] shrink-0 overflow-hidden rounded-lg transition sm:h-[68px] sm:w-[120px] sm:rounded-xl ${
+                        selected
+                          ? "ring-2 ring-kk-accent ring-offset-2 ring-offset-[#070807]"
+                          : "opacity-55 hover:opacity-100"
+                      }`}
+                    >
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={thumbPath(video.id)}
+                        alt=""
+                        className="size-full object-cover"
+                      />
+                      <span className="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent" />
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
           </motion.div>
         ) : null}
       </AnimatePresence>
