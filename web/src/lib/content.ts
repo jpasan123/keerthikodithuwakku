@@ -485,33 +485,52 @@ export const achievements = {
   videos: [
     {
       id: "eFdcP4RWKRg",
-      title:
-        'Building and Commercializing MedTech IP from Sri Lanka, Morph Lab, Imperial',
+      label: "Keynote",
+      title: "Building MedTech IP from Sri Lanka",
+      blurb:
+        "Morph Lab, Imperial: commercialising medical technology and patents from Sri Lanka to global markets.",
     },
     {
       id: "PmWH84RqYiE",
-      title:
-        "The Journey Towards a US Patent: Keerthi Kodithuwakku, Jendo Innovations",
+      label: "Patent journey",
+      title: "The journey towards a US patent",
+      blurb:
+        "Keerthi on Jendo Innovations and the path from research to protected MedTech IP.",
     },
     {
       id: "WKAR3etccU4",
-      title: "New invention for identifying heart patients: Jendo",
+      label: "Innovation",
+      title: "Identifying heart patients earlier",
+      blurb:
+        "Jendo’s non-invasive approach to cardiovascular screening, featured in national media.",
     },
     {
       id: "-bqUvBCFQxk",
-      title: "Sri Lanka's very first mind-controlled drone: Jendo Innovation",
+      label: "Breakthrough",
+      title: "Sri Lanka’s first mind-controlled drone",
+      blurb:
+        "A landmark demonstration of BCI-powered flight from Jendo Innovation.",
     },
     {
       id: "MKTUO5NX1Qg",
-      title: "Effective Solutions: interview at 4YFN 2017, Barcelona",
+      label: "Interview",
+      title: "Effective Solutions at 4YFN",
+      blurb:
+        "Barcelona 2017: positioning Sri Lankan technology on the global startup stage.",
     },
     {
       id: "F-KEnSZ2KzI",
-      title: "Business Today: CEO of Effective Solutions (2021)",
+      label: "Business Today",
+      title: "CEO of Effective Solutions",
+      blurb:
+        "A 2021 conversation on leadership, IoT, and building technology companies from Sri Lanka.",
     },
     {
       id: "bcE8pwGF3Zw",
-      title: "Aluth Parliament: Sri Lanka's $2 billion IT industry goal",
+      label: "Policy",
+      title: "A $2 billion IT industry goal",
+      blurb:
+        "Aluth Parliament: the case for scaling Sri Lanka’s technology export economy.",
     },
   ],
   /** Each card uses a unique image, no shared clinical/product shots */

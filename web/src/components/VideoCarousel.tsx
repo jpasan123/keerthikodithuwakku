@@ -1,17 +1,26 @@
 "use client";
 
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, Play, X } from "lucide-react";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { lockPageScroll, unlockPageScroll } from "@/lib/scrollLock";
 
-type Video = { id: string; title: string };
+type Video = {
+  id: string;
+  title: string;
+  label?: string;
+  blurb?: string;
+};
 
 function thumbPath(id: string) {
   return `/media/video-thumbs/${id.replace(/^-/, "")}.jpg`;
 }
 
-function embedSrc(id: string, { mute, controls }: { mute: boolean; controls: boolean }) {
+function embedSrc(
+  id: string,
+  { mute, controls }: { mute: boolean; controls: boolean },
+) {
+  // Leading "-" ids must stay intact for YouTube.
   const params = new URLSearchParams({
     autoplay: "1",
     mute: mute ? "1" : "0",
@@ -19,10 +28,12 @@ function embedSrc(id: string, { mute, controls }: { mute: boolean; controls: boo
     rel: "0",
     modestbranding: "1",
     playsinline: "1",
-    loop: "1",
-    playlist: id,
+    enablejsapi: "1",
   });
-  return `https://www.youtube-nocookie.com/embed/${id}?${params.toString()}`;
+  // Loop requires playlist=same id
+  params.set("loop", "1");
+  params.set("playlist", id);
+  return `https://www.youtube.com/embed/${id}?${params.toString()}`;
 }
 
 export function VideoCarousel({ videos }: { videos: readonly Video[] }) {
@@ -41,10 +52,12 @@ export function VideoCarousel({ videos }: { videos: readonly Video[] }) {
   const [paused, setPaused] = useState(false);
   const [hovered, setHovered] = useState<number | null>(null);
   const [active, setActive] = useState<number | null>(null);
+  const [playerReady, setPlayerReady] = useState(false);
 
   const close = useCallback(() => {
     setActive(null);
     setHovered(null);
+    setPlayerReady(false);
   }, []);
   const prev = useCallback(
     () => setActive((i) => (i === null ? null : (i - 1 + unique.length) % unique.length)),
@@ -54,6 +67,10 @@ export function VideoCarousel({ videos }: { videos: readonly Video[] }) {
     () => setActive((i) => (i === null ? null : (i + 1) % unique.length)),
     [unique.length],
   );
+
+  useEffect(() => {
+    setPlayerReady(false);
+  }, [active]);
 
   useEffect(() => {
     if (active === null) return;
@@ -78,7 +95,7 @@ export function VideoCarousel({ videos }: { videos: readonly Video[] }) {
   return (
     <div className="relative">
       <div
-        className="kk-video-track relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 overflow-hidden"
+        className="kk-video-track relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 overflow-hidden py-2"
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => {
           if (!lightboxOpen) {
@@ -88,7 +105,7 @@ export function VideoCarousel({ videos }: { videos: readonly Video[] }) {
         }}
       >
         <div
-          className={`flex w-max items-stretch gap-5 py-2 sm:gap-6 ${
+          className={`flex w-max items-stretch gap-5 px-4 sm:gap-6 sm:px-6 ${
             paused || reduce || lightboxOpen ? "[animation-play-state:paused]" : ""
           } animate-kk-video-scroll`}
         >
@@ -104,38 +121,51 @@ export function VideoCarousel({ videos }: { videos: readonly Video[] }) {
                 onFocus={() => setHovered(i)}
                 onBlur={() => setHovered((h) => (h === i ? null : h))}
                 onClick={() => setActive(sourceIndex)}
-                className="group relative h-[220px] w-[360px] shrink-0 overflow-hidden rounded-[22px] bg-[#0c0e0a] text-left shadow-[0_16px_44px_rgba(12,14,10,0.14)] transition duration-500 hover:-translate-y-1.5 hover:shadow-[0_26px_56px_rgba(12,14,10,0.22)] sm:h-[240px] sm:w-[400px] md:h-[260px] md:w-[440px]"
+                className="group flex w-[300px] shrink-0 flex-col overflow-hidden rounded-[26px] border border-kk-border bg-white text-left shadow-[0_14px_40px_rgba(12,14,10,0.08)] transition duration-500 hover:-translate-y-1.5 hover:border-kk-accent/35 hover:shadow-[0_24px_54px_rgba(12,14,10,0.14)] sm:w-[340px] md:w-[360px]"
                 aria-label={`Play video: ${video.title}`}
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={thumbPath(video.id)}
-                  alt=""
-                  className={`absolute inset-0 size-full object-cover transition duration-700 group-hover:scale-[1.04] ${
-                    isHovered ? "opacity-0" : "opacity-100"
-                  }`}
-                />
-
-                {isHovered && !reduce ? (
-                  <iframe
-                    title={video.title}
-                    src={embedSrc(video.id, { mute: true, controls: false })}
-                    className="pointer-events-none absolute inset-0 size-full"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    tabIndex={-1}
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-kk-ink">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={thumbPath(video.id)}
+                    alt=""
+                    className={`absolute inset-0 size-full object-cover transition duration-700 group-hover:scale-[1.04] ${
+                      isHovered ? "opacity-0" : "opacity-100"
+                    }`}
                   />
-                ) : null}
 
-                <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-kk-ink/90 via-kk-ink/25 to-transparent opacity-80 transition duration-300 group-hover:opacity-95" />
-                <span className="pointer-events-none absolute inset-x-0 bottom-0 p-4 sm:p-5">
-                  <span
-                    className="mb-2 block h-0.5 w-8 rounded-full bg-kk-accent"
-                    aria-hidden
-                  />
-                  <span className="block text-left text-sm font-semibold leading-snug text-white line-clamp-2">
+                  {isHovered && !reduce ? (
+                    <iframe
+                      title={video.title}
+                      src={embedSrc(video.id, { mute: true, controls: false })}
+                      className="pointer-events-none absolute inset-0 size-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      tabIndex={-1}
+                    />
+                  ) : null}
+
+                  {!isHovered ? (
+                    <span className="pointer-events-none absolute inset-0 flex items-center justify-center bg-kk-ink/10 transition group-hover:bg-kk-ink/20">
+                      <span className="inline-flex size-12 items-center justify-center rounded-full bg-white/95 text-kk-accent shadow-lg transition group-hover:scale-105">
+                        <Play className="size-5 fill-current" />
+                      </span>
+                    </span>
+                  ) : null}
+                </div>
+
+                <div className="flex flex-1 flex-col px-5 py-5 text-center sm:px-6 sm:py-6">
+                  <p className="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-kk-accent">
+                    {video.label ?? "On camera"}
+                  </p>
+                  <h3 className="mt-2 font-display text-[1.2rem] leading-snug tracking-[-0.02em] text-kk-ink sm:text-[1.3rem]">
                     {video.title}
-                  </span>
-                </span>
+                  </h3>
+                  {video.blurb ? (
+                    <p className="mt-2.5 text-sm leading-relaxed text-kk-muted line-clamp-3">
+                      {video.blurb}
+                    </p>
+                  ) : null}
+                </div>
               </button>
             );
           })}
@@ -145,7 +175,7 @@ export function VideoCarousel({ videos }: { videos: readonly Video[] }) {
       <AnimatePresence>
         {activeVideo && active !== null ? (
           <motion.div
-            className="fixed inset-0 z-[120] flex flex-col bg-[#070807]/96 backdrop-blur-xl"
+            className="fixed inset-0 z-[120] flex flex-col bg-[#070807]/97 backdrop-blur-xl"
             role="dialog"
             aria-modal="true"
             aria-labelledby="kk-video-lightbox-title"
@@ -154,11 +184,10 @@ export function VideoCarousel({ videos }: { videos: readonly Video[] }) {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.22 }}
           >
-            {/* Top chrome */}
             <div className="relative z-20 flex shrink-0 items-start justify-between gap-4 px-4 pt-[max(0.85rem,env(safe-area-inset-top))] pb-3 sm:px-6 sm:pt-5 sm:pb-4">
               <div className="min-w-0 flex-1 pt-1">
                 <p className="text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-kk-accent">
-                  On camera
+                  {activeVideo.label ?? "On camera"}
                 </p>
                 <h3
                   id="kk-video-lightbox-title"
@@ -180,13 +209,12 @@ export function VideoCarousel({ videos }: { videos: readonly Video[] }) {
               </button>
             </div>
 
-            {/* Stage */}
-            <div className="relative flex min-h-0 flex-1 items-center justify-center px-2 sm:px-8 md:px-16 lg:px-20">
+            <div className="relative flex min-h-0 flex-1 items-center justify-center px-3 sm:px-10 md:px-16">
               <button
                 type="button"
                 onClick={prev}
                 aria-label="Previous video"
-                className="absolute left-2 top-1/2 z-20 inline-flex size-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/40 text-white backdrop-blur-md transition hover:border-kk-accent/50 hover:bg-kk-accent sm:left-4 sm:size-12 md:left-6"
+                className="absolute left-2 top-1/2 z-20 inline-flex size-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/45 text-white backdrop-blur-md transition hover:border-kk-accent/50 hover:bg-kk-accent sm:left-4 sm:size-12 md:left-6"
               >
                 <ChevronLeft className="size-5" />
               </button>
@@ -194,38 +222,53 @@ export function VideoCarousel({ videos }: { videos: readonly Video[] }) {
                 type="button"
                 onClick={next}
                 aria-label="Next video"
-                className="absolute right-2 top-1/2 z-20 inline-flex size-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/40 text-white backdrop-blur-md transition hover:border-kk-accent/50 hover:bg-kk-accent sm:right-4 sm:size-12 md:right-6"
+                className="absolute right-2 top-1/2 z-20 inline-flex size-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/45 text-white backdrop-blur-md transition hover:border-kk-accent/50 hover:bg-kk-accent sm:right-4 sm:size-12 md:right-6"
               >
                 <ChevronRight className="size-5" />
               </button>
 
               <motion.div
                 key={activeVideo.id}
-                className="relative w-full max-w-[min(100%,1100px)] overflow-hidden rounded-xl bg-black shadow-[0_40px_120px_rgba(0,0,0,0.55)] ring-1 ring-white/10 sm:rounded-2xl"
-                style={{
-                  // Keep player large but leave room for chrome + filmstrip on all devices
-                  maxHeight: "min(72dvh, calc(100dvh - 11.5rem))",
-                }}
+                className="relative w-full max-w-5xl overflow-hidden rounded-xl bg-black shadow-[0_40px_120px_rgba(0,0,0,0.55)] ring-1 ring-white/10 sm:rounded-2xl"
                 initial={{ opacity: 0, scale: 0.985, y: 8 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.99 }}
                 transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
               >
-                <div className="relative aspect-video w-full max-h-[inherit] bg-black">
+                <div className="relative w-full" style={{ aspectRatio: "16 / 9" }}>
+                  {/* Poster while player boots — avoids black flash */}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={thumbPath(activeVideo.id)}
+                    alt=""
+                    className={`absolute inset-0 size-full object-cover transition-opacity duration-500 ${
+                      playerReady ? "opacity-0" : "opacity-100"
+                    }`}
+                  />
                   <iframe
                     key={activeVideo.id}
                     title={activeVideo.title}
-                    src={embedSrc(activeVideo.id, { mute: false, controls: true })}
-                    className="absolute inset-0 size-full"
+                    // Browsers block unmuted autoplay → black screen. Start muted; controls let users unmute.
+                    src={embedSrc(activeVideo.id, { mute: true, controls: true })}
+                    className={`absolute inset-0 size-full transition-opacity duration-500 ${
+                      playerReady ? "opacity-100" : "opacity-0"
+                    }`}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
                     referrerPolicy="strict-origin-when-cross-origin"
+                    onLoad={() => setPlayerReady(true)}
                   />
                 </div>
+                {activeVideo.blurb ? (
+                  <div className="border-t border-white/10 bg-[#0c0e0a] px-5 py-4 sm:px-6">
+                    <p className="text-sm leading-relaxed text-white/70">
+                      {activeVideo.blurb}
+                    </p>
+                  </div>
+                ) : null}
               </motion.div>
             </div>
 
-            {/* Filmstrip / mobile nav */}
             <div className="relative z-20 shrink-0 border-t border-white/8 bg-black/30 px-3 pb-[max(0.85rem,env(safe-area-inset-bottom))] pt-3 backdrop-blur-md sm:px-6 sm:pt-4">
               <div className="mx-auto flex max-w-6xl gap-2.5 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                 {unique.map((video, i) => {
