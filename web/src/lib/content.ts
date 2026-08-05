@@ -329,8 +329,8 @@ export const ventures = [
     summary:
       "Deep-tech MedTech venture building an AI-powered, non-invasive vascular health monitoring system: detecting endothelial dysfunction, the earliest indicator of cardiovascular disease, in about 15 minutes.",
     href: "https://jendo.health/",
-    image: "/media/products/jendo-device-kit.jpg",
-    position: "object-[50%_45%]",
+    image: "/media/products/jendo-background.jpg",
+    position: "object-[62%_48%]",
     highlights: ["US and Japan patents", "15-minute screening", "Bahrain pilot"],
   },
   {

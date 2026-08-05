@@ -46,7 +46,7 @@ export function VenturesShowcase({ items }: { items: readonly Venture[] }) {
 
   return (
     <div ref={rootRef}>
-      <div className="relative overflow-hidden rounded-[28px] border border-kk-border bg-kk-soft min-h-[380px] md:min-h-[440px]">
+      <div className="relative overflow-hidden rounded-[28px] border border-kk-border bg-kk-soft min-h-[400px] sm:min-h-[420px] md:min-h-[460px]">
         <AnimatePresence mode="wait">
           <motion.div
             key={item.name}
@@ -61,7 +61,7 @@ export function VenturesShowcase({ items }: { items: readonly Venture[] }) {
               alt=""
               fill
               className={`object-cover ${item.position ?? "object-center"}`}
-              sizes="100vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
               quality={92}
               priority={index === 0}
             />
@@ -70,7 +70,7 @@ export function VenturesShowcase({ items }: { items: readonly Venture[] }) {
           </motion.div>
         </AnimatePresence>
 
-        <div className="relative z-10 flex h-full min-h-[380px] md:min-h-[440px] flex-col justify-end p-6 md:p-11">
+        <div className="relative z-10 flex h-full min-h-[400px] sm:min-h-[420px] md:min-h-[460px] flex-col justify-end p-6 sm:p-8 md:p-11">
           <AnimatePresence mode="wait">
             <motion.div
               key={`${item.name}-copy`}

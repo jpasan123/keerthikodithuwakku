@@ -136,7 +136,7 @@ export function VideoCarousel({ videos }: { videos: readonly Video[] }) {
                 onFocus={() => setHovered(i)}
                 onBlur={() => setHovered((h) => (h === i ? null : h))}
                 onClick={() => setActive(sourceIndex)}
-                className="group flex w-[300px] shrink-0 flex-col overflow-hidden rounded-[26px] border border-kk-border bg-white text-left shadow-[0_14px_40px_rgba(12,14,10,0.08)] transition duration-500 hover:-translate-y-1.5 hover:border-kk-accent/35 hover:shadow-[0_24px_54px_rgba(12,14,10,0.14)] sm:w-[340px] md:w-[360px]"
+                className="group flex w-[340px] shrink-0 flex-col overflow-hidden rounded-[26px] border border-kk-border bg-white text-left shadow-[0_14px_40px_rgba(12,14,10,0.08)] transition duration-500 hover:-translate-y-1.5 hover:border-kk-accent/35 hover:shadow-[0_24px_54px_rgba(12,14,10,0.14)] sm:w-[380px] md:w-[420px]"
                 aria-label={`Play video: ${video.title}`}
               >
                 <div className="relative aspect-[16/10] w-full overflow-hidden bg-kk-ink">
@@ -168,11 +168,11 @@ export function VideoCarousel({ videos }: { videos: readonly Video[] }) {
                   ) : null}
                 </div>
 
-                <div className="flex flex-1 flex-col px-5 py-5 text-center sm:px-6 sm:py-6">
-                  <p className="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-kk-accent">
+                <div className="flex flex-1 flex-col px-5 py-5 text-center sm:px-6 sm:py-6 md:px-7 md:py-7">
+                  <p className="text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-kk-accent">
                     {video.label ?? "On camera"}
                   </p>
-                  <h3 className="mt-2 font-display text-[1.2rem] leading-snug tracking-[-0.02em] text-kk-ink sm:text-[1.3rem]">
+                  <h3 className="mt-2 font-display text-[1.25rem] leading-snug tracking-[-0.02em] text-kk-ink sm:text-[1.35rem] md:text-[1.4rem]">
                     {video.title}
                   </h3>
                   {video.blurb ? (
