@@ -124,17 +124,18 @@ body {
   will-change: transform;
 }
 
+/* Opposite direction to the photo gallery so adjacent reels don't look synced */
 @keyframes kk-video-scroll {
   from {
-    transform: translateX(0);
+    transform: translateX(calc(-33.333% - 10px));
   }
   to {
-    transform: translateX(calc(-33.333% - 10px));
+    transform: translateX(0);
   }
 }
 
 .animate-kk-video-scroll {
-  animation: kk-video-scroll 120s linear infinite;
+  animation: kk-video-scroll 135s linear infinite;
   will-change: transform;
 }
 

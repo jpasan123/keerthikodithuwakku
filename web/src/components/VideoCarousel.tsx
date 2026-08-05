@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Play, X } from "lucide-react";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { lockPageScroll, unlockPageScroll } from "@/lib/scrollLock";
 
 type Video = {
@@ -48,11 +48,24 @@ export function VideoCarousel({ videos }: { videos: readonly Video[] }) {
 
   const loop = useMemo(() => [...unique, ...unique, ...unique], [unique]);
   const reduce = useReducedMotion();
+  const trackRef = useRef<HTMLDivElement>(null);
 
   const [paused, setPaused] = useState(false);
   const [hovered, setHovered] = useState<number | null>(null);
   const [active, setActive] = useState<number | null>(null);
   const [playerReady, setPlayerReady] = useState(false);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const el = trackRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { threshold: 0.18, rootMargin: "0px 0px -8% 0px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
 
   const close = useCallback(() => {
     setActive(null);
@@ -91,10 +104,12 @@ export function VideoCarousel({ videos }: { videos: readonly Video[] }) {
 
   const activeVideo = active === null ? null : unique[active];
   const lightboxOpen = active !== null;
+  const animPaused = paused || reduce || lightboxOpen || !inView;
 
   return (
     <div className="relative">
       <div
+        ref={trackRef}
         className="kk-video-track relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 overflow-hidden py-2"
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => {
@@ -106,7 +121,7 @@ export function VideoCarousel({ videos }: { videos: readonly Video[] }) {
       >
         <div
           className={`flex w-max items-stretch gap-5 px-4 sm:gap-6 sm:px-6 ${
-            paused || reduce || lightboxOpen ? "[animation-play-state:paused]" : ""
+            animPaused ? "[animation-play-state:paused]" : ""
           } animate-kk-video-scroll`}
         >
           {loop.map((video, i) => {

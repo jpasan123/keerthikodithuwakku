@@ -3,12 +3,13 @@
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { lockPageScroll, unlockPageScroll } from "@/lib/scrollLock";
 
-type Item = { src: string; alt: string };
+type Item = { src: string; alt: string; focus?: string };
 
 export function InfiniteGallery({ items }: { items: readonly Item[] }) {
+  const trackRef = useRef<HTMLDivElement>(null);
   const unique = useMemo(() => {
     const seen = new Set<string>();
     return items.filter((item) => {
@@ -22,6 +23,7 @@ export function InfiniteGallery({ items }: { items: readonly Item[] }) {
 
   const [active, setActive] = useState<number | null>(null);
   const [paused, setPaused] = useState(false);
+  const [inView, setInView] = useState(false);
 
   const close = useCallback(() => setActive(null), []);
   const prev = useCallback(
@@ -32,6 +34,17 @@ export function InfiniteGallery({ items }: { items: readonly Item[] }) {
     () => setActive((i) => (i === null ? null : (i + 1) % unique.length)),
     [unique.length],
   );
+
+  useEffect(() => {
+    const el = trackRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { threshold: 0.18, rootMargin: "0px 0px -8% 0px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
 
   useEffect(() => {
     if (active === null) return;
@@ -50,9 +63,12 @@ export function InfiniteGallery({ items }: { items: readonly Item[] }) {
 
   if (unique.length === 0) return null;
 
+  const animPaused = paused || !inView || active !== null;
+
   return (
     <div className="relative">
       <div
+        ref={trackRef}
         className="kk-gallery-track relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 overflow-hidden"
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
@@ -60,7 +76,9 @@ export function InfiniteGallery({ items }: { items: readonly Item[] }) {
         onBlurCapture={() => setPaused(false)}
       >
         <div
-          className={`flex w-max items-stretch gap-5 py-3 sm:gap-6 ${paused ? "[animation-play-state:paused]" : ""} animate-kk-gallery-scroll`}
+          className={`flex w-max items-stretch gap-5 py-3 sm:gap-6 ${
+            animPaused ? "[animation-play-state:paused]" : ""
+          } animate-kk-gallery-scroll`}
         >
           {loop.map((item, i) => {
             const sourceIndex = i % unique.length;
@@ -76,7 +94,9 @@ export function InfiniteGallery({ items }: { items: readonly Item[] }) {
                   src={item.src}
                   alt={item.alt}
                   fill
-                  className="object-cover object-center transition duration-700 group-hover:scale-[1.06]"
+                  className={`object-cover transition duration-700 group-hover:scale-[1.06] ${
+                    item.focus ?? "object-[50%_28%]"
+                  }`}
                   sizes="(max-width: 768px) 420px, 440px"
                   quality={95}
                   loading={i < 8 ? "eager" : "lazy"}
