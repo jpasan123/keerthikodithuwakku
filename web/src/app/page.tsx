@@ -251,7 +251,6 @@ export default function HomePage() {
         <SectionHeading
           eyebrow="Gallery"
           title="Leadership and collaboration in focus"
-          description="A continuous reel of selected moments — hover to pause, click to view full size."
         />
         <InfiniteGallery items={gallery} />
       </Section>

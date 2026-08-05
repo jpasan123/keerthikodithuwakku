@@ -98,10 +98,6 @@ export function InfiniteGallery({ items }: { items: readonly Item[] }) {
         </div>
       </div>
 
-      <p className="mt-5 text-center text-xs text-kk-muted sm:text-sm">
-        Smooth auto-scroll — hover to pause · click to view full size
-      </p>
-
       <AnimatePresence>
         {active !== null ? (
           <motion.div
