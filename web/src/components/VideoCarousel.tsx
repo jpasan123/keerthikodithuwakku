@@ -50,7 +50,6 @@ export function VideoCarousel({ videos }: { videos: readonly Video[] }) {
   const reduce = useReducedMotion();
   const trackRef = useRef<HTMLDivElement>(null);
 
-  const [paused, setPaused] = useState(false);
   const [hovered, setHovered] = useState<number | null>(null);
   const [active, setActive] = useState<number | null>(null);
   const [playerReady, setPlayerReady] = useState(false);
@@ -104,20 +103,13 @@ export function VideoCarousel({ videos }: { videos: readonly Video[] }) {
 
   const activeVideo = active === null ? null : unique[active];
   const lightboxOpen = active !== null;
-  const animPaused = paused || reduce || lightboxOpen || !inView;
+  const animPaused = reduce || lightboxOpen || !inView;
 
   return (
     <div className="relative">
       <div
         ref={trackRef}
         className="kk-video-track relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 overflow-hidden py-2"
-        onMouseEnter={() => setPaused(true)}
-        onMouseLeave={() => {
-          if (!lightboxOpen) {
-            setPaused(false);
-            setHovered(null);
-          }
-        }}
       >
         <div
           className={`flex w-max items-stretch gap-5 px-4 sm:gap-6 sm:px-6 ${
@@ -136,7 +128,7 @@ export function VideoCarousel({ videos }: { videos: readonly Video[] }) {
                 onFocus={() => setHovered(i)}
                 onBlur={() => setHovered((h) => (h === i ? null : h))}
                 onClick={() => setActive(sourceIndex)}
-                className="group flex w-[340px] shrink-0 flex-col overflow-hidden rounded-[26px] border border-kk-border bg-white text-left shadow-[0_14px_40px_rgba(12,14,10,0.08)] transition duration-500 hover:-translate-y-1.5 hover:border-kk-accent/35 hover:shadow-[0_24px_54px_rgba(12,14,10,0.14)] sm:w-[380px] md:w-[420px]"
+                className="kk-video-card group flex w-[340px] shrink-0 flex-col overflow-hidden rounded-[26px] border border-kk-border bg-white text-left shadow-[0_14px_40px_rgba(12,14,10,0.08)] transition duration-500 hover:-translate-y-1.5 hover:border-kk-accent/35 hover:shadow-[0_24px_54px_rgba(12,14,10,0.14)] sm:w-[380px] md:w-[420px]"
                 aria-label={`Play video: ${video.title}`}
               >
                 <div className="relative aspect-[16/10] w-full overflow-hidden bg-kk-ink">

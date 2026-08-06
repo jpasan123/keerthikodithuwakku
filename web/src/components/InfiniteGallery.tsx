@@ -22,7 +22,6 @@ export function InfiniteGallery({ items }: { items: readonly Item[] }) {
   const loop = useMemo(() => [...unique, ...unique, ...unique], [unique]);
 
   const [active, setActive] = useState<number | null>(null);
-  const [paused, setPaused] = useState(false);
   const [inView, setInView] = useState(false);
 
   const close = useCallback(() => setActive(null), []);
@@ -63,17 +62,13 @@ export function InfiniteGallery({ items }: { items: readonly Item[] }) {
 
   if (unique.length === 0) return null;
 
-  const animPaused = paused || !inView || active !== null;
+  const animPaused = !inView || active !== null;
 
   return (
     <div className="relative">
       <div
         ref={trackRef}
         className="kk-gallery-track relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 overflow-hidden"
-        onMouseEnter={() => setPaused(true)}
-        onMouseLeave={() => setPaused(false)}
-        onFocusCapture={() => setPaused(true)}
-        onBlurCapture={() => setPaused(false)}
       >
         <div
           className={`flex w-max items-stretch gap-5 py-3 sm:gap-6 ${

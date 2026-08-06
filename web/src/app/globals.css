@@ -124,6 +124,11 @@ body {
   will-change: transform;
 }
 
+.kk-gallery-track:has(.kk-gallery-card:hover) .animate-kk-gallery-scroll,
+.kk-gallery-track:has(.kk-gallery-card:focus-visible) .animate-kk-gallery-scroll {
+  animation-play-state: paused;
+}
+
 /* Opposite direction to the photo gallery so adjacent reels don't look synced */
 @keyframes kk-video-scroll {
   from {
@@ -139,6 +144,11 @@ body {
   will-change: transform;
 }
 
+.kk-video-track:has(.kk-video-card:hover) .animate-kk-video-scroll,
+.kk-video-track:has(.kk-video-card:focus-visible) .animate-kk-video-scroll {
+  animation-play-state: paused;
+}
+
 /* Gallery — zoom cursor on cards, grab on track when paused */
 .kk-gallery-track {
   cursor: default;
@@ -149,6 +159,10 @@ body {
 }
 
 .kk-gallery-track:hover {
+  cursor: default;
+}
+
+.kk-gallery-track:has(.kk-gallery-card:hover) {
   cursor: grab;
 }
 
