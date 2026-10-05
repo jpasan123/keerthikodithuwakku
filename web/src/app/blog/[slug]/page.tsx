@@ -85,7 +85,7 @@ export default async function BlogPostPage({ params }: Props) {
               />
             </figure>
 
-            <div className="prose-kk space-y-5 text-kk-muted leading-relaxed [&_h2]:font-display [&_h2]:text-2xl md:[&_h2]:text-3xl [&_h2]:text-kk-ink [&_h2]:mt-10 [&_h2]:mb-3 [&_p]:text-base md:[&_p]:text-lg [&_strong]:text-kk-ink">
+            <div className="prose-kk space-y-5 text-kk-muted leading-relaxed [&_h2]:font-display [&_h2]:text-2xl md:[&_h2]:text-3xl [&_h2]:text-kk-ink [&_h2]:mt-10 [&_h2]:mb-3 [&_p]:text-base md:[&_p]:text-lg [&_strong]:text-kk-ink [&_img]:my-8 [&_img]:mx-auto [&_img]:block [&_img]:h-auto [&_img]:w-auto [&_img]:max-w-full [&_img]:max-h-[640px] [&_img]:rounded-2xl [&_img]:border [&_img]:border-kk-border [&_a]:font-semibold [&_a]:text-kk-accent [&_a]:underline-offset-4 hover:[&_a]:underline [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-2">
               <MDXRemote source={post.content} />
             </div>
 
