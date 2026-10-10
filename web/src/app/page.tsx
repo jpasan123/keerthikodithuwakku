@@ -253,6 +253,15 @@ export default function HomePage() {
           title="Leadership and collaboration in focus"
         />
         <InfiniteGallery items={gallery} />
+        <div className="mt-10 flex justify-center">
+          <Link
+            href="/gallery"
+            className="inline-flex items-center gap-2 rounded-full border border-kk-accent px-6 py-2.5 text-sm font-semibold text-kk-accent transition hover:bg-kk-accent hover:text-white"
+          >
+            View full gallery
+            <ArrowUpRight className="size-4" />
+          </Link>
+        </div>
       </Section>
 
       <Section>
