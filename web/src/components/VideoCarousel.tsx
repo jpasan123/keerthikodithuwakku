@@ -134,6 +134,8 @@ export function VideoCarousel({ videos }: { videos: readonly Video[] }) {
                 <div className="relative aspect-[16/10] w-full overflow-hidden bg-kk-ink">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
+                    loading="lazy"
+                    decoding="async"
                     src={thumbPath(video.id)}
                     alt=""
                     className={`absolute inset-0 size-full object-cover transition duration-700 group-hover:scale-[1.04] ${
@@ -295,6 +297,8 @@ export function VideoCarousel({ videos }: { videos: readonly Video[] }) {
                     >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
+                        loading="lazy"
+                        decoding="async"
                         src={thumbPath(video.id)}
                         alt=""
                         className="size-full object-cover"
