@@ -275,25 +275,33 @@ export const gallery = [
 
 export const highlights = [
   {
+    title: "Inspiring Sri Lankan Engineers: IET Sri Lanka Chapter Session",
+    excerpt:
+      "Inspiring Sri Lankan engineers to turn ideas into innovation, intellectual value, and global impact.",
+    body: "Inspiring the engineering community in Sri Lanka to think beyond technology towards innovation, intellectual property, commercialization and impact. A valuable and interactive session with the Institution of Engineering and Technology (IET) Sri Lanka Chapter, wherein their views on the ways in which Sri Lankan Engineers can convert ideas into valuable innovations and bring them to the international markets were shared.",
+    image: "/media/news/iet-sri-lanka-engineers.jpg",
+    href: "/achievements#speaking",
+  },
+  {
     title: "Sri Lanka’s Impact at the Global AI for Health Summit",
     excerpt:
       "Represented Sri Lanka at the 2nd Global Initiative on AI for Health (GIAI4H) summit in Singapore, hosted by NUS alongside WIPO, WHO, and ITU, showcasing AI-driven cardiovascular health solutions.",
     image: "/media/news/giai4h-singapore.jpg",
-    href: "/achievements",
+    href: "/achievements#speaking",
   },
   {
     title: "ASNAC 2025: Congress of Sri Lankan Neurologists",
     excerpt:
       "Presented on AI-driven diagnostics, brain–computer interfaces, and non-invasive monitoring, encouraging researchers to protect and scale their work through patents.",
     image: "/media/news/asnac-2025.jpg",
-    href: "/achievements",
+    href: "/achievements#speaking",
   },
   {
     title: "An IP-Driven Technopreneur: Scale Up Your IP",
     excerpt:
       "Speaker at the WIPO / NIA workshop at the University of Colombo, helping startups and university spin-offs use intellectual property to bridge lab research and market needs.",
     image: "/media/news/ip-workshop.jpg",
-    href: "/achievements",
+    href: "/achievements#speaking",
   },
 ] as const;
 
@@ -417,6 +425,7 @@ export const achievements = {
     {
       year: "2026 / 2025",
       items: [
+        "Speaker: IET Sri Lanka Chapter session on turning engineering ideas into innovation, intellectual value and global impact",
         "Eisenhower Fellowships 2026: Innovative Entrepreneurs Program (1 of 28 fellows from 500+ global applicants)",
         "Chevening CRISP Fellowship: St Cross College, University of Oxford",
         "ICT Leader of the Year 2025: National ICT Awards (CSSL)",

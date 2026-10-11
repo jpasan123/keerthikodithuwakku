@@ -10,7 +10,7 @@ import { Reveal } from "@/components/Reveal";
 import { Section, SectionHeading } from "@/components/Section";
 import { TimelineFlow } from "@/components/TimelineFlow";
 import { VideoCarousel } from "@/components/VideoCarousel";
-import { achievements, featuredAwards, fellowships } from "@/lib/content";
+import { achievements, featuredAwards, fellowships, highlights } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Achievements",
@@ -176,6 +176,35 @@ export default function AchievementsPage() {
                   </span>
                 </div>
               </a>
+            </Reveal>
+          ))}
+        </div>
+      </Section>
+
+      <Section surface id="speaking" className="scroll-mt-24">
+        <SectionHeading
+          eyebrow="Speaking"
+          title="Selected speaking & programme moments"
+          description="Conference, summit and workshop highlights."
+        />
+        <div className="grid gap-6 md:grid-cols-2">
+          {highlights.map((item, i) => (
+            <Reveal key={item.title} delay={(i % 2) * 0.06}>
+              <article className="flex h-full flex-col overflow-hidden rounded-3xl border border-kk-border bg-white transition-shadow hover:shadow-xl hover:shadow-kk-ink/5">
+                <ContentImageFrame
+                  src={item.image}
+                  alt={item.title}
+                  fit="cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="rounded-none border-0"
+                />
+                <div className="flex flex-1 flex-col p-6">
+                  <h3 className="font-display text-2xl text-kk-ink">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-kk-muted md:text-base">
+                    {"body" in item ? item.body : item.excerpt}
+                  </p>
+                </div>
+              </article>
             </Reveal>
           ))}
         </div>
