@@ -36,14 +36,14 @@ export function SectionHeading({
 }) {
   return (
     <div
-      className={`mb-8 max-w-2xl sm:mb-10 md:mb-14 ${align === "center" ? "mx-auto text-center" : ""}`}
+      className={`relative z-10 mb-7 max-w-3xl overflow-visible sm:mb-8 md:mb-10 ${align === "center" ? "mx-auto text-center" : ""}`}
     >
       {eyebrow ? (
         <p className="mb-2.5 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-kk-accent sm:mb-3 sm:text-xs">
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="font-display text-[1.55rem] leading-[1.2] text-kk-ink sm:text-[1.85rem] md:text-[2.35rem] lg:text-[2.6rem]">
+      <h2 className="font-display text-[1.55rem] leading-[1.22] text-balance text-kk-ink sm:text-[1.85rem] md:text-[2.35rem] lg:text-[2.55rem]">
         {title}
       </h2>
       {description ? (

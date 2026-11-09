@@ -115,7 +115,7 @@ body {
     transform: translateX(0);
   }
   to {
-    transform: translateX(calc(-33.333% - 10px));
+    transform: translateX(calc(-50% - 10px));
   }
 }
 

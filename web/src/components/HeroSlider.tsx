@@ -5,11 +5,6 @@ import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Button } from "./Button";
 
-/**
- * Each slide carries a desktop (cinematic landscape) image AND a
- * mobile image where Keerthi is centered, so tall phones never crop
- * to a logo or another person. Positions are tuned per orientation.
- */
 const slides = [
   {
     src: "/media/hero/ict-leader-stage-hq.jpg",
@@ -69,6 +64,7 @@ export function HeroSlider() {
 
   const slide = slides[index];
   const marqueeRow = [...marqueeItems, ...marqueeItems];
+  const preloadIndex = (index + 1) % slides.length;
 
   function goToSlide(next: number) {
     setPaused(true);
@@ -80,51 +76,57 @@ export function HeroSlider() {
       <div className="absolute inset-0 bg-[#0c0e0a]" aria-hidden />
 
       {slides.map((s, i) => {
+        const isActive = i === index;
+        const shouldLoad = isActive || i === preloadIndex;
+
         return (
           <motion.div
             key={s.eyebrow}
             className={`absolute inset-0 overflow-hidden ${
-              i === index ? "z-[1]" : "z-0 pointer-events-none"
+              isActive ? "z-[1]" : "z-0 pointer-events-none"
             }`}
             initial={false}
             animate={{
-              opacity: i === index ? 1 : 0,
+              opacity: isActive ? 1 : 0,
               scale: 1,
             }}
             transition={{
               opacity: { duration: 1.05, ease: "easeInOut" },
             }}
-            aria-hidden={i !== index}
+            aria-hidden={!isActive}
           >
-            {/* Full-bleed cover on every breakpoint, never letterbox */}
-            <Image
-              src={s.mobileSrc}
-              alt=""
-              fill
-              priority={i === 0 || i === 1}
-              className={`!h-full !w-full object-cover object-center md:hidden ${s.mobilePosition}`}
-              sizes="100vw"
-              quality={90}
-            />
-            <Image
-              src={s.src}
-              alt=""
-              fill
-              priority={i === 0 || i === 1}
-              className={`!h-full !w-full object-cover object-center hidden md:block ${s.desktopPosition}`}
-              sizes="100vw"
-              quality={90}
-            />
+            {shouldLoad ? (
+              <>
+                <Image
+                  src={s.mobileSrc}
+                  alt=""
+                  fill
+                  priority={i === 0}
+                  fetchPriority={i === 0 ? "high" : "auto"}
+                  className={`!h-full !w-full object-cover object-center md:hidden ${s.mobilePosition}`}
+                  sizes="100vw"
+                  quality={i === 0 ? 88 : 80}
+                />
+                <Image
+                  src={s.src}
+                  alt=""
+                  fill
+                  priority={i === 0}
+                  fetchPriority={i === 0 ? "high" : "auto"}
+                  className={`!h-full !w-full object-cover object-center hidden md:block ${s.desktopPosition}`}
+                  sizes="100vw"
+                  quality={i === 0 ? 88 : 80}
+                />
+              </>
+            ) : null}
           </motion.div>
         );
       })}
 
-      {/* Readable text without crushing the photo into black bars */}
       <div className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-t from-black/70 via-black/20 to-black/15 md:from-black/68 md:via-black/22 md:to-black/20" />
       <div className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-r from-black/45 via-black/12 to-transparent md:from-black/50 md:via-black/15" />
 
       <div className="relative z-[3] flex h-full min-h-0 flex-col">
-        {/* Lower-third placement, balanced above the recognition bar, not floating mid-screen */}
         <div className="container-kk flex min-h-0 flex-1 flex-col justify-end pb-5 pt-[5rem] sm:pb-6 sm:pt-28 md:pb-9 md:pt-32 lg:pb-11">
           <motion.div
             key={slide.title}
@@ -183,14 +185,12 @@ export function HeroSlider() {
           transition={{ duration: 0.5, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           className="relative shrink-0 overflow-hidden border-t border-white/12 bg-black/45 backdrop-blur-xl"
         >
-          {/* Soft top accent line */}
           <div
             className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-kk-accent/70 to-transparent"
             aria-hidden
           />
 
           <div className="relative flex items-stretch">
-            {/* Fixed label, stays while achievements scroll */}
             <div className="relative z-[2] hidden shrink-0 items-center border-r border-white/12 bg-white/6 px-5 sm:flex md:px-6">
               <p className="whitespace-nowrap text-[0.65rem] font-bold uppercase tracking-[0.22em] text-kk-accent">
                 Recognition
@@ -198,7 +198,6 @@ export function HeroSlider() {
             </div>
 
             <div className="relative min-w-0 flex-1 overflow-hidden py-3.5 select-none sm:py-4">
-              {/* Edge fades */}
               <div
                 className="pointer-events-none absolute inset-y-0 left-0 z-[1] w-10 bg-gradient-to-r from-black/55 to-transparent sm:w-16"
                 aria-hidden

@@ -10,6 +10,7 @@ import { HomeContact } from "@/components/HomeContact";
 import { RecognitionSlider } from "@/components/RecognitionSlider";
 import { Reveal } from "@/components/Reveal";
 import { Section, SectionHeading } from "@/components/Section";
+import { SpeakingHighlights } from "@/components/SpeakingHighlights";
 import { ServiceIcon } from "@/components/ServiceIcon";
 import { VenturesShowcase } from "@/components/VenturesShowcase";
 import { VideoCarousel } from "@/components/VideoCarousel";
@@ -86,7 +87,7 @@ export default function HomePage() {
                 fill
                 className="object-cover object-[50%_20%]"
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                quality={92}
+                quality={78}
               />
             </div>
           </Reveal>
@@ -148,7 +149,7 @@ export default function HomePage() {
                     fill
                     className="object-cover transition duration-700 group-hover:scale-[1.05]"
                     sizes="(max-width: 768px) 100vw, 33vw"
-                    quality={92}
+                    quality={78}
                   />
                 </div>
                 <div className="flex flex-1 flex-col p-7 md:p-8">
@@ -221,7 +222,7 @@ export default function HomePage() {
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                quality={90}
+                quality={78}
               />
             </div>
           </Reveal>
@@ -273,45 +274,13 @@ export default function HomePage() {
       </Section>
 
       {/* 8) Speaking highlights, no fellowship/alumni overlap */}
-      <Section surface>
+      <Section surface className="!py-10 sm:!py-12 md:!py-16">
         <SectionHeading
           eyebrow="Impact"
           title="Selected speaking & programme moments"
           description="Distinct from fellowships and blog stories: conference and workshop highlights."
         />
-        <div className="grid gap-6 md:grid-cols-3 md:gap-7">
-          {highlights.map((item, i) => (
-            <Reveal key={item.title} delay={i * 0.07}>
-              <Link
-                href={item.href}
-                className="group flex h-full flex-col overflow-hidden rounded-[28px] border border-kk-border bg-white shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-kk-accent/35 hover:shadow-xl hover:shadow-kk-ink/8"
-              >
-                <div className="relative aspect-[16/10] overflow-hidden">
-                  <Image
-                    src={item.image}
-                    alt=""
-                    fill
-                    className="object-cover transition duration-700 group-hover:scale-[1.05]"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    quality={90}
-                  />
-                </div>
-                <div className="flex flex-1 flex-col p-6">
-                  <h3 className="text-lg font-semibold leading-snug text-kk-ink">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-kk-muted">
-                    {item.excerpt}
-                  </p>
-                  <span className="mt-5 inline-flex w-fit items-center gap-1.5 text-sm font-semibold text-kk-accent">
-                    View archive
-                    <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </span>
-                </div>
-              </Link>
-            </Reveal>
-          ))}
-        </div>
+        <SpeakingHighlights items={highlights} />
       </Section>
 
       {/* 9) Blog once, excludes Recognition stories */}

@@ -19,7 +19,7 @@ export function InfiniteGallery({ items }: { items: readonly Item[] }) {
     });
   }, [items]);
 
-  const loop = useMemo(() => [...unique, ...unique, ...unique], [unique]);
+  const loop = useMemo(() => [...unique, ...unique], [unique]);
 
   const [active, setActive] = useState<number | null>(null);
   const [inView, setInView] = useState(false);
@@ -93,8 +93,8 @@ export function InfiniteGallery({ items }: { items: readonly Item[] }) {
                     item.focus ?? "object-[50%_28%]"
                   }`}
                   sizes="(max-width: 768px) 420px, 440px"
-                  quality={95}
-                  loading={i < 8 ? "eager" : "lazy"}
+                  quality={78}
+                  loading={i < 4 ? "eager" : "lazy"}
                 />
 
                 <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-kk-ink/90 via-kk-ink/20 to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
@@ -167,7 +167,7 @@ export function InfiniteGallery({ items }: { items: readonly Item[] }) {
                 fill
                 className="object-contain"
                 sizes="100vw"
-                quality={95}
+                quality={78}
               />
             </motion.div>
             <p className="absolute bottom-5 left-1/2 max-w-xl -translate-x-1/2 px-4 text-center text-sm font-medium text-kk-accent">

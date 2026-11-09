@@ -14,12 +14,14 @@ const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -55,6 +57,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="preload"
+          as="image"
+          href="/media/hero/ict-leader-stage-hq.jpg"
+          fetchPriority="high"
+        />
+      </head>
       <body
         className={`${plusJakarta.variable} ${dmSans.variable} antialiased bg-kk-bg text-kk-ink`}
       >

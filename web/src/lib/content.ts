@@ -212,6 +212,11 @@ export const recognition = [
 /** Home Insights, exclude stories already in Recognition */
 export const featuredStorySlugs = [
   {
+    slug: "lsn-spotlight-ai-medtech-global-stage",
+    image: "/media/blog/lsn-spotlight-keerthi-hero.jpg",
+    cta: "Read full spotlight",
+  },
+  {
     slug: "alumni-association-moratuwa",
     image: "/media/news/alumni-moratuwa.jpg",
     cta: "Read this article",
@@ -219,11 +224,6 @@ export const featuredStorySlugs = [
   {
     slug: "healthcare-regulatory-compliance-challenges",
     image: "/media/blog/jendo-regulatory-kit.jpg",
-    cta: "Read this article",
-  },
-  {
-    slug: "jendo-bahrain-pilot",
-    image: "/media/gallery/bahrain-pilot.jpeg",
     cta: "Read this article",
   },
   {
