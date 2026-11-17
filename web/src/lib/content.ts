@@ -239,7 +239,7 @@ export const featuredStorySlugs = [
  * `focus` = Tailwind object-position so faces stay in frame under object-cover.
  */
 export const gallery = [
-  { src: "/media/gallery/eu-parliament-french-government.jpg", alt: "Meeting with EU parliamentarians and key French government officials, Paris", focus: "object-[50%_35%]" },
+  { src: "/media/gallery/eu-parliament-french-government.jpg", alt: "High-level strategic dialogue with European Parliamentarians and French government leadership, Paris", focus: "object-[50%_35%]" },
   { src: "/media/gallery/hangzhou-giai4h-banner.jpg", alt: "Sharing Jendo Innovations’ AI healthcare journey at the WHO–ITU–WIPO Global Initiative on AI for Health in Hangzhou, China.", focus: "object-[70%_45%]" },
   { src: "/media/gallery/hangzhou-giai4h-session.jpg", alt: "Presenting at the Global Initiative on AI for Health annual meeting, Hangzhou, China, September 2026", focus: "object-[50%_30%]" },
   { src: "/media/news/iet-sri-lanka-engineers.jpg", alt: "Speaking to Sri Lankan engineers at the IET Sri Lanka Chapter session", focus: "object-[50%_30%]" },
