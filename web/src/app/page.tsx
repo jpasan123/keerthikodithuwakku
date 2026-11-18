@@ -12,6 +12,7 @@ import { Reveal } from "@/components/Reveal";
 import { Section, SectionHeading } from "@/components/Section";
 import { SpeakingHighlights } from "@/components/SpeakingHighlights";
 import { ServiceIcon } from "@/components/ServiceIcon";
+import { FounderVideo } from "@/components/FounderVideo";
 import { VenturesShowcase } from "@/components/VenturesShowcase";
 import { VideoCarousel } from "@/components/VideoCarousel";
 import { getPostBySlug } from "@/lib/blog";
@@ -265,7 +266,12 @@ export default function HomePage() {
         </div>
       </Section>
 
+      {/* Founder's Key Strategic Video Insight */}
       <Section>
+        <FounderVideo />
+      </Section>
+
+      <Section surface>
         <SectionHeading
           eyebrow="On camera"
           title="Television, interviews & programme features"
@@ -274,7 +280,7 @@ export default function HomePage() {
       </Section>
 
       {/* 8) Speaking highlights, no fellowship/alumni overlap */}
-      <Section surface className="!py-10 sm:!py-12 md:!py-16">
+      <Section className="!py-10 sm:!py-12 md:!py-16">
         <SectionHeading
           eyebrow="Impact"
           title="Selected speaking & programme moments"
@@ -284,7 +290,7 @@ export default function HomePage() {
       </Section>
 
       {/* 9) Blog once, excludes Recognition stories */}
-      <Section>
+      <Section surface>
         <SectionHeading
           eyebrow="Insights"
           title="Latest from the blog"
