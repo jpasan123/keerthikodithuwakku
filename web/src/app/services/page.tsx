@@ -147,6 +147,47 @@ export default function ServicesPage() {
       </Section>
 
       <Section>
+        <div className="rounded-[28px] border border-kk-border bg-kk-soft p-6 sm:p-8 md:p-10">
+          <div className="grid gap-8 lg:grid-cols-12 lg:items-start">
+            <div className="lg:col-span-7">
+              <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-kk-accent">
+                Scientific Foundation · 1998 Nobel Prize in Physiology or Medicine
+              </p>
+              <h2 className="mt-2 font-display text-2xl leading-tight text-kk-ink sm:text-3xl">
+                Nitric Oxide &amp; Endothelial Signalling
+              </h2>
+              <p className="mt-4 text-sm leading-relaxed text-kk-muted md:text-base">
+                Jendo&apos;s focus on non-invasive endothelial assessment builds on the foundational cardiovascular discovery awarded the 1998 Nobel Prize in Physiology or Medicine jointly to <strong>Robert F. Furchgott</strong>, <strong>Louis J. Ignarro</strong>, and <strong>Ferid Murad</strong> for identifying <em>&ldquo;nitric oxide as a signalling molecule in the cardiovascular system.&rdquo;</em>
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-kk-muted md:text-base">
+                Their research showed that the innermost cell layer of arteries—the <strong>endothelium</strong>—produces nitric oxide (NO, originally termed EDRF) to relax vascular smooth muscle, regulate blood pressure, and prevent clot formation. Detecting reduced endothelial NO activity early enables preventive intervention long before symptoms emerge.
+              </p>
+              <Link
+                href="https://www.nobelprize.org/prizes/medicine/1998/press-release/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-kk-accent hover:underline"
+              >
+                Read the 1998 Nobel Prize Press Release
+                <ArrowUpRight className="size-4" />
+              </Link>
+            </div>
+            <div className="lg:col-span-5 rounded-2xl border border-kk-border bg-white p-6">
+              <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-kk-accent">
+                Historical Note
+              </p>
+              <h3 className="mt-2 font-display text-xl text-kk-ink">
+                Nitroglycerin
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-kk-muted">
+                Alfred Nobel invented dynamite by curbing explosion-prone nitroglycerin in kieselguhr, a porous soil rich in shells of diatoms. When Nobel was taken ill with heart disease, his doctor prescribed nitroglycerin—which he refused, knowing it caused headache and doubting it could eliminate chest pain. In a letter, Nobel wrote: <em>&ldquo;It is ironical that I am now ordered by my physician to eat nitroglycerin.&rdquo;</em> Though its benefit against chest pain had been known for a century, it took 100 years until it was clarified that nitroglycerin acts by releasing <strong>NO gas</strong>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      <Section surface>
         <SectionHeading
           eyebrow="Platforms"
           title="Where the work ships"
